@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://5gr1cl3ruuul"]
+
+[ext_resource type="Texture2D" uid="uid://twl5fl0gr03v" path="res://location_scenes/Drip Store/b8eedffa73eb480195282403bdb8ac0e.jpg" id="1_0ivqj"]
+[ext_resource type="Script" uid="uid://c556ny5sgu0oe" path="res://location_scenes/Drip Store/looking_dapper.gd" id="1_bdxpd"]
+[ext_resource type="PackedScene" uid="uid://c4f3qr3emk1ga" path="res://GUI.tscn" id="2_imqw5"]
+
+[node name="LookingDapper" type="Node2D" unique_id=814987487]
+script = ExtResource("1_bdxpd")
+
+[node name="Gui" parent="." unique_id=1657345474 instance=ExtResource("2_imqw5")]
+
+[node name="Label" type="Label" parent="." unique_id=807367394]
+offset_left = 402.0
+offset_top = 36.0
+offset_right = 671.0
+offset_bottom = 59.0
+text = "I see you have come to buy clothes
+Sadly we sell drip boxes only"
+
+[node name="B8Eedffa73Eb480195282403Bdb8Ac0e" type="Sprite2D" parent="." unique_id=1262898402]
+position = Vector2(991, 178)
+scale = Vector2(0.2734375, 0.2643229)
+texture = ExtResource("1_0ivqj")
+
+[node name="Button" type="Button" parent="." unique_id=70377914]
+offset_left = 982.0
+offset_top = 608.0
+offset_right = 1118.0
+offset_bottom = 639.0
+text = "Go back to steve"
+
+[node name="Button2" type="Button" parent="." unique_id=1460036791]
+offset_left = 890.0
+offset_top = 312.0
+offset_right = 1060.0
+offset_bottom = 343.0
+text = "Buy a drip box (200$)"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

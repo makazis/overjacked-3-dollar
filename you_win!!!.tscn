@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cnxfkpeqf1gis"]
+
+[ext_resource type="Script" uid="uid://byefrmay7gvac" path="res://you_win!!!.gd" id="1_83eek"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_g4v7s"]
+font_size = 50
+
+[node name="YOU WIN!!!" type="Node2D" unique_id=1966592079]
+script = ExtResource("1_83eek")
+
+[node name="Label" type="Label" parent="." unique_id=1063721829]
+offset_left = 465.0
+offset_top = 36.0
+offset_right = 741.0
+offset_bottom = 105.0
+text = "YOU WIN!!!!"
+label_settings = SubResource("LabelSettings_g4v7s")
+
+[node name="Label2" type="Label" parent="." unique_id=54710070]
+offset_left = 543.0
+offset_top = 115.0
+offset_right = 619.0
+offset_bottom = 138.0
+text = "Your time: 10.00.00"

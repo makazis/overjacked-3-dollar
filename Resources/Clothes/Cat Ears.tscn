@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://b7qpn3m281f4r"]
+
+[ext_resource type="PackedScene" uid="uid://dhw70p6idapgy" path="res://Resources/clothing.tscn" id="1_xfmjf"]
+
+[node name="Clothing" unique_id=711110764 instance=ExtResource("1_xfmjf")]
+aura = 9
+cute = 18
+official = 2
+clothing_name = "Cat Ears"
+rarity = "Uncommon"
