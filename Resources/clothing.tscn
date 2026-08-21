@@ -2,5 +2,19 @@
 
 [ext_resource type="Script" uid="uid://djs001oxy6fvw" path="res://Resources/clothing.gd" id="1_rwie8"]
 
-[node name="Clothing" type="Node2D" unique_id=711110764]
+[node name="Clothing" type="Panel" unique_id=195571354]
+custom_minimum_size = Vector2(130, 170)
+offset_right = 130.0
+offset_bottom = 109.0
 script = ExtResource("1_rwie8")
+
+[node name="Label" type="Label" parent="." unique_id=2042981366]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 118.0
+offset_right = 128.0
+offset_bottom = 167.0
+text = "Placeholder"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3

@@ -3,8 +3,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 var objects=[
-	preload("res://Resources/Clothes/Cat Ears.tscn"),
-	preload("res://Resources/Clothes/EpicCloak.tscn")
+	preload("res://Resources/Clothes/Cat Ears.tscn")
 ]
 var roll_weights={
 	"Common":1,
@@ -20,13 +19,16 @@ func _ready() -> void:
 		all_clothes.append(i.instantiate())
 		total_roll+=roll_weights[all_clothes[-1].rarity]
 	var roll=randf_range(0,total_roll)
-	var selected=null
+	var selected:Clothing=null
 	for i in all_clothes:
 		roll-=roll_weights[i.rarity]
 		if roll<=0:
 			selected=i
 			break
-	
+	$Marker2D.add_child(selected)
+	for i in Global.clothes:
+		if i.clothing_name==selected.clothing_name:
+			return
 	Global.clothes.append(selected)
 
 

@@ -1,6 +1,6 @@
 extends Node
 
-var money=3.00:
+var money=300.00:
 	set(value):
 		for i in money_multipliers:
 			value*=i
@@ -14,6 +14,7 @@ var time_acceleration=1 #good luck figuring out which one does what you fucker.
 # Called when the node enters the scene tree for the first time.
 
 var clothes:Array[Clothing]=[]
+
 func _ready() -> void:
 	pass # Replace with function body.
 

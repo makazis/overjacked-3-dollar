@@ -1,4 +1,4 @@
-class_name Clothing extends Node2D
+class_name Clothing extends Panel
 
 @export var aura=0
 @export var cute=0

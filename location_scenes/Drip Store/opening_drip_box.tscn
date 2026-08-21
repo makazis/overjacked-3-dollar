@@ -27,4 +27,7 @@ offset_right = 663.0
 offset_bottom = 72.0
 text = "You Opened A"
 
+[node name="Marker2D" type="Marker2D" parent="." unique_id=980267975]
+position = Vector2(585, 126)
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

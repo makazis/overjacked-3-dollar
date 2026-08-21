@@ -1,10 +1,23 @@
 [gd_scene format=3 uid="uid://b7qpn3m281f4r"]
 
 [ext_resource type="PackedScene" uid="uid://dhw70p6idapgy" path="res://Resources/clothing.tscn" id="1_xfmjf"]
+[ext_resource type="Texture2D" uid="uid://bcrnw02i7vdap" path="res://Resources/Clothes/9333de1854b97480cdd96c6fc7d3baf3.jpg" id="2_1el0a"]
 
 [node name="Clothing" unique_id=711110764 instance=ExtResource("1_xfmjf")]
-aura = 9
+aura = 6
 cute = 18
 official = 2
 clothing_name = "Cat Ears"
 rarity = "Uncommon"
+
+[node name="Label" parent="." index="1" unique_id=2042981366]
+offset_left = 1.0
+offset_top = 119.0
+offset_right = 127.0
+offset_bottom = 168.0
+text = "Cat Ears"
+
+[node name="9333De1854b97480Cdd96c6Fc7d3Baf3" type="Sprite2D" parent="." index="2" unique_id=1757480598]
+position = Vector2(64.5, 68)
+scale = Vector2(0.16440217, 0.16576086)
+texture = ExtResource("2_1el0a")
