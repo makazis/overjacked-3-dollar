@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://n3mglootpx7f"]
+
+[ext_resource type="PackedScene" uid="uid://dhw70p6idapgy" path="res://Resources/clothing.tscn" id="1_i2mls"]
+[ext_resource type="Texture2D" uid="uid://cqx4uwt04otf3" path="res://Resources/Clothes/Achievement Clothes/6177EiM+HTS._AC_UL1500_.jpg" id="2_s60xs"]
+
+[node name="Clothing" unique_id=711110764 instance=ExtResource("1_i2mls")]
+offset_bottom = 170.0
+cute = 30
+clothing_name = "God Gamer Trophy"
+clothing_slot = "Bag"
+rarity = "Achievement"
+market_price = 0.0
+set_name = "Ergonomic Gamer"
+
+[node name="Label" parent="." index="0" unique_id=2042981366]
+offset_left = 1.0
+offset_top = 119.0
+offset_right = 127.0
+offset_bottom = 168.0
+text = "God Gamer Trophy"
+
+[node name="9333De1854b97480Cdd96c6Fc7d3Baf3" type="Sprite2D" parent="." index="1" unique_id=1757480598]
+position = Vector2(64.5, 68)
+scale = Vector2(0.068529174, 0.06909552)
+texture = ExtResource("2_s60xs")

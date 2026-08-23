@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://cjjrdmcg4b7vw"
+path="res://.godot/imported/phone_house_enter.dialogue-ec6ad53e65adb56c82cdc6afd2ae2946.tres"
+
+[deps]
+
+source_file="res://location_scenes/Riga/Phone House/phone_house_enter.dialogue"
+dest_files=["res://.godot/imported/phone_house_enter.dialogue-ec6ad53e65adb56c82cdc6afd2ae2946.tres"]
+
+[params]
+
+defaults=true

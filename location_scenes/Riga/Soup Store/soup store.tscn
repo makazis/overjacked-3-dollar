@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://dtmb521qq5g8k"]
+
+[ext_resource type="Script" uid="uid://ci50g3gl7612m" path="res://location_scenes/Riga/Soup Store/soup_store.gd" id="1_h1ud8"]
+[ext_resource type="PackedScene" uid="uid://c4f3qr3emk1ga" path="res://GUI.tscn" id="2_6moko"]
+[ext_resource type="PackedScene" uid="uid://drqk3i6h0otek" path="res://Resources/Clothes/Soup Store Clothing/Red Cap.tscn" id="3_h1ud8"]
+[ext_resource type="PackedScene" uid="uid://cf62wm605sswi" path="res://Resources/Clothes/Soup Store Clothing/Suit Up.tscn" id="3_k5rkt"]
+[ext_resource type="PackedScene" uid="uid://bkhqq76wnxal6" path="res://Resources/Clothes/Soup Store Clothing/Lidl Socks.tscn" id="3_n8sg0"]
+[ext_resource type="PackedScene" uid="uid://c4ykbae6pqayb" path="res://Resources/Clothes/Soup Store Clothing/Lidl Mice.tscn" id="4_k5rkt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yf5fn"]
+resource_local_to_scene = true
+bg_color = Color(0, 0.66225123, 0.82388914, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="Theme" id="Theme_g4v7s"]
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_yf5fn")
+
+[sub_resource type="Theme" id="Theme_ccl8g"]
+resource_local_to_scene = true
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_yf5fn")
+
+[node name="Soup Store" type="Node2D" unique_id=769450635]
+script = ExtResource("1_h1ud8")
+
+[node name="Gui" parent="." unique_id=1657345474 instance=ExtResource("2_6moko")]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=963698363]
+offset_left = 9.0
+offset_top = 89.0
+offset_right = 817.0
+offset_bottom = 637.0
+color = Color(0.17880967, 0.17880964, 0.17880964, 1)
+
+[node name="Button2" type="Button" parent="." unique_id=877168408]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 9.0
+offset_top = 89.0
+offset_right = 814.0
+offset_bottom = 636.0
+mouse_filter = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=647417739]
+offset_left = 9.0
+offset_top = 89.0
+offset_right = 817.0
+offset_bottom = 637.0
+
+[node name="GridContainer" type="GridContainer" parent="ScrollContainer" unique_id=367674055]
+layout_mode = 2
+columns = 6
+
+[node name="Clothing4" parent="ScrollContainer/GridContainer" unique_id=711110764 instance=ExtResource("3_k5rkt")]
+layout_mode = 2
+
+[node name="Clothing3" parent="ScrollContainer/GridContainer" unique_id=944627048 instance=ExtResource("3_n8sg0")]
+layout_mode = 2
+
+[node name="Clothing2" parent="ScrollContainer/GridContainer" unique_id=623857202 instance=ExtResource("4_k5rkt")]
+layout_mode = 2
+
+[node name="Clothing" parent="ScrollContainer/GridContainer" unique_id=1393986267 instance=ExtResource("3_h1ud8")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="." unique_id=317427874]
+offset_left = 841.0
+offset_top = 103.0
+offset_right = 904.0
+offset_bottom = 126.0
+text = "Cat Ears
+Aura: 
+Official:
+Cute:
+Cost: 0.00$"
+
+[node name="CutenessBar" type="ProgressBar" parent="Label" unique_id=1352539807]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 80.0
+offset_right = 141.0
+offset_bottom = 102.0
+theme = SubResource("Theme_g4v7s")
+value = 4.0
+show_percentage = false
+
+[node name="Obara" type="ProgressBar" parent="Label" unique_id=37799726]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 53.0
+offset_right = 161.0
+offset_bottom = 75.0
+theme = SubResource("Theme_ccl8g")
+value = 30.0
+show_percentage = false
+
+[node name="AuraBar" type="ProgressBar" parent="Label" unique_id=1993476753]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 27.0
+offset_right = 142.0
+offset_bottom = 51.0
+theme = SubResource("Theme_g4v7s")
+value = 18.0
+show_percentage = false
+
+[node name="Button" type="Button" parent="Label" unique_id=667831557]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 127.0
+offset_right = 39.0
+offset_bottom = 158.0
+text = "Buy"
+
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Label/Button" to="." method="buy"]

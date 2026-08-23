@@ -1,0 +1,121 @@
+[gd_scene format=3 uid="uid://cp6dfjrpuyqyg"]
+
+[ext_resource type="Script" uid="uid://cyqru36qfde3f" path="res://location_scenes/Riga/Home/wardrobe.gd" id="1_cqx3e"]
+[ext_resource type="PackedScene" uid="uid://c4f3qr3emk1ga" path="res://GUI.tscn" id="2_vooer"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yf5fn"]
+resource_local_to_scene = true
+bg_color = Color(0, 0.66225123, 0.82388914, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="Theme" id="Theme_g4v7s"]
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_yf5fn")
+
+[sub_resource type="Theme" id="Theme_ccl8g"]
+resource_local_to_scene = true
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_yf5fn")
+
+[node name="Wardrobe" type="Node2D" unique_id=769450635]
+script = ExtResource("1_cqx3e")
+
+[node name="Gui" parent="." unique_id=1657345474 instance=ExtResource("2_vooer")]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=963698363]
+offset_left = 9.0
+offset_top = 89.0
+offset_right = 817.0
+offset_bottom = 637.0
+color = Color(0.17880967, 0.17880964, 0.17880964, 1)
+
+[node name="Button2" type="Button" parent="." unique_id=877168408]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 9.0
+offset_top = 89.0
+offset_right = 814.0
+offset_bottom = 636.0
+mouse_filter = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=647417739]
+offset_left = 9.0
+offset_top = 89.0
+offset_right = 817.0
+offset_bottom = 637.0
+
+[node name="GridContainer" type="GridContainer" parent="ScrollContainer" unique_id=367674055]
+layout_mode = 2
+columns = 6
+
+[node name="Label" type="Label" parent="." unique_id=317427874]
+offset_left = 841.0
+offset_top = 103.0
+offset_right = 904.0
+offset_bottom = 126.0
+text = "Cat Ears
+Aura: 
+Official:
+Cute:
+Set: "
+
+[node name="CutenessBar" type="ProgressBar" parent="Label" unique_id=1352539807]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 80.0
+offset_right = 141.0
+offset_bottom = 102.0
+theme = SubResource("Theme_g4v7s")
+value = 4.0
+show_percentage = false
+
+[node name="Obara" type="ProgressBar" parent="Label" unique_id=37799726]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 53.0
+offset_right = 161.0
+offset_bottom = 75.0
+theme = SubResource("Theme_ccl8g")
+value = 30.0
+show_percentage = false
+
+[node name="AuraBar" type="ProgressBar" parent="Label" unique_id=1993476753]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 27.0
+offset_right = 142.0
+offset_bottom = 51.0
+theme = SubResource("Theme_g4v7s")
+value = 18.0
+show_percentage = false
+
+[node name="Button" type="Button" parent="." unique_id=1355673995]
+offset_left = 1077.0
+offset_top = 610.0
+offset_right = 1132.0
+offset_bottom = 641.0
+text = "Home"
+
+[node name="DripBar" type="ProgressBar" parent="." unique_id=697287846]
+offset_left = 714.0
+offset_top = 32.0
+offset_right = 1114.0
+offset_bottom = 56.0
+theme = SubResource("Theme_g4v7s")
+show_percentage = false
+
+[node name="Label2" type="Label" parent="." unique_id=1537063572]
+offset_left = 675.0
+offset_top = 29.0
+offset_right = 715.0
+offset_bottom = 52.0
+text = "Drip:"
+
+[node name="Label3" type="RichTextLabel" parent="." unique_id=706743690]
+offset_left = 838.0
+offset_top = 256.0
+offset_right = 1133.0
+offset_bottom = 600.0
+
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

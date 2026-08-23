@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cf62wm605sswi"]
+
+[ext_resource type="PackedScene" uid="uid://dhw70p6idapgy" path="res://Resources/clothing.tscn" id="1_s4cdl"]
+[ext_resource type="Texture2D" uid="uid://cvnxc78vq804g" path="res://Resources/Clothes/Soup Store Clothing/70a9c4700f5d18eed21d9a3d9517172e-1.jpg" id="2_s4cdl"]
+
+[node name="Clothing" unique_id=711110764 instance=ExtResource("1_s4cdl")]
+offset_bottom = 170.0
+aura = 12
+official = 28
+clothing_name = "Velvet Suit"
+clothing_slot = "Shirt"
+rarity = "Uncommon"
+market_price = 599.99
+
+[node name="Label" parent="." index="0" unique_id=2042981366]
+offset_left = 1.0
+offset_top = 119.0
+offset_right = 127.0
+offset_bottom = 168.0
+text = "Velvet Suit"
+
+[node name="9333De1854b97480Cdd96c6Fc7d3Baf3" type="Sprite2D" parent="." index="1" unique_id=1757480598]
+position = Vector2(64.5, 68)
+scale = Vector2(0.16485013, 0.1662125)
+texture = ExtResource("2_s4cdl")

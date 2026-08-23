@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://drqk3i6h0otek"]
+
+[ext_resource type="PackedScene" uid="uid://dhw70p6idapgy" path="res://Resources/clothing.tscn" id="1_davpf"]
+[ext_resource type="Texture2D" uid="uid://cc8ks80srgjkg" path="res://Resources/Clothes/Soup Store Clothing/923fd45f1704ac789817e73a15216a9a.jpg" id="2_davpf"]
+
+[node name="Clothing" unique_id=711110764 instance=ExtResource("1_davpf")]
+offset_bottom = 170.0
+aura = 5
+cute = 3
+official = -2
+clothing_name = "Red Cap"
+market_price = 4.99
+
+[node name="Label" parent="." index="0" unique_id=2042981366]
+offset_left = 1.0
+offset_top = 119.0
+offset_right = 127.0
+offset_bottom = 168.0
+text = "Red Cap"
+
+[node name="9333De1854b97480Cdd96c6Fc7d3Baf3" type="Sprite2D" parent="." index="1" unique_id=1757480598]
+position = Vector2(64.5, 68)
+scale = Vector2(0.10043486, 0.101264894)
+texture = ExtResource("2_davpf")

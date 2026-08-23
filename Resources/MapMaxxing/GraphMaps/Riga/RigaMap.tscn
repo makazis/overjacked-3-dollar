@@ -1,0 +1,167 @@
+[gd_scene format=3 uid="uid://doetk8gtoypxk"]
+
+[ext_resource type="Texture2D" uid="uid://n8n462bml3if" path="res://Resources/MapMaxxing/GraphMaps/Riga/ws9bkzm3mvd21.webp" id="1_a0ra6"]
+[ext_resource type="Script" uid="uid://ilwjvg5f8a1" path="res://Resources/MapMaxxing/GraphMaps/Riga/riga_map.gd" id="1_gy4n5"]
+[ext_resource type="PackedScene" uid="uid://bbqtppox7q4lq" path="res://Resources/MapMaxxing/Mapcamera.tscn" id="2_er5ts"]
+[ext_resource type="PackedScene" uid="uid://bqvvbvpdnt7dc" path="res://Resources/MapMaxxing/GraphMaps/GraphPoint.tscn" id="3_er5ts"]
+[ext_resource type="Script" uid="uid://crujsi4571xf0" path="res://Resources/Conditions/Graph_point_with_conditions.gd" id="4_gy4n5"]
+[ext_resource type="Script" uid="uid://d14n6xyehew5m" path="res://Resources/Conditions/condition.gd" id="5_jo2ha"]
+[ext_resource type="Script" uid="uid://ju33licv4gg2" path="res://Resources/Conditions/Conditions/Checks/has_money.gd" id="7_u1nsh"]
+[ext_resource type="Script" uid="uid://ciqes2gk5v1y2" path="res://Resources/Conditions/Conditions/Checks/is_wearing.gd" id="8_r4g8y"]
+
+[sub_resource type="Resource" id="Resource_h1fea"]
+script = ExtResource("7_u1nsh")
+money_amount = 100.0
+metadata/_custom_type_script = "uid://ju33licv4gg2"
+
+[sub_resource type="Resource" id="Resource_u1nsh"]
+script = ExtResource("8_r4g8y")
+needs_to_be_wearing = "Lidl Socks"
+metadata/_custom_type_script = "uid://ciqes2gk5v1y2"
+
+[node name="RigaMap" type="Node2D" unique_id=579946939]
+script = ExtResource("1_gy4n5")
+
+[node name="Ws9Bkzm3Mvd21" type="Sprite2D" parent="." unique_id=1634670434]
+scale = Vector2(2, 2)
+texture = ExtResource("1_a0ra6")
+centered = false
+
+[node name="Camera" parent="." unique_id=325288373 instance=ExtResource("2_er5ts")]
+limit_right = 2944
+limit_bottom = 1980
+
+[node name="Airport" parent="." unique_id=1895469004 instance=ExtResource("3_er5ts")]
+position = Vector2(205, 1246)
+
+[node name="House" parent="." unique_id=999098470 instance=ExtResource("3_er5ts")]
+position = Vector2(2405, 1572)
+loads_scene = "res://location_scenes/Riga/Home/root.tscn"
+
+[node name="graph_point_with_conditions" type="Node2D" parent="House" unique_id=1176240827 node_paths=PackedStringArray("connects_to")]
+visible = false
+script = ExtResource("4_gy4n5")
+connects_to = NodePath("../../SteveTheDiceGoblin")
+metadata/_custom_type_script = "uid://crujsi4571xf0"
+
+[node name="graph_point_with_conditions3" type="Node2D" parent="House" unique_id=1029229562 node_paths=PackedStringArray("connects_to")]
+visible = false
+script = ExtResource("4_gy4n5")
+connects_to = NodePath("../../Carnikava")
+metadata/_custom_type_script = "uid://crujsi4571xf0"
+
+[node name="graph_point_with_conditions2" type="Node2D" parent="House" unique_id=1569022776 node_paths=PackedStringArray("connects_to")]
+visible = false
+script = ExtResource("4_gy4n5")
+conditions = Array[ExtResource("5_jo2ha")]([SubResource("Resource_h1fea")])
+connects_to = NodePath("../../Clothing Store")
+metadata/_custom_type_script = "uid://crujsi4571xf0"
+
+[node name="Clothing Store" parent="." unique_id=2127089120 instance=ExtResource("3_er5ts")]
+position = Vector2(1616, 1484)
+loads_scene = "res://location_scenes/Riga/Drip Store/looking_dapper.tscn"
+
+[node name="graph_point_with_conditions" type="Node2D" parent="Clothing Store" unique_id=1002619925 node_paths=PackedStringArray("connects_to")]
+visible = false
+script = ExtResource("4_gy4n5")
+connects_to = NodePath("../../House")
+metadata/_custom_type_script = "uid://crujsi4571xf0"
+
+[node name="SteveTheDiceGoblin" parent="." unique_id=1347300624 instance=ExtResource("3_er5ts")]
+position = Vector2(2201, 1801)
+loads_scene = "res://location_scenes/Riga/The Dice Goblin/rolling dice.tscn"
+
+[node name="graph_point_with_conditions" type="Node2D" parent="SteveTheDiceGoblin" unique_id=299013467 node_paths=PackedStringArray("connects_to")]
+visible = false
+script = ExtResource("4_gy4n5")
+connects_to = NodePath("../../House")
+metadata/_custom_type_script = "uid://crujsi4571xf0"
+
+[node name="Carnikava" parent="." unique_id=1835641321 instance=ExtResource("3_er5ts")]
+position = Vector2(3257, 1636)
+
+[node name="graph_point_with_conditions" type="Node2D" parent="Carnikava" unique_id=2085228842 node_paths=PackedStringArray("connects_to")]
+visible = false
+script = ExtResource("4_gy4n5")
+connects_to = NodePath("../../House")
+metadata/_custom_type_script = "uid://crujsi4571xf0"
+
+[node name="graph_point_with_conditions2" type="Node2D" parent="Carnikava" unique_id=1782865011 node_paths=PackedStringArray("connects_to")]
+visible = false
+script = ExtResource("4_gy4n5")
+connects_to = NodePath("../../Poor Man\'s Pond")
+metadata/_custom_type_script = "uid://crujsi4571xf0"
+
+[node name="Poor Man\'s Pond" parent="." unique_id=2126358389 instance=ExtResource("3_er5ts")]
+position = Vector2(3046, 888)
+loads_scene = "res://location_scenes/Riga/Poor Man's Pond/poor_man's_pond.tscn"
+
+[node name="graph_point_with_conditions" type="Node2D" parent="Poor Man\'s Pond" unique_id=380996096 node_paths=PackedStringArray("connects_to")]
+visible = false
+script = ExtResource("4_gy4n5")
+connects_to = NodePath("../../Carnikava")
+metadata/_custom_type_script = "uid://crujsi4571xf0"
+
+[node name="graph_point_with_conditions2" type="Node2D" parent="Poor Man\'s Pond" unique_id=1687185134 node_paths=PackedStringArray("connects_to")]
+visible = false
+script = ExtResource("4_gy4n5")
+connects_to = NodePath("../../Hospital")
+metadata/_custom_type_script = "uid://crujsi4571xf0"
+
+[node name="graph_point_with_conditions3" type="Node2D" parent="Poor Man\'s Pond" unique_id=247165410 node_paths=PackedStringArray("connects_to")]
+visible = false
+script = ExtResource("4_gy4n5")
+connects_to = NodePath("../../Soup Store")
+metadata/_custom_type_script = "uid://crujsi4571xf0"
+
+[node name="graph_point_with_conditions4" type="Node2D" parent="Poor Man\'s Pond" unique_id=1421497797 node_paths=PackedStringArray("connects_to")]
+visible = false
+script = ExtResource("4_gy4n5")
+connects_to = NodePath("../../The Phone House")
+metadata/_custom_type_script = "uid://crujsi4571xf0"
+
+[node name="Hospital" parent="." unique_id=602202868 instance=ExtResource("3_er5ts")]
+position = Vector2(2768, 450)
+loads_scene = "res://location_scenes/Riga/Hospital/Waiting Room.tscn"
+
+[node name="graph_point_with_conditions" type="Node2D" parent="Hospital" unique_id=1037339216 node_paths=PackedStringArray("connects_to")]
+visible = false
+script = ExtResource("4_gy4n5")
+connects_to = NodePath("../../Poor Man\'s Pond")
+metadata/_custom_type_script = "uid://crujsi4571xf0"
+
+[node name="Soup Store" parent="." unique_id=2105577367 instance=ExtResource("3_er5ts")]
+position = Vector2(3782, 931)
+loads_scene = "res://location_scenes/Riga/Soup Store/soup store.tscn"
+
+[node name="graph_point_with_conditions" type="Node2D" parent="Soup Store" unique_id=738295399 node_paths=PackedStringArray("connects_to")]
+visible = false
+script = ExtResource("4_gy4n5")
+connects_to = NodePath("../../Poor Man\'s Pond")
+metadata/_custom_type_script = "uid://crujsi4571xf0"
+
+[node name="graph_point_with_conditions2" type="Node2D" parent="Soup Store" unique_id=946485544 node_paths=PackedStringArray("connects_to")]
+visible = false
+script = ExtResource("4_gy4n5")
+conditions = Array[ExtResource("5_jo2ha")]([SubResource("Resource_u1nsh")])
+connects_to = NodePath("../../Soup Backrooms")
+metadata/_custom_type_script = "uid://crujsi4571xf0"
+
+[node name="Soup Backrooms" parent="." unique_id=1932327128 instance=ExtResource("3_er5ts")]
+position = Vector2(3919, 771)
+loads_scene = "res://location_scenes/Riga/Soup Store/fishing_in_backrooms.tscn"
+
+[node name="graph_point_with_conditions" type="Node2D" parent="Soup Backrooms" unique_id=285159364 node_paths=PackedStringArray("connects_to")]
+visible = false
+script = ExtResource("4_gy4n5")
+connects_to = NodePath("../../Soup Store")
+metadata/_custom_type_script = "uid://crujsi4571xf0"
+
+[node name="The Phone House" parent="." unique_id=1347917621 instance=ExtResource("3_er5ts")]
+position = Vector2(2334, 769)
+
+[node name="graph_point_with_conditions" type="Node2D" parent="The Phone House" unique_id=395259109 node_paths=PackedStringArray("connects_to")]
+visible = false
+script = ExtResource("4_gy4n5")
+connects_to = NodePath("../../Poor Man\'s Pond")
+metadata/_custom_type_script = "uid://crujsi4571xf0"

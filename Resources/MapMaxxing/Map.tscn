@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://bdctgion4dy5p"]
+
+[ext_resource type="Script" uid="uid://cdsdkwdf3b8ob" path="res://Resources/MapMaxxing/map.gd" id="1_53nga"]
+[ext_resource type="Texture2D" uid="uid://broe3cri1hqmf" path="res://Resources/MapMaxxing/Screenshot 2026-08-22 121626.png" id="1_xpeui"]
+[ext_resource type="PackedScene" uid="uid://bbqtppox7q4lq" path="res://Resources/MapMaxxing/Mapcamera.tscn" id="2_8p737"]
+[ext_resource type="PackedScene" uid="uid://c4f3qr3emk1ga" path="res://GUI.tscn" id="2_jtupw"]
+[ext_resource type="PackedScene" uid="uid://bqvvbvpdnt7dc" path="res://Resources/MapMaxxing/GraphMaps/GraphPoint.tscn" id="2_s7icw"]
+[ext_resource type="Script" uid="uid://crujsi4571xf0" path="res://Resources/Conditions/Graph_point_with_conditions.gd" id="3_lubkk"]
+[ext_resource type="Script" uid="uid://d14n6xyehew5m" path="res://Resources/Conditions/condition.gd" id="4_c7hc8"]
+[ext_resource type="Script" uid="uid://c22n32x6w5pwg" path="res://Resources/Conditions/Conditions/Affects/costs_money.gd" id="7_xxfgm"]
+
+[sub_resource type="Resource" id="Resource_yy7ak"]
+script = ExtResource("7_xxfgm")
+money_amount = 400.0
+metadata/_custom_type_script = "uid://c22n32x6w5pwg"
+
+[sub_resource type="Resource" id="Resource_da0fj"]
+script = ExtResource("7_xxfgm")
+money_amount = 400.0
+metadata/_custom_type_script = "uid://c22n32x6w5pwg"
+
+[node name="Map" type="Node2D" unique_id=1496684153]
+script = ExtResource("1_53nga")
+
+[node name="Camera" parent="." unique_id=325288373 instance=ExtResource("2_8p737")]
+limit_right = 4188
+limit_bottom = 2756
+
+[node name="Gui2" parent="Camera" unique_id=1657345474 instance=ExtResource("2_jtupw")]
+
+[node name="Screenshot20260822121626" type="Sprite2D" parent="." unique_id=170687596]
+scale = Vector2(2, 2)
+texture = ExtResource("1_xpeui")
+centered = false
+
+[node name="Livonia" parent="." unique_id=1895469004 instance=ExtResource("2_s7icw")]
+position = Vector2(2500, 1157)
+
+[node name="Livonia_To_finland" type="Node2D" parent="Livonia" unique_id=270553287 node_paths=PackedStringArray("connects_to")]
+visible = false
+script = ExtResource("3_lubkk")
+connects_to = NodePath("../../Finland")
+metadata/_custom_type_script = "uid://crujsi4571xf0"
+
+[node name="Finland" parent="." unique_id=281836656 instance=ExtResource("2_s7icw")]
+position = Vector2(2470, 771)
+
+[node name="Finland_To_Livonia" type="Node2D" parent="Finland" unique_id=2023466530 node_paths=PackedStringArray("connects_to")]
+visible = false
+script = ExtResource("3_lubkk")
+connects_to = NodePath("../../Livonia")
+metadata/_custom_type_script = "uid://crujsi4571xf0"
+
+[node name="Finland_To_Sweden" type="Node2D" parent="Finland" unique_id=1394057681 node_paths=PackedStringArray("connects_to")]
+visible = false
+script = ExtResource("3_lubkk")
+conditions = Array[ExtResource("4_c7hc8")]([SubResource("Resource_yy7ak")])
+connects_to = NodePath("../../Sweden")
+metadata/_custom_type_script = "uid://crujsi4571xf0"
+
+[node name="Sweden" parent="." unique_id=268187506 instance=ExtResource("2_s7icw")]
+position = Vector2(2146, 872)
+
+[node name="Sweden_To_Finland" type="Node2D" parent="Sweden" unique_id=921252078 node_paths=PackedStringArray("connects_to")]
+visible = false
+script = ExtResource("3_lubkk")
+conditions = Array[ExtResource("4_c7hc8")]([SubResource("Resource_da0fj")])
+connects_to = NodePath("../../Finland")
+metadata/_custom_type_script = "uid://crujsi4571xf0"

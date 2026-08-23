@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://g8vasl3v45q3"]
+
+[ext_resource type="Texture2D" uid="uid://b54fm3gn2mbym" path="res://location_scenes/Riga/Soup Store/JohnCena.png" id="1_5atg5"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_r64qi"]
+bounce = 0.85
+
+[node name="Big Fish in a small Pong" type="RigidBody2D" unique_id=1742050440]
+physics_material_override = SubResource("PhysicsMaterial_r64qi")
+gravity_scale = 0.0
+
+[node name="JohnCena" type="Sprite2D" parent="." unique_id=1410748117]
+position = Vector2(92, -55)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_5atg5")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1128364763]
+position = Vector2(138, -81)
+scale = Vector2(0.25, 0.25)
+polygon = PackedVector2Array(33, 119, 14, 330, -25, 493, -16, 682, -406, 683, -376, 194, -455, -55, -598, -113, -681, -206, -653, -253, -411, -390, -270, -397, -199, -396, -163, -347, -143, -291, -151, -261, -168, -268, -176, -174, -23, -77)

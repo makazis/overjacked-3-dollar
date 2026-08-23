@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dh2f1grafo32k"]
+
+[ext_resource type="Texture2D" uid="uid://bcyktgacko5io" path="res://Resources/Minigames/Arrowverse/Arrow Left.png" id="1_c6s1s"]
+[ext_resource type="Script" uid="uid://bgktnrhyhnmaw" path="res://Resources/Minigames/Arrowverse/note.gd" id="1_p7uhv"]
+[ext_resource type="Texture2D" uid="uid://625j1ldo3cbg" path="res://Resources/Minigames/Arrowverse/Arrow Down.png" id="2_p7uhv"]
+[ext_resource type="Texture2D" uid="uid://bt2eqhfsgy8fe" path="res://Resources/Minigames/Arrowverse/Arrow Right.png" id="3_gnt7a"]
+[ext_resource type="Texture2D" uid="uid://tl26wswxvi4f" path="res://Resources/Minigames/Arrowverse/Arrow Up.png" id="4_qxaws"]
+
+[node name="Node2D" type="PathFollow2D" unique_id=1079723907]
+rotates = false
+loop = false
+script = ExtResource("1_p7uhv")
+
+[node name="ArrowLeft" type="Sprite2D" parent="." unique_id=376997260]
+visible = false
+position = Vector2(1, -2)
+texture = ExtResource("1_c6s1s")
+
+[node name="ArrowDown" type="Sprite2D" parent="." unique_id=1671951486]
+visible = false
+position = Vector2(1, -1)
+texture = ExtResource("2_p7uhv")
+
+[node name="ArrowRight" type="Sprite2D" parent="." unique_id=769113258]
+visible = false
+position = Vector2(0, 1)
+texture = ExtResource("3_gnt7a")
+
+[node name="ArrowUp" type="Sprite2D" parent="." unique_id=2082774733]
+visible = false
+position = Vector2(-1, -1)
+texture = ExtResource("4_qxaws")

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bia748agajhd2"
+path="res://.godot/imported/Oathbreaker.mp3-eb48a7d29958c891aac12ebe0bf3736f.mp3str"
+
+[deps]
+
+source_file="res://location_scenes/Riga/The Dice Goblin/Oathbreaker.mp3"
+dest_files=["res://.godot/imported/Oathbreaker.mp3-eb48a7d29958c891aac12ebe0bf3736f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

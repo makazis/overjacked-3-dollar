@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://drnfcelp40c5i"]
+
+[ext_resource type="PackedScene" uid="uid://tj7t4ru5nv0f" path="res://location_scenes/Riga/Hospital/Dialogue/balloon.tscn" id="1_c5vl4"]
+[ext_resource type="Script" uid="uid://cof4xfsn0y5aw" path="res://location_scenes/Riga/Hospital/is_it_my_number_yet.gd" id="1_q06o0"]
+[ext_resource type="Texture2D" uid="uid://uib24s6iwfcu" path="res://location_scenes/Riga/Hospital/magnified nurse.png" id="1_srh7q"]
+[ext_resource type="Resource" uid="uid://c2ry3bef4auu4" path="res://location_scenes/Riga/Hospital/Dialogue/test.dialogue" id="2_q06o0"]
+
+[node name="isItMyNumberYet" type="Node2D" unique_id=590734223]
+script = ExtResource("1_q06o0")
+
+[node name="ExampleBalloon" parent="." unique_id=38036521 instance=ExtResource("1_c5vl4")]
+dialogue_resource = ExtResource("2_q06o0")
+start_from_cue = "start"
+auto_start = true
+
+[node name="MagnifiedNurse" type="Sprite2D" parent="." unique_id=1758468288]
+position = Vector2(586.5, 328.5)
+scale = Vector2(1.2018073, 0.90533334)
+texture = ExtResource("1_srh7q")
+
+[editable path="ExampleBalloon"]

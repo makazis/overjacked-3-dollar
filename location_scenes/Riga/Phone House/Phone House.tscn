@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://dpq2auto8cobn"]
+
+[ext_resource type="PackedScene" uid="uid://c23jbxmldi3sa" path="res://location_scenes/Riga/Phone House/balloon.tscn" id="1_j2h1u"]
+[ext_resource type="Script" uid="uid://d2cktoufadekh" path="res://location_scenes/Riga/Phone House/phone_house.gd" id="1_tkpgu"]
+[ext_resource type="Script" uid="uid://dtiwaymx6ksdx" path="res://location_scenes/Riga/Phone House/balloon.gd" id="2_sjjbk"]
+[ext_resource type="Resource" uid="uid://cjjrdmcg4b7vw" path="res://location_scenes/Riga/Phone House/phone_house_enter.dialogue" id="3_sjjbk"]
+[ext_resource type="Texture2D" uid="uid://pxs601tbfndy" path="res://location_scenes/Riga/Phone House/Screenshot 2026-08-24 002449.png" id="5_54bha"]
+[ext_resource type="AudioStream" uid="uid://d0m51drljf6xw" path="res://location_scenes/Riga/Phone House/u_xg7ssi08yr-old-telephone-ringing-362034.mp3" id="6_yvn46"]
+
+[node name="PhoneHouse" type="Node2D" unique_id=1260931209]
+script = ExtResource("1_tkpgu")
+
+[node name="ExampleBalloon" parent="." unique_id=38036521 instance=ExtResource("1_j2h1u")]
+script = ExtResource("2_sjjbk")
+dialogue_resource = ExtResource("3_sjjbk")
+start_from_cue = "start"
+
+[node name="Balloon" parent="ExampleBalloon" index="0" unique_id=154399927]
+visible = false
+
+[node name="CenterContainer" parent="ExampleBalloon/Balloon" index="1" unique_id=1087901387]
+offset_left = 2.0
+offset_right = 2.0
+
+[node name="Screenshot20260824002449" type="Sprite2D" parent="." unique_id=1041183961]
+position = Vector2(573.73676, 325.11804)
+scale = Vector2(0.31190038, 0.40285605)
+texture = ExtResource("5_54bha")
+
+[node name="Button" type="Button" parent="." unique_id=1515161960]
+offset_left = 560.0
+offset_top = 496.0
+offset_right = 626.0
+offset_bottom = 527.0
+text = "Pick Up
+"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1828580734]
+stream = ExtResource("6_yvn46")
+
+[editable path="ExampleBalloon"]

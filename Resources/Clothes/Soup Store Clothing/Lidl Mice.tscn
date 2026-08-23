@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://c4ykbae6pqayb"]
+
+[ext_resource type="PackedScene" uid="uid://dhw70p6idapgy" path="res://Resources/clothing.tscn" id="1_nj24f"]
+[ext_resource type="Texture2D" uid="uid://7wm35bm0aq16" path="res://Resources/Clothes/Soup Store Clothing/Screenshot 2026-08-22 204313.png" id="2_nj24f"]
+
+[node name="Clothing" unique_id=711110764 instance=ExtResource("1_nj24f")]
+offset_bottom = 170.0
+aura = 4
+cute = 6
+official = 1
+clothing_name = "Red Cap"
+market_price = 5.99
+
+[node name="Label" parent="." index="0" unique_id=2042981366]
+offset_left = 1.0
+offset_top = 119.0
+offset_right = 127.0
+offset_bottom = 168.0
+text = "Lidl Winter Hat"
+
+[node name="9333De1854b97480Cdd96c6Fc7d3Baf3" type="Sprite2D" parent="." index="1" unique_id=1757480598]
+position = Vector2(64.5, 68)
+scale = Vector2(0.1673924, 0.1687758)
+texture = ExtResource("2_nj24f")

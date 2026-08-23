@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://dmsa1kcpsnv7o"]
+
+[ext_resource type="Script" uid="uid://djh8r187ihvq0" path="res://Nokia/AppData/Roaming/Book 2/book_2.gd" id="1_hi4he"]
+[ext_resource type="FontFile" uid="uid://d2fr85waffxeb" path="res://Nokia/AppData/Roaming/Book 2/Cinzel-VariableFont_wght.ttf" id="2_74dpw"]
+
+[node name="Book 2" type="Node2D" unique_id=1353759088]
+script = ExtResource("1_hi4he")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1969040362]
+offset_right = 366.0
+offset_bottom = 768.0
+color = Color(1.5883148e-06, 0.4140053, 0.5205398, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect" unique_id=1043739850]
+layout_mode = 0
+offset_left = 9.000029
+offset_top = 681.464
+offset_right = 657.4573
+offset_bottom = 1028.7972
+rotation = -1.5707964
+theme_override_fonts/normal_font = ExtResource("2_74dpw")
+
+[node name="Button" type="Button" parent="." unique_id=2040834744]
+offset_left = 12.0
+offset_top = 758.0
+offset_right = 57.0
+offset_bottom = 789.0
+rotation = -1.5707964
+text = "back
+"
+
+[node name="Button2" type="Button" parent="." unique_id=219712569]
+offset_left = 48.0
+offset_top = 757.0
+offset_right = 93.0
+offset_bottom = 788.0
+rotation = -1.5707964
+text = "next
+"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

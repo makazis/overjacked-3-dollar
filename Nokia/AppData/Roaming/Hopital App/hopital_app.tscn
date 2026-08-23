@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://h2jaoq1loy8d"]
+
+[ext_resource type="Script" uid="uid://cl8fbho5xu0f8" path="res://Nokia/AppData/Roaming/Hopital App/color_rect.gd" id="1_7orng"]
+[ext_resource type="Texture2D" uid="uid://dnuybscabuj8y" path="res://location_scenes/Riga/Hospital/token_number.png" id="2_6t8tj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tu3o7"]
+font_size = 50
+font_color = Color(0.9529412, 0.6039216, 0.22745098, 1)
+
+[node name="Hopital App" type="Node2D" unique_id=393059582]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1203626786]
+offset_right = 366.0
+offset_bottom = 768.0
+color = Color(1, 0.8591416, 0.7922969, 1)
+script = ExtResource("1_7orng")
+
+[node name="TokenNumber" type="Sprite2D" parent="ColorRect" unique_id=415975344]
+position = Vector2(179, 120.00001)
+scale = Vector2(0.9990476, 0.8428572)
+texture = ExtResource("2_6t8tj")
+
+[node name="Label" type="Label" parent="ColorRect/TokenNumber" unique_id=411112235]
+offset_left = -50.440865
+offset_top = 4.15254
+offset_right = 35.559135
+offset_bottom = 73.15254
+text = "003"
+label_settings = SubResource("LabelSettings_tu3o7")
+horizontal_alignment = 1
+vertical_alignment = 1

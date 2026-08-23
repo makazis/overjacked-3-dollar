@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://d2pyw880e7age"]
+
+[ext_resource type="Script" uid="uid://x7ssr8427vro" path="res://location_scenes/Riga/Hospital/waiting_room.gd" id="1_shjjl"]
+[ext_resource type="PackedScene" uid="uid://c4f3qr3emk1ga" path="res://GUI.tscn" id="1_v4kdt"]
+[ext_resource type="Texture2D" uid="uid://wcrplt0vryn2" path="res://location_scenes/Riga/Hospital/22b151a34969c50faed7d44df66cd8ea.jpg" id="2_shjjl"]
+[ext_resource type="Texture2D" uid="uid://w4oxqgvw0eko" path="res://location_scenes/Riga/Hospital/take-el-number.jpg" id="3_5nwwy"]
+[ext_resource type="Texture2D" uid="uid://bber5g1hofnxj" path="res://location_scenes/Riga/Hospital/hand_with_number.png" id="5_5nwwy"]
+[ext_resource type="Texture2D" uid="uid://dnuybscabuj8y" path="res://location_scenes/Riga/Hospital/token_number.png" id="6_sl255"]
+[ext_resource type="AudioStream" uid="uid://cr3gwt4q4707v" path="res://location_scenes/Riga/Hospital/Carefree.mp3" id="7_44bdj"]
+[ext_resource type="AudioStream" uid="uid://dao81wrdmknpj" path="res://location_scenes/Riga/Hospital/loud-incorrect-buzzer.mp3" id="8_7jtp4"]
+[ext_resource type="Script" uid="uid://dyo1l7dhsvb4t" path="res://Resources/Music/music_script.gd" id="8_64be8"]
+[ext_resource type="Script" uid="uid://bw6lf3frnnlhr" path="res://Resources/Music/sfx_script.gd" id="10_kx77y"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_g4v7s"]
+font_color = Color(0.32432923, 0.041107744, 0.03840685, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_44bdj"]
+font_size = 50
+font_color = Color(0.9529412, 0.6039216, 0.22745098, 1)
+
+[node name="Node2D" type="Node2D" unique_id=1991940579]
+script = ExtResource("1_shjjl")
+
+[node name="Gui" parent="." unique_id=1657345474 instance=ExtResource("1_v4kdt")]
+
+[node name="22b151a34969c50Faed7d44Df66Cd8Ea" type="Sprite2D" parent="." unique_id=1562428324]
+position = Vector2(574, 320.75)
+scale = Vector2(0.6975904, 0.59485096)
+texture = ExtResource("2_shjjl")
+
+[node name="TakeElNumber" type="Sprite2D" parent="." unique_id=70031302]
+position = Vector2(1072, 503.99997)
+scale = Vector2(0.32871535, 0.32871535)
+texture = ExtResource("3_5nwwy")
+flip_h = true
+
+[node name="Button" type="Button" parent="TakeElNumber" unique_id=910165024]
+offset_left = -155.14944
+offset_top = -544.54395
+offset_right = 164.27585
+offset_bottom = -450.23743
+theme_override_font_sizes/font_size = 32
+text = "Take a number"
+
+[node name="HandWithNumber" type="Sprite2D" parent="." unique_id=798638886]
+visible = false
+position = Vector2(684, 558)
+texture = ExtResource("5_5nwwy")
+
+[node name="Button2" type="Button" parent="HandWithNumber" unique_id=1516625355]
+offset_left = -256.0
+offset_top = -303.0
+offset_right = -36.0
+offset_bottom = -261.0
+theme_override_font_sizes/font_size = 24
+text = "my time has come"
+
+[node name="Label" type="Label" parent="HandWithNumber" unique_id=26621422]
+offset_left = -166.0
+offset_top = -212.0
+offset_right = -126.0
+offset_bottom = -189.0
+text = "003"
+label_settings = SubResource("LabelSettings_g4v7s")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TokenNumber" type="Sprite2D" parent="." unique_id=554231749]
+position = Vector2(1028.3928, 92.5)
+scale = Vector2(0.9990476, 0.8428572)
+texture = ExtResource("6_sl255")
+
+[node name="Label" type="Label" parent="TokenNumber" unique_id=1364720509]
+offset_left = -50.440865
+offset_top = 4.15254
+offset_right = 35.559135
+offset_bottom = 73.15254
+text = "003"
+label_settings = SubResource("LabelSettings_44bdj")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=303313446]
+stream = ExtResource("7_44bdj")
+autoplay = true
+parameters/looping = true
+script = ExtResource("8_64be8")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1022577579]
+stream = ExtResource("8_7jtp4")
+script = ExtResource("10_kx77y")
+
+[connection signal="pressed" from="TakeElNumber/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="HandWithNumber/Button2" to="." method="_on_button_2_pressed"]

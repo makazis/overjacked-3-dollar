@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://c2ry3bef4auu4"
+path="res://.godot/imported/test.dialogue-3cfbbcc6c79c6e312fe1bfd4982bf684.tres"
+
+[deps]
+
+source_file="res://location_scenes/Riga/Hospital/Dialogue/test.dialogue"
+dest_files=["res://.godot/imported/test.dialogue-3cfbbcc6c79c6e312fe1bfd4982bf684.tres"]
+
+[params]
+
+defaults=true

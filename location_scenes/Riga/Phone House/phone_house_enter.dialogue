@@ -1,0 +1,19 @@
+~ start
+%2 Veronica: Heya, buckaroo.
+%3 Veronica: Heya, darling.
+% Veronica: Hiya, banshee.
+% Veronica: Oi, lad.
+
+Veronica: What'ya looking for?
+- Cooler Apps
+	Veronica: Alright, here's what we can offer
+	$> Global.action="Buying Cooler Apps"
+- I need WIFI
+	Veronica: ...
+	Veronica: That'll be 19.99$
+	- Pay [if Global.money>19.99 /]
+		$> Global.money-=19.99
+		Veronica: Alright, you can use the store's wifi now.
+		Veronica: The password is s1gm4-v3r0n1c4
+- Nothing => END
+=> END

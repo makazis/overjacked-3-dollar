@@ -1,0 +1,13 @@
+~ start
+Nurse: [[Hi|Hello|Howdy]], What have you come here to do?
+- Fix Me Up
+	Nurse: Let us make you feel better this instant. 
+	$> Global.open_link("https://youtu.be/da3Mw1ab7h4?si=o8CC9sQyw5JGkB8O&t=1")
+	$> Global.action=""
+- Donate Blood [if Global.can_donate_blood /]
+	Nurse: Very well, come to the blood donation facility
+	$> Global.action="Donate Blood"
+- I want a job [if Global.official>=10 /]=> END
+	Nurse: Oh? Well, we do have a position here.[wait=2] Just fill out this form. 
+	$> Global.action="Hospital Form"
+=> END

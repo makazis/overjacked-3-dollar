@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cqgqax73jv74u"]
+
+[ext_resource type="FontFile" uid="uid://d2fr85waffxeb" path="res://Nokia/AppData/Roaming/Book 2/Cinzel-VariableFont_wght.ttf" id="1_5m1n7"]
+[ext_resource type="Texture2D" uid="uid://cj7fdcfuqdkyw" path="res://location_scenes/Riga/Soup Store/download.png" id="2_pyfil"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_g4v7s"]
+font = ExtResource("1_5m1n7")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[node name="Whatsapp" type="Node2D" unique_id=929981603]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1905142389]
+offset_right = 366.0
+offset_bottom = 768.0
+color = Color(0.6108661, 0.99999994, 0.6511537, 1)
+
+[node name="Label" type="Label" parent="ColorRect" unique_id=249179868]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 206.0
+offset_right = 143.0
+offset_bottom = 229.0
+rotation = -1.5707964
+text = "WHATSAPP"
+label_settings = SubResource("LabelSettings_g4v7s")
+
+[node name="Download" type="Sprite2D" parent="." unique_id=1161299356]
+position = Vector2(182.25069, 352.67554)
+rotation = -1.5707964
+scale = Vector2(0.32876128, 0.26635072)
+texture = ExtResource("2_pyfil")

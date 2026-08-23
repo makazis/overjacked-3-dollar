@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cm385kv3id1j5"
+path="res://.godot/imported/Sneaky Snitch.mp3-ebd0be64a4274ef03b94a652cae1bd33.mp3str"
+
+[deps]
+
+source_file="res://location_scenes/Riga/Poor Man's Pond/Sneaky Snitch.mp3"
+dest_files=["res://.godot/imported/Sneaky Snitch.mp3-ebd0be64a4274ef03b94a652cae1bd33.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

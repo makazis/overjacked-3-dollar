@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bkhqq76wnxal6"]
+
+[ext_resource type="PackedScene" uid="uid://dhw70p6idapgy" path="res://Resources/clothing.tscn" id="1_ealym"]
+[ext_resource type="Texture2D" uid="uid://467umtdo3mi3" path="res://Resources/Clothes/Soup Store Clothing/Screenshot 2026-08-22 204615.png" id="2_ealym"]
+
+[node name="Clothing" unique_id=711110764 instance=ExtResource("1_ealym")]
+offset_bottom = 170.0
+aura = 4
+cute = 2
+official = 2
+clothing_name = "Lidl Socks"
+clothing_slot = "Underwear"
+market_price = 2.99
+
+[node name="Label" parent="." index="0" unique_id=2042981366]
+offset_left = 1.0
+offset_top = 119.0
+offset_right = 127.0
+offset_bottom = 168.0
+text = "Lidl Socks"
+
+[node name="9333De1854b97480Cdd96c6Fc7d3Baf3" type="Sprite2D" parent="." index="1" unique_id=1757480598]
+position = Vector2(64.5, 68)
+scale = Vector2(0.068529174, 0.06909552)
+texture = ExtResource("2_ealym")

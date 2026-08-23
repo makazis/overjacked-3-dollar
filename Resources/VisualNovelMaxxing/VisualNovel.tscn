@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://d15x73fk0rmd1"]
+
+[ext_resource type="Script" uid="uid://bym4qqobf6a0m" path="res://Resources/VisualNovelMaxxing/visual_novel.gd" id="1_tfwsu"]
+
+[node name="Node2D" type="Node2D" unique_id=158027106]
+script = ExtResource("1_tfwsu")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1671090811]
+z_index = 3
+offset_top = 448.0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.19215687, 0.19215687, 0.19215687, 0.64705884)
+
+[node name="Label" type="Label" parent="ColorRect" unique_id=106026720]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 27.0
+offset_right = 1135.0
+offset_bottom = 176.0
+text = "[Character 1] - All your base are belong to us.
+[Character 2] - Also your gay"
+horizontal_alignment = 1

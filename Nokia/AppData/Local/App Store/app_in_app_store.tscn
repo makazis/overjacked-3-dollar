@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://b7dxd21hivdsd"]
+
+[ext_resource type="Script" uid="uid://0wjni4youvpu" path="res://Nokia/AppData/Local/App Store/app_in_app_store.gd" id="1_kwxwc"]
+[ext_resource type="PackedScene" uid="uid://hnikt7fa7tdu" path="res://Nokia/AppData/System32/App.tscn" id="2_nfx0h"]
+[ext_resource type="FontFile" uid="uid://m0vqq8du060s" path="res://Nokia/AppData/System32/Orbitron-VariableFont_wght.ttf" id="3_nfx0h"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_g4v7s"]
+font = ExtResource("3_nfx0h")
+font_size = 24
+
+[node name="Control" type="Panel" unique_id=376120411]
+custom_minimum_size = Vector2(340, 100)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -812.0
+offset_bottom = -548.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kwxwc")
+
+[node name="Panel" parent="." unique_id=1215886016 instance=ExtResource("2_nfx0h")]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 81.0
+offset_bottom = 121.0
+scale = Vector2(0.8169728, 0.8169728)
+
+[node name="Label" type="Label" parent="." unique_id=1320070333]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 5.0
+offset_right = 317.0
+offset_bottom = 46.0
+text = "499'999.99$"
+label_settings = SubResource("LabelSettings_g4v7s")
+
+[node name="Button" type="Button" parent="." unique_id=1878556135]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 37.0
+offset_right = 136.0
+offset_bottom = 76.0
+theme_override_fonts/font = ExtResource("3_nfx0h")
+theme_override_font_sizes/font_size = 24
+text = "BUY"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

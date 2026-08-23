@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://obxfnjv2hwnn"]
+
+[ext_resource type="Script" uid="uid://by7qdj1qi3sb4" path="res://Resources/VisualNovelMaxxing/option.gd" id="1_etcfq"]
+
+[node name="Button" type="Button" unique_id=1599937856]
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_etcfq")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -1,28 +1,40 @@
 [gd_scene format=3 uid="uid://c4f3qr3emk1ga"]
 
 [ext_resource type="Script" uid="uid://be4vm1cgv6qfg" path="res://gui.gd" id="1_q7530"]
+[ext_resource type="Texture2D" uid="uid://bocdukwsh4aa6" path="res://Nokia/AppData/System32/Phone.png" id="2_0v7bq"]
+[ext_resource type="PackedScene" uid="uid://bt435rldlaulh" path="res://Nokia/phone_screen.tscn" id="3_l1do4"]
 
 [node name="Gui" type="Control" unique_id=1657345474]
+z_index = 999
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 script = ExtResource("1_q7530")
 
-[node name="Time" type="Label" parent="." unique_id=2097329813]
-layout_mode = 0
-offset_left = 3.0
-offset_top = 19.0
-offset_right = 180.0
-offset_bottom = 42.0
-text = "Time: 00:00:00.000"
+[node name="Marker2D" type="Marker2D" parent="." unique_id=789196336]
+position = Vector2(1118, 21)
 
-[node name="Money" type="Label" parent="." unique_id=1251155659]
-layout_mode = 0
-offset_left = 3.0
-offset_top = 2.0
-offset_right = 180.0
-offset_bottom = 25.0
-text = "3.00$"
+[node name="Phone" type="Sprite2D" parent="." unique_id=1964658668]
+position = Vector2(-472, 142)
+scale = Vector2(0.46935934, 0.46935934)
+texture = ExtResource("2_0v7bq")
+centered = false
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Phone" unique_id=1939816947]
+show_behind_parent = true
+offset_left = 639.1691
+offset_top = 83.09198
+offset_right = 1005.1691
+offset_bottom = 851.092
+rotation = 0.36277443
+
+[node name="SubViewport" type="SubViewport" parent="Phone/SubViewportContainer" unique_id=414108905]
+handle_input_locally = false
+size = Vector2i(366, 768)
+render_target_update_mode = 4
+
+[node name="PhoneScreen" parent="Phone/SubViewportContainer/SubViewport" unique_id=560274772 instance=ExtResource("3_l1do4")]

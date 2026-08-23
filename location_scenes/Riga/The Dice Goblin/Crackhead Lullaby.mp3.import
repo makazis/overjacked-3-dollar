@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dse2dynq4oj0g"
+path="res://.godot/imported/Crackhead Lullaby.mp3-463383f259ae14a0437dd6d817f7fc76.mp3str"
+
+[deps]
+
+source_file="res://location_scenes/Riga/The Dice Goblin/Crackhead Lullaby.mp3"
+dest_files=["res://.godot/imported/Crackhead Lullaby.mp3-463383f259ae14a0437dd6d817f7fc76.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

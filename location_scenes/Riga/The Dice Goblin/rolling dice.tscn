@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://bfnnbmgwtd782"]
+
+[ext_resource type="Script" uid="uid://b3s7uktw7fpsl" path="res://location_scenes/Riga/The Dice Goblin/rolling_dice.gd" id="1_xosbo"]
+[ext_resource type="PackedScene" uid="uid://c4f3qr3emk1ga" path="res://GUI.tscn" id="2_nnsff"]
+[ext_resource type="Texture2D" uid="uid://ducsc616yfrii" path="res://location_scenes/Riga/The Dice Goblin/8668566ca11f6f376afe0cfc0afe097b.jpg" id="3_awuvp"]
+[ext_resource type="AudioStream" uid="uid://bia748agajhd2" path="res://location_scenes/Riga/The Dice Goblin/Oathbreaker.mp3" id="4_nnsff"]
+[ext_resource type="Script" uid="uid://dyo1l7dhsvb4t" path="res://Resources/Music/music_script.gd" id="5_528nh"]
+[ext_resource type="AudioStream" uid="uid://dse2dynq4oj0g" path="res://location_scenes/Riga/The Dice Goblin/Crackhead Lullaby.mp3" id="5_awuvp"]
+
+[node name="RollingDice" type="Node2D" unique_id=1234283275]
+script = ExtResource("1_xosbo")
+
+[node name="Gui" parent="." unique_id=1657345474 instance=ExtResource("2_nnsff")]
+
+[node name="Button" type="Button" parent="." unique_id=1080696231]
+offset_left = 402.0
+offset_top = 176.0
+offset_right = 475.0
+offset_bottom = 207.0
+text = "Roll dice
+"
+
+[node name="Button2" type="Button" parent="." unique_id=2010689771]
+offset_left = 143.0
+offset_top = 231.0
+offset_right = 226.0
+offset_bottom = 262.0
+text = "Next Dice"
+
+[node name="Button3" type="Button" parent="." unique_id=908142955]
+offset_left = 134.0
+offset_top = 265.0
+offset_right = 247.0
+offset_bottom = 296.0
+text = "Previous Dice"
+
+[node name="Label" type="Label" parent="." unique_id=1338340039]
+offset_left = 784.0
+offset_top = 423.0
+offset_right = 1109.0
+offset_bottom = 472.0
+text = "Roll high and get moneyyy"
+
+[node name="Label3" type="Label" parent="." unique_id=929566984]
+offset_left = 843.0
+offset_top = 110.0
+offset_right = 1168.0
+offset_bottom = 159.0
+text = "Steve the dice goblin!"
+
+[node name="Label2" type="Label" parent="." unique_id=895506023]
+offset_left = 139.0
+offset_top = 144.0
+offset_right = 179.0
+offset_bottom = 167.0
+text = "selected dice: d4
+payout: 5$
+cost: 1$"
+
+[node name="Label6" type="Label" parent="." unique_id=788742869]
+visible = false
+offset_left = 359.0
+offset_top = 322.0
+offset_right = 684.0
+offset_bottom = 371.0
+text = "You rolled a: "
+
+[node name="8668566Ca11f6f376Afe0Cfc0Afe097b" type="Sprite2D" parent="." unique_id=800328425]
+position = Vector2(978.00006, 278)
+scale = Vector2(0.3758504, 0.42839193)
+texture = ExtResource("3_awuvp")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1482963814]
+visible = false
+offset_right = 1156.0
+offset_bottom = 653.0
+color = Color(0.8352941, 0, 0.07058824, 0.18431373)
+
+[node name="EpicHexcore" type="AudioStreamPlayer" parent="." unique_id=695299624]
+stream = ExtResource("4_nnsff")
+autoplay = true
+script = ExtResource("5_528nh")
+
+[node name="Shitmusic" type="AudioStreamPlayer" parent="." unique_id=469832350]
+stream = ExtResource("5_awuvp")
+script = ExtResource("5_528nh")
+
+[connection signal="pressed" from="Button" to="." method="roll"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
+[connection signal="finished" from="EpicHexcore" to="." method="_on_audio_stream_player_finished"]
+[connection signal="finished" from="Shitmusic" to="." method="_on_audio_stream_player_finished"]

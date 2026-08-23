@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bbqtppox7q4lq"]
+
+[ext_resource type="Script" uid="uid://dtf5x4r4g36x" path="res://Resources/MapMaxxing/mapcamera.gd" id="1_b0sci"]
+
+[node name="Camera" type="Camera2D" unique_id=325288373]
+anchor_mode = 0
+limit_left = 0
+limit_top = 0
+limit_right = 2000
+limit_bottom = 1000
+script = ExtResource("1_b0sci")
+
+[node name="Button" type="Button" parent="." unique_id=2045905594]
+self_modulate = Color(1, 1, 1, 0)
+z_index = -999
+offset_right = 1156.0
+offset_bottom = 657.0
+mouse_filter = 1
+action_mode = 0
+button_mask = 2
+
+[node name="Button2" type="Button" parent="." unique_id=2138715884]
+z_index = 10
+offset_left = 1077.0
+offset_top = 501.0
+offset_right = 1127.0
+offset_bottom = 532.0
+mouse_filter = 1
+text = "Enter"
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

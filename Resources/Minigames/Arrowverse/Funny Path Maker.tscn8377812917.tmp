@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://5xpuu87rorca"]
+
+[ext_resource type="Script" uid="uid://dhopmvjbruqxj" path="res://Resources/Minigames/Arrowverse/funny_path_maker.gd" id="1_0mkwr"]
+[ext_resource type="AudioStream" uid="uid://dwnob8glfqle3" path="res://Resources/Minigames/Arrowverse/bombinsound-funk-amp-breakbeat-logo-version-bounce-funk-570529.mp3" id="2_b2mv2"]
+[ext_resource type="PackedScene" uid="uid://cebxylahl2sal" path="res://Resources/Minigames/Arrowverse/funny_path.tscn" id="2_gmdmy"]
+[ext_resource type="AudioStream" uid="uid://t46ffmebw6v4" path="res://Resources/Minigames/Arrowverse/dragon-studio-simple-snare-447488.mp3" id="4_b2mv2"]
+
+[node name="FunnyPathMaker" type="Node2D" unique_id=1393873915]
+script = ExtResource("1_0mkwr")
+
+[node name="Button" type="Button" parent="." unique_id=785920757]
+offset_left = 109.0
+offset_top = 43.0
+offset_right = 172.0
+offset_bottom = 74.0
+text = "Record"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=969744494]
+stream = ExtResource("2_b2mv2")
+
+[node name="Funny Path" parent="." unique_id=2127652659 instance=ExtResource("2_gmdmy")]
+position = Vector2(217, 303)
+direction = null
+path_length = null
+
+[node name="Funny Path2" parent="." unique_id=52123090 instance=ExtResource("2_gmdmy")]
+position = Vector2(217, 393)
+direction = "Down"
+path_length = null
+
+[node name="Funny Path3" parent="." unique_id=2111473905 instance=ExtResource("2_gmdmy")]
+position = Vector2(217, 483)
+direction = "Left"
+path_length = null
+
+[node name="Funny Path4" parent="." unique_id=1284914294 instance=ExtResource("2_gmdmy")]
+position = Vector2(217, 213)
+direction = "Right"
+path_length = null
+
+[node name="Button2" type="Button" parent="." unique_id=1740135888]
+offset_left = 110.0
+offset_top = 75.0
+offset_right = 170.0
+offset_bottom = 106.0
+text = "Replay
+"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1425564965]
+stream = ExtResource("4_b2mv2")
+max_polyphony = 20
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
+[connection signal="note_dies" from="Funny Path" to="." method="_on_funny_path_note_dies"]
+[connection signal="note_dies" from="Funny Path2" to="." method="_on_funny_path_note_dies"]
+[connection signal="note_dies" from="Funny Path3" to="." method="_on_funny_path_note_dies"]
+[connection signal="note_dies" from="Funny Path4" to="." method="_on_funny_path_note_dies"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

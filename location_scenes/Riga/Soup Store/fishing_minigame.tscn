@@ -1,0 +1,182 @@
+[gd_scene format=3 uid="uid://dipllt6qqv21o"]
+
+[ext_resource type="Script" uid="uid://ce6jpo3orhdc8" path="res://location_scenes/Riga/Soup Store/fishing_minigame.gd" id="1_rxtvs"]
+[ext_resource type="Texture2D" uid="uid://d1sy8q6n4g2uu" path="res://location_scenes/Riga/Soup Store/fish_transparent_png_by_jasonfrazier2_dfu1rc6-pre.png" id="2_hsrei"]
+[ext_resource type="Texture2D" uid="uid://dq0kl2u8o2j2j" path="res://location_scenes/Riga/Soup Store/OIP.webp" id="2_ku2kc"]
+[ext_resource type="PackedScene" uid="uid://g8vasl3v45q3" path="res://location_scenes/Riga/Soup Store/big_fish_in_a_small_pong.tscn" id="4_8wm4g"]
+[ext_resource type="Texture2D" uid="uid://bepvdlnbdxycf" path="res://location_scenes/Riga/Soup Store/download (1).png" id="5_bfvy8"]
+[ext_resource type="AudioStream" uid="uid://cqsrinby0spye" path="res://location_scenes/Riga/Soup Store/WE AFCEWRCHARILUBEN KIRJKN.mp3" id="6_ui8v1"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ku2kc"]
+bounce = 0.55
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_g4v7s"]
+normal = Vector2(1, -3.598771e-08)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hsrei"]
+normal = Vector2(-4.3711392e-08, -1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0172o"]
+normal = Vector2(4.3711406e-08, 1)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rxtvs"]
+radius = 11.0
+height = 70.0
+
+[sub_resource type="Curve2D" id="Curve2D_8wm4g"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -91, 753, 0, 0, 0, 0, 66, 1100, 0, 0, 0, 0, 437, 1147, 0, 0, 0, 0, 704, 1127, 0, 0, 0, 0, 1076, 955, 0, 0, 0, 0, 1386, 671, 0, 0, 0, 0, 1604, 1366, 0, 0, 0, 0, 1267, 1738, 0, 0, 0, 0, 946, 1984, 0, 0, 0, 0, 735, 1839, 0, 0, 0, 0, 621, 1622, 0, 0, 0, 0, 446, 1309, 0, 0, 0, 0, 235, 1383, 0, 0, 0, 0, 79, 1691, 0, 0, 0, 0, 128, 1910, 0, 0, 0, 0, 320, 2127, 0, 0, 0, 0, 533, 2275, 0, 0, 0, 0, 984, 2556, 0, 0, 0, 0, 881, 2801, 0, 0, 0, 0, 592, 2921, 0, 0, 0, 0, 305, 2856, 0, 0, 0, 0, 267, 2645, 0, 0, 0, 0, 486, 2503, 0, 0, 0, 0, 834, 2550, 0, 0, 0, 0, 1163, 2801, 0, 0, 0, 0, 1499, 2898, 0, 0, 0, 0, 1543, 3134, 0, 0, 0, 0, 1476, 3446, 0, 0, 0, 0, 1087, 3513, 0, 0, 0, 0, 783, 3402, 0, 0, 0, 0, 490, 3201, 0, 0, 0, 0, 55, 3132, 0, 0, 0, 0, -265, 3222, 0, 0, 0, 0, -200, 3485, 0, 0, 0, 0, -31, 3584, 0, 0, 0, 0, 139, 3590, 0, 0, 0, 0, 405, 3693, 0, 0, 0, 0, 635, 3745, 0, 0, 0, 0, 895, 3946, 0, 0, 0, 0, 925, 4197, 0, 0, 0, 0, 499, 4339, 0, 0, 0, 0, 288, 4227, 0, 0, 0, 0, 249, 3996, 0, 0, 0, 0, 561, 3949, 0, 0, 0, 0, 1045, 4105, 0, 0, 0, 0, 1438, 4264, 0, 0, 0, 0, 1978, 3902, 0, 0, 0, 0, 1870, 3704, 0, 0, 0, 0, 1541, 3754, 0, 0, 0, 0, 1285, 4166, 0, 0, 0, 0, 1126, 4375, 0, 0, 0, 0, 680, 4499, 0, 0, 0, 0, 83, 4622, 0, 0, 0, 0, -423, 4563)
+}
+point_count = 54
+
+[node name="Node2D" type="Node2D" unique_id=1214783705]
+script = ExtResource("1_rxtvs")
+
+[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=1434750436]
+modulate = Color(0.6854519, 0.8165921, 1, 0.95686275)
+scroll_scale = Vector2(0.5, 0.5)
+repeat_size = Vector2(500, 400)
+repeat_times = 15
+
+[node name="Oip" type="Sprite2D" parent="Parallax2D2" unique_id=2142905130]
+position = Vector2(231, 43)
+rotation = 2.8881757
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("2_ku2kc")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=192354329]
+scroll_scale = Vector2(0.8, 0.8)
+repeat_size = Vector2(700, 800)
+repeat_times = 15
+
+[node name="Oip" type="Sprite2D" parent="Parallax2D" unique_id=37682933]
+modulate = Color(1, 1, 0.8235294, 1)
+position = Vector2(231, 43)
+rotation = 0.7962767
+texture = ExtResource("2_ku2kc")
+
+[node name="Parallax2D3" type="Parallax2D" parent="." unique_id=643808538]
+scroll_scale = Vector2(1.2, 1.2)
+scroll_offset = Vector2(347, -342)
+repeat_size = Vector2(700, 800)
+repeat_times = 15
+
+[node name="Oip" type="Sprite2D" parent="Parallax2D3" unique_id=398189182]
+modulate = Color(1, 0.6745098, 1, 1)
+position = Vector2(231, 43)
+rotation = 2.4956954
+scale = Vector2(0.54874694, 0.54874694)
+texture = ExtResource("2_ku2kc")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=656632050]
+anchor_mode = 0
+position_smoothing_enabled = true
+position_smoothing_speed = 2.0
+
+[node name="Node2D" type="Node2D" parent="Camera2D" unique_id=1010967738]
+
+[node name="Download(1)" type="Sprite2D" parent="Camera2D/Node2D" unique_id=1502989691]
+z_index = 2
+position = Vector2(1086, 46.000008)
+scale = Vector2(0.053185422, 0.053185422)
+texture = ExtResource("5_bfvy8")
+
+[node name="Download(1)2" type="Sprite2D" parent="Camera2D/Node2D" unique_id=2053267373]
+z_index = 2
+position = Vector2(1029, 70)
+scale = Vector2(0.053185422, 0.053185422)
+texture = ExtResource("5_bfvy8")
+
+[node name="Download(1)3" type="Sprite2D" parent="Camera2D/Node2D" unique_id=1436793909]
+z_index = 2
+position = Vector2(971.00006, 91)
+scale = Vector2(0.053185422, 0.053185422)
+texture = ExtResource("5_bfvy8")
+
+[node name="Download(1)4" type="Sprite2D" parent="Camera2D/Node2D" unique_id=1371942091]
+z_index = 2
+position = Vector2(914, 118)
+scale = Vector2(0.053185422, 0.053185422)
+texture = ExtResource("5_bfvy8")
+
+[node name="Download(1)5" type="Sprite2D" parent="Camera2D/Node2D" unique_id=1271799562]
+z_index = 2
+position = Vector2(979.00006, 28)
+scale = Vector2(0.053185422, 0.053185422)
+texture = ExtResource("5_bfvy8")
+
+[node name="Download(1)6" type="Sprite2D" parent="Camera2D/Node2D" unique_id=239318418]
+z_index = 2
+position = Vector2(912.00006, 53)
+scale = Vector2(0.053185422, 0.053185422)
+texture = ExtResource("5_bfvy8")
+
+[node name="Download(1)7" type="Sprite2D" parent="Camera2D/Node2D" unique_id=222918527]
+z_index = 2
+position = Vector2(852.00006, 81)
+scale = Vector2(0.053185422, 0.053185422)
+texture = ExtResource("5_bfvy8")
+
+[node name="Download(1)8" type="Sprite2D" parent="Camera2D/Node2D" unique_id=609831956]
+z_index = 2
+position = Vector2(1083, 105)
+scale = Vector2(0.053185422, 0.053185422)
+texture = ExtResource("5_bfvy8")
+
+[node name="Download(1)9" type="Sprite2D" parent="Camera2D/Node2D" unique_id=868896207]
+z_index = 2
+position = Vector2(1019.0001, 131)
+scale = Vector2(0.053185422, 0.053185422)
+texture = ExtResource("5_bfvy8")
+
+[node name="Download(1)10" type="Sprite2D" parent="Camera2D/Node2D" unique_id=244621519]
+z_index = 2
+position = Vector2(951.00006, 166)
+scale = Vector2(0.053185422, 0.053185422)
+texture = ExtResource("5_bfvy8")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1691043192]
+physics_material_override = SubResource("PhysicsMaterial_ku2kc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1909992211]
+position = Vector2(13, 0)
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_g4v7s")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1573190240]
+position = Vector2(13, 0)
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_hsrei")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=933389622]
+position = Vector2(1141, 0)
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_0172o")
+
+[node name="Fisch" type="RigidBody2D" parent="." unique_id=1476218546]
+position = Vector2(90, 41)
+gravity_scale = 0.0
+
+[node name="FishTransparentPngByJasonfrazier2Dfu1Rc6Pre" type="Sprite2D" parent="Fisch" unique_id=488130881]
+scale = Vector2(0.06534251, 0.07709577)
+texture = ExtResource("2_hsrei")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fisch" unique_id=1352517017]
+rotation = 1.5672492
+shape = SubResource("CapsuleShape2D_rxtvs")
+
+[node name="Big Fish in a small Pong" parent="." unique_id=1742050440 instance=ExtResource("4_8wm4g")]
+position = Vector2(437, 456)
+
+[node name="Timer" type="Timer" parent="." unique_id=1821460566]
+autostart = true
+
+[node name="Path2D" type="Path2D" parent="." unique_id=2051738109]
+curve = SubResource("Curve2D_8wm4g")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1112060765]
+stream = ExtResource("6_ui8v1")
+autoplay = true
+parameters/looping = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

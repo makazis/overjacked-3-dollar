@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cqsrinby0spye"
+path="res://.godot/imported/WE AFCEWRCHARILUBEN KIRJKN.mp3-1a1de067c72075095acd9e400a133496.mp3str"
+
+[deps]
+
+source_file="res://location_scenes/Riga/Soup Store/WE AFCEWRCHARILUBEN KIRJKN.mp3"
+dest_files=["res://.godot/imported/WE AFCEWRCHARILUBEN KIRJKN.mp3-1a1de067c72075095acd9e400a133496.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://duct5e0sq55f3"]
+
+[ext_resource type="Script" uid="uid://haam60xobg2w" path="res://location_scenes/Riga/Home/root.gd" id="1_lp78p"]
+[ext_resource type="PackedScene" uid="uid://c4f3qr3emk1ga" path="res://GUI.tscn" id="2_dan0d"]
+
+[node name="Node2D" type="Node2D" unique_id=937409004]
+script = ExtResource("1_lp78p")
+
+[node name="Gui" parent="." unique_id=1657345474 instance=ExtResource("2_dan0d")]
+
+[node name="Label" type="Label" parent="." unique_id=733865327]
+offset_left = 675.0
+offset_top = 25.0
+offset_right = 722.0
+offset_bottom = 48.0
+text = "Home"
+
+[node name="Button2" type="Button" parent="." unique_id=2026727298]
+offset_left = 732.0
+offset_top = 303.0
+offset_right = 818.0
+offset_bottom = 334.0
+text = "Wardrobe"
+
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

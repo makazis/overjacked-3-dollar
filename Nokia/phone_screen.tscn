@@ -1,0 +1,137 @@
+[gd_scene format=3 uid="uid://bt435rldlaulh"]
+
+[ext_resource type="Script" uid="uid://bqg6yrstdwq32" path="res://Nokia/phone_screen.gd" id="1_snsq6"]
+[ext_resource type="Texture2D" uid="uid://cgrjpgwwcekts" path="res://Nokia/AppData/System32/OIP.webp" id="2_3dl5m"]
+[ext_resource type="FontFile" uid="uid://m0vqq8du060s" path="res://Nokia/AppData/System32/Orbitron-VariableFont_wght.ttf" id="2_7gfux"]
+[ext_resource type="Texture2D" uid="uid://de4pblrdrk86a" path="res://Nokia/AppData/System32/padlock.png" id="4_x0kek"]
+[ext_resource type="Texture2D" uid="uid://dbcp5en7iw263" path="res://Nokia/AppData/Local/Windows Settings/2880659.jpg" id="5_v14ay"]
+[ext_resource type="Texture2D" uid="uid://bdm1c724ygg3i" path="res://Nokia/AppData/System32/Untitled.png" id="6_31ngj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_v14ay"]
+font = ExtResource("2_7gfux")
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_7gfux"]
+font = ExtResource("2_7gfux")
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_31ngj"]
+font = ExtResource("2_7gfux")
+
+[sub_resource type="LabelSettings" id="LabelSettings_4krki"]
+font = ExtResource("2_7gfux")
+
+[node name="PhoneScreen" type="Node2D" unique_id=560274772]
+script = ExtResource("1_snsq6")
+
+[node name="PhoneControl" type="Control" parent="." unique_id=120945870]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Lock Screen" type="Control" parent="PhoneControl" unique_id=295248114]
+z_index = 8
+anchors_preset = 0
+offset_right = 366.0
+offset_bottom = 768.0
+
+[node name="ColorRect" type="ColorRect" parent="PhoneControl/Lock Screen" unique_id=1084996005]
+layout_mode = 0
+offset_right = 366.0
+offset_bottom = 768.0
+color = Color(0.24356923, 0.24356923, 0.24356923, 1)
+
+[node name="Oip" type="Sprite2D" parent="PhoneControl/Lock Screen/ColorRect" unique_id=58105175]
+position = Vector2(183.00002, 383.5)
+scale = Vector2(0.77215195, 0.7480545)
+texture = ExtResource("2_3dl5m")
+
+[node name="Label" type="Label" parent="PhoneControl/Lock Screen" unique_id=803978957]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 89.0
+offset_right = 321.0
+offset_bottom = 153.0
+text = "00:00:00"
+label_settings = SubResource("LabelSettings_v14ay")
+
+[node name="Money" type="Label" parent="PhoneControl/Lock Screen" unique_id=1849562364]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 143.0
+offset_right = 344.0
+offset_bottom = 182.0
+text = "0.00$"
+label_settings = SubResource("LabelSettings_7gfux")
+horizontal_alignment = 1
+
+[node name="Button" type="TextureButton" parent="PhoneControl/Lock Screen" unique_id=1717394423]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 548.0
+offset_right = 253.0
+offset_bottom = 676.0
+texture_normal = ExtResource("4_x0kek")
+
+[node name="App Screen" type="Control" parent="PhoneControl" unique_id=307554394]
+anchors_preset = 0
+offset_top = 768.0
+offset_right = 366.0
+offset_bottom = 1536.0
+
+[node name="2880659" type="Sprite2D" parent="PhoneControl/App Screen" unique_id=1954990596]
+scale = Vector2(0.33888885, 0.39999995)
+texture = ExtResource("5_v14ay")
+centered = false
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PhoneControl/App Screen" unique_id=20383565]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 50.0
+offset_right = 354.0
+offset_bottom = 759.0
+
+[node name="GridContainer" type="GridContainer" parent="PhoneControl/App Screen/ScrollContainer" unique_id=998527011]
+layout_mode = 2
+columns = 4
+
+[node name="Using App" type="Control" parent="PhoneControl" unique_id=1043914772]
+anchors_preset = 0
+offset_left = 366.0
+offset_top = 768.0
+offset_right = 732.0
+offset_bottom = 1536.0
+
+[node name="CachedApps" type="Control" parent="PhoneControl" unique_id=273857993]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Money" type="Label" parent="." unique_id=962588594]
+z_index = 2
+offset_left = 24.0
+offset_top = 13.0
+offset_right = 194.0
+offset_bottom = 34.0
+text = "000'000'000.00$"
+label_settings = SubResource("LabelSettings_31ngj")
+
+[node name="Time" type="Label" parent="." unique_id=1452624662]
+z_index = 2
+offset_left = 255.0
+offset_top = 10.0
+offset_right = 342.0
+offset_bottom = 31.0
+text = "00:00:00"
+label_settings = SubResource("LabelSettings_4krki")
+
+[node name="Button" type="TextureButton" parent="." unique_id=472708774]
+offset_left = 161.0
+offset_top = 684.0
+offset_right = 221.0
+offset_bottom = 744.0
+texture_normal = ExtResource("6_31ngj")
+
+[connection signal="pressed" from="PhoneControl/Lock Screen/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button" to="." method="_go_home"]

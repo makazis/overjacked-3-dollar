@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dsxaho13phkim"]
+
+[ext_resource type="Texture2D" uid="uid://dvgrvri5r0t4r" path="res://location_scenes/Riga/Poor Man's Pond/V-677-12.jpg" id="1_ak8c5"]
+[ext_resource type="Script" uid="uid://btwdtfefnqqaq" path="res://location_scenes/Riga/Poor Man's Pond/poor_man's_pond.gd" id="1_bfscw"]
+[ext_resource type="PackedScene" uid="uid://c4f3qr3emk1ga" path="res://GUI.tscn" id="2_p4ikp"]
+[ext_resource type="Texture2D" uid="uid://b658k0y52pu32" path="res://location_scenes/Riga/Poor Man's Pond/grab it.png" id="4_p4ikp"]
+[ext_resource type="Texture2D" uid="uid://b8l7vksbayqek" path="res://location_scenes/Riga/Poor Man's Pond/reach for it.png" id="4_tq5d3"]
+[ext_resource type="AudioStream" uid="uid://cm385kv3id1j5" path="res://location_scenes/Riga/Poor Man's Pond/Sneaky Snitch.mp3" id="6_tq5d3"]
+[ext_resource type="Script" uid="uid://dyo1l7dhsvb4t" path="res://Resources/Music/music_script.gd" id="7_034dr"]
+
+[node name="Poor Man\'s Pond" type="Node2D" unique_id=2100011655]
+script = ExtResource("1_bfscw")
+
+[node name="Gui" parent="." unique_id=1657345474 instance=ExtResource("2_p4ikp")]
+
+[node name="V67712" type="Sprite2D" parent="." unique_id=515092876]
+position = Vector2(576.49994, 320.99997)
+scale = Vector2(1.1650001, 0.99550235)
+texture = ExtResource("1_ak8c5")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=132929294]
+position = Vector2(703, 492)
+
+[node name="GrabIt" type="Sprite2D" parent="Marker2D" unique_id=1364671224]
+position = Vector2(-32.000046, 223.00003)
+scale = Vector2(1.4187763, 1.4187763)
+texture = ExtResource("4_p4ikp")
+
+[node name="ReachForIt" type="Sprite2D" parent="Marker2D" unique_id=691811072]
+position = Vector2(211, -8.0000305)
+scale = Vector2(0.6582634, 0.6582634)
+texture = ExtResource("4_tq5d3")
+flip_h = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1713609287]
+stream = ExtResource("6_tq5d3")
+autoplay = true
+parameters/looping = true
+script = ExtResource("7_034dr")
