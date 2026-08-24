@@ -5,10 +5,13 @@ extends Control
 func _ready() -> void:
 	Global.make_money_popup.connect(make_money_popup)
 
-
+@onready var foxy_jumpscare=preload("res://Resources/Even I Don't Know/foxy_jumpscare.tscn")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	
+	if randf()<delta*10*pow(Phone.overjacked_setting/100.,6):
+		var FOXY=foxy_jumpscare.instantiate()
+		#print(spooked_ya)
+		add_child(FOXY)
 	
 	if Global.money>1_000_000: #get one million money to win
 		get_tree().change_scene_to_file("res://you_win!!!.tscn")
@@ -66,3 +69,7 @@ func _input(event: InputEvent) -> void:
 				ctween.tween_property($Phone,'scale',Vector2(0.469,0.469),0.7)
 				await ctween.finished
 			
+
+
+func _on_video_stream_player_finished() -> void:
+	$TextureRect.visible=false

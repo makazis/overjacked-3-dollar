@@ -5,7 +5,7 @@ extends Node2D
 func _ready() -> void:
 	$ScrollContainer/VBoxContainer/Panel/MusicVolume.value=Phone.music_volume
 	$"ScrollContainer/VBoxContainer/Panel/SFX Volume".value=Phone.sfx_volume
-	
+	$ScrollContainer/VBoxContainer/Panel2/FoxyJumpscareMeter.value=Phone.overjacked_setting
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -22,4 +22,4 @@ func _on_music_volume_value_changed(value: float) -> void:
 
 
 func _on_foxy_jumpscare_meter_value_changed(value: float) -> void:
-	pass # Replace with function body.
+	Phone.overjacked_setting=$ScrollContainer/VBoxContainer/Panel2/FoxyJumpscareMeter.value

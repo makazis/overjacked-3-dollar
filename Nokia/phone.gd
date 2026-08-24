@@ -9,6 +9,7 @@ signal apps_changed()
 #settings
 var music_volume=100
 var sfx_volume=100
+var overjacked_setting=0
 
 func _ready() -> void:
 	

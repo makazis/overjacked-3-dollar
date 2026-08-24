@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://du1digw642tca"]
+
+[ext_resource type="Script" uid="uid://5mus57iqrk22" path="res://Resources/Even I Don't Know/foxy_jumpscare.gd" id="1_4dffa"]
+[ext_resource type="VideoStream" uid="uid://jsof7x5mhgfw" path="res://Resources/Even I Don't Know/foxy.ogv" id="1_f3yht"]
+[ext_resource type="Shader" uid="uid://qeic3iw8bq11" path="res://Resources/Even I Don't Know/green.gdshader" id="2_4dffa"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_42hna"]
+shader = ExtResource("2_4dffa")
+shader_parameter/key_color = Color(0, 1, 0, 1)
+shader_parameter/similarity = 0.4
+shader_parameter/smoothness = 0.08
+shader_parameter/spill = 0.1
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_um0ui"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Foxy Jumpscare" type="Control" unique_id=2129777244]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_4dffa")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=1000922649]
+transparent_bg = true
+handle_input_locally = false
+gui_disable_input = true
+size = Vector2i(784, 512)
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="SubViewport" unique_id=1345734784]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+stream = ExtResource("1_f3yht")
+autoplay = true
+expand = true
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=374902494]
+material = SubResource("ShaderMaterial_42hna")
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = SubResource("ViewportTexture_um0ui")
+
+[node name="Timer" type="Timer" parent="." unique_id=1051504783]
+wait_time = 0.8
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
