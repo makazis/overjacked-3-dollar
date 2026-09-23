@@ -17,7 +17,7 @@ offset_right = 1156.0
 offset_bottom = 657.0
 mouse_filter = 1
 action_mode = 0
-button_mask = 2
+button_mask = 3
 
 [node name="Button2" type="Button" parent="." unique_id=2138715884]
 z_index = 10
@@ -27,6 +27,14 @@ offset_right = 1127.0
 offset_bottom = 532.0
 mouse_filter = 1
 text = "Enter"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=880803112]
+visible = false
+z_index = 4096
+offset_right = 1156.0
+offset_bottom = 684.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

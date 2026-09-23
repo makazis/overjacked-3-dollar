@@ -4,9 +4,16 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Global.make_money_popup.connect(make_money_popup)
-
+	$ColorRect.visible=true
+	var tween=create_tween()
+	tween.tween_property($ColorRect,'modulate',Color(1,1,1,0),0.5)
 @onready var foxy_jumpscare=preload("res://Resources/Even I Don't Know/foxy_jumpscare.tscn")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+func transition_to_scene(scene_name:String):
+	var tween=create_tween()
+	tween.tween_property($ColorRect,'modulate',Color(1,1,1,1),0.5)
+	await tween.finished
+	get_tree().change_scene_to_file(scene_name)
 func _process(delta: float) -> void:
 	if randf()<delta*10*pow(Phone.overjacked_setting/100.,6):
 		var FOXY=foxy_jumpscare.instantiate()
@@ -14,7 +21,8 @@ func _process(delta: float) -> void:
 		add_child(FOXY)
 	
 	if Global.money>1_000_000: #get one million money to win
-		get_tree().change_scene_to_file("res://you_win!!!.tscn")
+		transition_to_scene("res://you_win!!!.tscn")
+		#get_tree().change_scene_to_file()
 
 @onready var money_popup=preload("res://Resources/money_popup.tscn")
 func make_money_popup(money:int,reason:String):
@@ -33,8 +41,11 @@ func make_money_popup(money:int,reason:String):
 
 var phone_out=false
 var phone_fullscreen=false
+var can_exit_to_map=true
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("map"):
+		if !can_exit_to_map:
+			return
 		if get_tree().current_scene.has_method('on_exit'):
 			get_tree().current_scene.on_exit()
 		Global.return_to_map()

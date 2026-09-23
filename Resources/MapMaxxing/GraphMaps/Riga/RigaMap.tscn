@@ -8,6 +8,8 @@
 [ext_resource type="Script" uid="uid://d14n6xyehew5m" path="res://Resources/Conditions/condition.gd" id="5_jo2ha"]
 [ext_resource type="Script" uid="uid://ju33licv4gg2" path="res://Resources/Conditions/Conditions/Checks/has_money.gd" id="7_u1nsh"]
 [ext_resource type="Script" uid="uid://ciqes2gk5v1y2" path="res://Resources/Conditions/Conditions/Checks/is_wearing.gd" id="8_r4g8y"]
+[ext_resource type="Script" uid="uid://dceyvpdj3na2m" path="res://Resources/MapMaxxing/GraphMaps/Graph Arguments/Graph Argument Base.gd" id="9_y6n6c"]
+[ext_resource type="Script" uid="uid://dyingl04aiw5p" path="res://Resources/MapMaxxing/GraphMaps/Graph Arguments/BusStopArgument.gd" id="10_62ky2"]
 
 [sub_resource type="Resource" id="Resource_h1fea"]
 script = ExtResource("7_u1nsh")
@@ -19,7 +21,17 @@ script = ExtResource("8_r4g8y")
 needs_to_be_wearing = "Lidl Socks"
 metadata/_custom_type_script = "uid://ciqes2gk5v1y2"
 
-[node name="RigaMap" type="Node2D" unique_id=579946939]
+[sub_resource type="Resource" id="Resource_fclkh"]
+script = ExtResource("10_62ky2")
+metadata/_custom_type_script = "uid://dyingl04aiw5p"
+
+[sub_resource type="Resource" id="Resource_62ky2"]
+script = ExtResource("10_62ky2")
+stop_index = 1
+buss_stop_type = "Order"
+metadata/_custom_type_script = "uid://dyingl04aiw5p"
+
+[node name="Riga" type="Node2D" unique_id=579946939]
 script = ExtResource("1_gy4n5")
 
 [node name="Ws9Bkzm3Mvd21" type="Sprite2D" parent="." unique_id=1634670434]
@@ -77,8 +89,15 @@ script = ExtResource("4_gy4n5")
 connects_to = NodePath("../../House")
 metadata/_custom_type_script = "uid://crujsi4571xf0"
 
+[node name="graph_point_with_conditions2" type="Node2D" parent="SteveTheDiceGoblin" unique_id=1287071873 node_paths=PackedStringArray("connects_to")]
+visible = false
+script = ExtResource("4_gy4n5")
+connects_to = NodePath("../../Lāčplēša Iela (A)")
+metadata/_custom_type_script = "uid://crujsi4571xf0"
+
 [node name="Carnikava" parent="." unique_id=1835641321 instance=ExtResource("3_er5ts")]
 position = Vector2(3257, 1636)
+loads_scene = "res://location_scenes/Riga/Carnikava/Carnikava.tscn"
 
 [node name="graph_point_with_conditions" type="Node2D" parent="Carnikava" unique_id=2085228842 node_paths=PackedStringArray("connects_to")]
 visible = false
@@ -164,4 +183,28 @@ position = Vector2(2334, 769)
 visible = false
 script = ExtResource("4_gy4n5")
 connects_to = NodePath("../../Poor Man\'s Pond")
+metadata/_custom_type_script = "uid://crujsi4571xf0"
+
+[node name="Lāčplēša Iela (A)" parent="." unique_id=1852991362 instance=ExtResource("3_er5ts")]
+position = Vector2(2363, 1814)
+loads_scene = "res://location_scenes/General/buss_scenes/bus_stop.tscn"
+graph_arguments = Array[ExtResource("9_y6n6c")]([SubResource("Resource_fclkh")])
+
+[node name="graph_point_with_conditions3" type="Node2D" parent="Lāčplēša Iela (A)" unique_id=186245671 node_paths=PackedStringArray("connects_to")]
+visible = false
+position = Vector2(-162, -13)
+script = ExtResource("4_gy4n5")
+connects_to = NodePath("../../SteveTheDiceGoblin")
+metadata/_custom_type_script = "uid://crujsi4571xf0"
+
+[node name="Bruņinieku Iela (A)" parent="." unique_id=2036301157 instance=ExtResource("3_er5ts")]
+position = Vector2(1880, 1739)
+loads_scene = "res://location_scenes/General/buss_scenes/bus_stop.tscn"
+graph_arguments = Array[ExtResource("9_y6n6c")]([SubResource("Resource_62ky2")])
+
+[node name="graph_point_with_conditions4" type="Node2D" parent="Bruņinieku Iela (A)" unique_id=1321858830 node_paths=PackedStringArray("connects_to")]
+visible = false
+position = Vector2(321, 62)
+script = ExtResource("4_gy4n5")
+connects_to = NodePath("../../Clothing Store")
 metadata/_custom_type_script = "uid://crujsi4571xf0"

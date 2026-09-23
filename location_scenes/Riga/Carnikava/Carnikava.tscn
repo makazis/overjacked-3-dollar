@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://tb3x3dqrjt5c"]
+
+[ext_resource type="Script" uid="uid://cvv888wpgx73d" path="res://location_scenes/Riga/Carnikava/carnikava.gd" id="1_eeviq"]
+[ext_resource type="PackedScene" uid="uid://c4f3qr3emk1ga" path="res://GUI.tscn" id="1_m3pqp"]
+[ext_resource type="Texture2D" uid="uid://bl2vyej6030x5" path="res://location_scenes/Riga/Carnikava/What you can see in carnikava.jpg" id="2_c1jno"]
+[ext_resource type="Texture2D" uid="uid://m48x06m8tnbr" path="res://location_scenes/Riga/Carnikava/519wcc1dxVL._AC_UL450_SY450_QL70_.jpg" id="3_eeviq"]
+
+[node name="Carnikava" type="Node2D" unique_id=1687762870]
+script = ExtResource("1_eeviq")
+
+[node name="Gui" parent="." unique_id=1657345474 instance=ExtResource("1_m3pqp")]
+
+[node name="WhatYouCanSeeInCarnikava" type="Sprite2D" parent="." unique_id=475266349]
+z_index = -10
+position = Vector2(550, 389)
+texture = ExtResource("2_c1jno")
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="." unique_id=1946017863]
+offset_left = -16.0
+offset_top = 126.0
+offset_right = 1135.0
+offset_bottom = 280.0
+text = "Welcome to Carnikava
+IDK what is in Carnikava as i've never been there
+So this is empty until i visit Carnikava myself
+Till then why don't you enjoy the fun button?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="TextureButton" parent="." unique_id=1624516736]
+offset_left = 913.0
+offset_top = 438.00003
+offset_right = 1363.0
+offset_bottom = 855.0
+scale = Vector2(0.4462411, 0.4462411)
+texture_normal = ExtResource("3_eeviq")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

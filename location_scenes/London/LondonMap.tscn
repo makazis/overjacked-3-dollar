@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dh0wnk8wxvrys"]
+
+[ext_resource type="Script" uid="uid://h3ql7a5we7a1" path="res://location_scenes/London/london_map.gd" id="1_t7cno"]
+
+[node name="London" type="Node2D" unique_id=614889433]
+script = ExtResource("1_t7cno")
+
+[node name="Label" type="Label" parent="." unique_id=414639226]
+offset_left = 293.0
+offset_top = 110.0
+offset_right = 764.0
+offset_bottom = 445.0
+text = "Weldome to london!
+Since there is nothing in london right now, this is a softlock. 
+IF you are here and you have things to put in london, contact me on discord, apply as a developer, and make something fun for london.
+Remember to keep this as a shitpost."
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="." unique_id=182712166]
+offset_left = 331.0
+offset_top = 403.0
+offset_right = 529.0
+offset_bottom = 434.0
+text = "Oh ok i want to go home"
+
+[node name="Timer" type="Timer" parent="." unique_id=149601430]
+wait_time = 20.0
+one_shot = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

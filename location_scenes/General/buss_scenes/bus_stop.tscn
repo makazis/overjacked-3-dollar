@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://dbqq8dou7xi0d"]
+
+[ext_resource type="Script" uid="uid://ys5xhgudbku7" path="res://location_scenes/General/buss_scenes/bus_stop.gd" id="1_3em86"]
+[ext_resource type="PackedScene" uid="uid://c4f3qr3emk1ga" path="res://GUI.tscn" id="2_mv3dm"]
+[ext_resource type="Texture2D" uid="uid://cbpl8jasv0uvu" path="res://location_scenes/General/buss_scenes/nasir-khan-1-loading-screen-copy.jpg" id="3_cungx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cungx"]
+bg_color = Color(0.70463866, 0.0012779677, 0.83197147, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.22352941, 0.23529412, 0.29803923, 1)
+
+[sub_resource type="Theme" id="Theme_mv3dm"]
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_cungx")
+
+[node name="BusStop" type="Node2D" unique_id=1789020358]
+script = ExtResource("1_3em86")
+
+[node name="Gui" parent="." unique_id=1657345474 instance=ExtResource("2_mv3dm")]
+
+[node name="Timer" type="Timer" parent="." unique_id=767197609]
+wait_time = 20.0
+one_shot = true
+autostart = true
+
+[node name="NasirKhan1LoadingScreenCopy" type="Sprite2D" parent="." unique_id=1034133623]
+position = Vector2(572.5, 314.5)
+scale = Vector2(0.6067708, 0.61759263)
+texture = ExtResource("3_cungx")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1689026627]
+offset_left = 714.0
+offset_top = 605.0
+offset_right = 1134.0
+offset_bottom = 632.0
+theme = SubResource("Theme_mv3dm")
+theme_override_colors/font_color = Color(0.9607843, 0.9490196, 0.9490196, 1)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -4,6 +4,9 @@ extends Camera2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	call_deferred("move_on_global")
+	$ColorRect.visible=true
+	var tween=create_tween()
+	tween.tween_property($ColorRect,'modulate',Color(1,1,1,0),0.5)
 	#pass
 func move_on_global():
 	global_position=-Vector2(1152,648)/2+Global.where_am_i.global_position
@@ -37,4 +40,7 @@ func _on_button_button_up() -> void:
 
 
 func _on_button_2_pressed() -> void:
+	var tween=create_tween()
+	tween.tween_property($ColorRect,'modulate',Color(1,1,1,1),0.5)
+	await tween.finished
 	get_tree().change_scene_to_file(Global.where_am_i.loads_scene)
