@@ -1,7 +1,7 @@
 extends Node2D
 
 var chapter=1
-var chapters_total=3
+var chapters_total=2335
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
 	
 func load_chapter():
 	$ColorRect/RichTextLabel.scroll_to_line(0)
-	$ColorRect/RichTextLabel.text=load_text_file("res://Nokia/AppData/Roaming/Book 2/Ch/CH"+str(chapter)+".txt")
+	$ColorRect/RichTextLabel.text=load_text_file("res://Nokia/AppData/Roaming/Book 2/Ch/CH"+str(chapter-1)+".txt")
 
 func load_text_file(file_path: String) -> String:
 	var file = FileAccess.open(file_path, FileAccess.READ)

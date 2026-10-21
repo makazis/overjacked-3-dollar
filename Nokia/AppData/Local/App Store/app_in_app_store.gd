@@ -5,6 +5,8 @@ extends Panel
 var costs={
 	"Book 2":0.00,
 	"Hopital App":1.99,
+	"Rhythm Heaven":4.99,
+	"ChadGPT":0.14,
 }
 var is_about_app="Book 2"
 func setup(app_name:String):

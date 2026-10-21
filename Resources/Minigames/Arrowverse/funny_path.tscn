@@ -7,8 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://tl26wswxvi4f" path="res://Resources/Minigames/Arrowverse/Arrow Up.png" id="5_5d3q5"]
 
 [sub_resource type="Curve2D" id="Curve2D_xp4jl"]
+resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6, -484)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, -696)
 }
 point_count = 2
 

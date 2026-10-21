@@ -4,10 +4,13 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Global.make_money_popup.connect(make_money_popup)
+	Phone.shake_phone.connect(shake_phone)
 
 @onready var foxy_jumpscare=preload("res://Resources/Even I Don't Know/foxy_jumpscare.tscn")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+var timer=0
 func _process(delta: float) -> void:
+	timer+=delta
 	if randf()<delta*10*pow(Phone.overjacked_setting/100.,6):
 		var FOXY=foxy_jumpscare.instantiate()
 		#print(spooked_ya)
@@ -15,10 +18,22 @@ func _process(delta: float) -> void:
 	
 	if Global.money>1_000_000: #get one million money to win
 		get_tree().change_scene_to_file("res://you_win!!!.tscn")
-
+	if phone_shakes_for>0:
+		phone_shakes_for-=delta
+		if phone_out: 
+			if phone_fullscreen:
+				$Phone.position=Vector2(967,-805)+Vector2(0,sin(timer*30)*80)
+			else:			
+				$Phone.position=Vector2(0,142)+Vector2(0,sin(timer*30)*40)
+		if phone_shakes_for<=0:
+			if phone_fullscreen:
+				$Phone.position=Vector2(967,-805)
+			else:			
+				$Phone.position=Vector2(0,142)
+func shake_phone(time:int):
+	phone_shakes_for=time
 @onready var money_popup=preload("res://Resources/money_popup.tscn")
 func make_money_popup(money:int,reason:String):
-	print(reason)
 	var new_money_popup=money_popup.instantiate()
 	if Global.last_money_popup==null:
 		new_money_popup.position=$Marker2D.position
@@ -33,6 +48,8 @@ func make_money_popup(money:int,reason:String):
 
 var phone_out=false
 var phone_fullscreen=false
+var phone_shakes_for=0
+
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("map"):
 		if get_tree().current_scene.has_method('on_exit'):

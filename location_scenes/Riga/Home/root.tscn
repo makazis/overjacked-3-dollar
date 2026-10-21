@@ -20,6 +20,6 @@ offset_left = 732.0
 offset_top = 303.0
 offset_right = 818.0
 offset_bottom = 334.0
-text = "Wardrobe"
+text = "War-drobe"
 
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

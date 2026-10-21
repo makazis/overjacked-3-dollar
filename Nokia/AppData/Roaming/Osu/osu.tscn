@@ -1,32 +1,173 @@
 [gd_scene format=3 uid="uid://cqgqax73jv74u"]
 
-[ext_resource type="FontFile" uid="uid://d2fr85waffxeb" path="res://Nokia/AppData/Roaming/Book 2/Cinzel-VariableFont_wght.ttf" id="1_5m1n7"]
-[ext_resource type="Texture2D" uid="uid://cj7fdcfuqdkyw" path="res://location_scenes/Riga/Soup Store/download.png" id="2_pyfil"]
+[ext_resource type="Script" uid="uid://b3nf36vgui37f" path="res://Nokia/AppData/Roaming/Osu/osu.gd" id="1_dmyae"]
+[ext_resource type="Script" uid="uid://b8vmwe65k1jsk" path="res://Resources/Minigames/Arrowverse/funny_path.gd" id="2_vq4iu"]
+[ext_resource type="Texture2D" uid="uid://625j1ldo3cbg" path="res://Resources/Minigames/Arrowverse/Arrow Down.png" id="3_bl5ig"]
+[ext_resource type="Texture2D" uid="uid://bcyktgacko5io" path="res://Resources/Minigames/Arrowverse/Arrow Left.png" id="4_ey0um"]
+[ext_resource type="Texture2D" uid="uid://bt2eqhfsgy8fe" path="res://Resources/Minigames/Arrowverse/Arrow Right.png" id="5_uqw3l"]
+[ext_resource type="Texture2D" uid="uid://tl26wswxvi4f" path="res://Resources/Minigames/Arrowverse/Arrow Up.png" id="6_x8mdy"]
+[ext_resource type="AudioStream" uid="uid://bpie4i65xue4j" path="res://Nokia/AppData/Roaming/Osu/lovesick, cannibal x shake (1).mp3" id="7_bl5ig"]
+[ext_resource type="FontFile" uid="uid://m0vqq8du060s" path="res://Nokia/AppData/System32/Orbitron-VariableFont_wght.ttf" id="8_ey0um"]
+[ext_resource type="Script" uid="uid://dyo1l7dhsvb4t" path="res://Resources/Music/music_script.gd" id="8_uqw3l"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_g4v7s"]
-font = ExtResource("1_5m1n7")
-font_size = 32
-font_color = Color(0, 0, 0, 1)
+[sub_resource type="Curve2D" id="Curve2D_xp4jl"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, -696)
+}
+point_count = 2
 
-[node name="Whatsapp" type="Node2D" unique_id=929981603]
+[sub_resource type="Curve2D" id="Curve2D_6mlje"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, -696)
+}
+point_count = 2
+
+[sub_resource type="LabelSettings" id="LabelSettings_bl5ig"]
+font = ExtResource("8_ey0um")
+font_size = 50
+
+[node name="Rhythm Heaven" type="Node2D" unique_id=929981603]
+script = ExtResource("1_dmyae")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1905142389]
 offset_right = 366.0
 offset_bottom = 768.0
-color = Color(0.6108661, 0.99999994, 0.6511537, 1)
+color = Color(0, 0.2286833, 0.056162186, 1)
 
-[node name="Label" type="Label" parent="ColorRect" unique_id=249179868]
-layout_mode = 0
-offset_left = 56.0
-offset_top = 206.0
-offset_right = 143.0
-offset_bottom = 229.0
-rotation = -1.5707964
-text = "WHATSAPP"
-label_settings = SubResource("LabelSettings_g4v7s")
+[node name="Node2D" type="Node2D" parent="." unique_id=1322486889]
 
-[node name="Download" type="Sprite2D" parent="." unique_id=1161299356]
-position = Vector2(182.25069, 352.67554)
-rotation = -1.5707964
-scale = Vector2(0.32876128, 0.26635072)
-texture = ExtResource("2_pyfil")
+[node name="Funny Path" type="Path2D" parent="Node2D" unique_id=2127652659]
+position = Vector2(56, 715)
+curve = SubResource("Curve2D_xp4jl")
+script = ExtResource("2_vq4iu")
+direction = "Left"
+path_length = 0.6
+deadzone = 0.16
+
+[node name="ArrowDown" type="Sprite2D" parent="Node2D/Funny Path" unique_id=2071490697]
+position = Vector2(1, -1)
+texture = ExtResource("3_bl5ig")
+
+[node name="ArrowLeft" type="Sprite2D" parent="Node2D/Funny Path" unique_id=913730837]
+visible = false
+position = Vector2(0, -1)
+texture = ExtResource("4_ey0um")
+
+[node name="ArrowRight" type="Sprite2D" parent="Node2D/Funny Path" unique_id=1036286671]
+visible = false
+position = Vector2(0, 1)
+texture = ExtResource("5_uqw3l")
+
+[node name="ArrowUp" type="Sprite2D" parent="Node2D/Funny Path" unique_id=395830760]
+visible = false
+position = Vector2(-1, -1)
+texture = ExtResource("6_x8mdy")
+
+[node name="Funny Path2" type="Path2D" parent="Node2D" unique_id=435502692]
+position = Vector2(135, 715)
+curve = SubResource("Curve2D_xp4jl")
+script = ExtResource("2_vq4iu")
+direction = "Down"
+path_length = 0.6
+deadzone = 0.16
+
+[node name="ArrowDown" type="Sprite2D" parent="Node2D/Funny Path2" unique_id=2069619445]
+position = Vector2(1, -1)
+texture = ExtResource("3_bl5ig")
+
+[node name="ArrowLeft" type="Sprite2D" parent="Node2D/Funny Path2" unique_id=2012691347]
+visible = false
+position = Vector2(0, -1)
+texture = ExtResource("4_ey0um")
+
+[node name="ArrowRight" type="Sprite2D" parent="Node2D/Funny Path2" unique_id=298979795]
+visible = false
+position = Vector2(0, 1)
+texture = ExtResource("5_uqw3l")
+
+[node name="ArrowUp" type="Sprite2D" parent="Node2D/Funny Path2" unique_id=1006644499]
+visible = false
+position = Vector2(-1, -1)
+texture = ExtResource("6_x8mdy")
+
+[node name="Funny Path3" type="Path2D" parent="Node2D" unique_id=1585918173]
+position = Vector2(216, 716)
+curve = SubResource("Curve2D_6mlje")
+script = ExtResource("2_vq4iu")
+path_length = 0.6
+deadzone = 0.16
+
+[node name="ArrowDown" type="Sprite2D" parent="Node2D/Funny Path3" unique_id=770568611]
+position = Vector2(1, -1)
+texture = ExtResource("3_bl5ig")
+
+[node name="ArrowLeft" type="Sprite2D" parent="Node2D/Funny Path3" unique_id=792465043]
+visible = false
+position = Vector2(0, -1)
+texture = ExtResource("4_ey0um")
+
+[node name="ArrowRight" type="Sprite2D" parent="Node2D/Funny Path3" unique_id=2134012744]
+visible = false
+position = Vector2(0, 1)
+texture = ExtResource("5_uqw3l")
+
+[node name="ArrowUp" type="Sprite2D" parent="Node2D/Funny Path3" unique_id=2067453613]
+visible = false
+position = Vector2(-1, -1)
+texture = ExtResource("6_x8mdy")
+
+[node name="Funny Path4" type="Path2D" parent="Node2D" unique_id=539053745]
+position = Vector2(295, 716)
+curve = SubResource("Curve2D_xp4jl")
+script = ExtResource("2_vq4iu")
+direction = "Right"
+path_length = 0.6
+deadzone = 0.16
+
+[node name="ArrowDown" type="Sprite2D" parent="Node2D/Funny Path4" unique_id=823930364]
+position = Vector2(1, -1)
+texture = ExtResource("3_bl5ig")
+
+[node name="ArrowLeft" type="Sprite2D" parent="Node2D/Funny Path4" unique_id=607970348]
+visible = false
+position = Vector2(0, -1)
+texture = ExtResource("4_ey0um")
+
+[node name="ArrowRight" type="Sprite2D" parent="Node2D/Funny Path4" unique_id=269020865]
+visible = false
+position = Vector2(0, 1)
+texture = ExtResource("5_uqw3l")
+
+[node name="ArrowUp" type="Sprite2D" parent="Node2D/Funny Path4" unique_id=1528914611]
+visible = false
+position = Vector2(-1, -1)
+texture = ExtResource("6_x8mdy")
+
+[node name="Button" type="Button" parent="." unique_id=733411971]
+offset_left = 81.0
+offset_top = 161.0
+offset_right = 282.0
+offset_bottom = 208.0
+theme_override_fonts/font = ExtResource("8_ey0um")
+theme_override_font_sizes/font_size = 30
+text = "Play: 0.20$"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1749298883]
+stream = ExtResource("7_bl5ig")
+script = ExtResource("8_uqw3l")
+
+[node name="Timer" type="Timer" parent="." unique_id=653914079]
+wait_time = 41.0
+
+[node name="Label" type="Label" parent="." unique_id=1181339486]
+visible = false
+offset_left = 75.0
+offset_top = 102.0
+offset_right = 340.0
+offset_bottom = 175.0
+text = "0$"
+label_settings = SubResource("LabelSettings_bl5ig")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -8,6 +8,8 @@ var all_apps=[
 	"App Store", #IDK HOW YOU WOULD BE IN THE APP STORE WHILE HAVING APP STORE DELETED (NixOS)
 	"Settings",
 	"Hopital App",
+	"Rhythm Heaven",
+	"ChadGPT"
 ]
 @onready var app_in_app_store=preload("res://Nokia/AppData/Local/App Store/app_in_app_store.tscn")
 func _ready() -> void:

@@ -8,7 +8,7 @@ offset_bottom = 170.0
 aura = 4
 cute = 6
 official = 1
-clothing_name = "Red Cap"
+clothing_name = "Lidl Winter Hat"
 market_price = 5.99
 
 [node name="Label" parent="." index="0" unique_id=2042981366]

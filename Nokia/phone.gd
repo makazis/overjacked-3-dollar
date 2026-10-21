@@ -5,7 +5,7 @@ extends Node
 signal open_app(app_path:String)
 var apps=["App Store","Whatsapp","Settings"]
 signal apps_changed()
-
+signal shake_phone(time:int)
 #settings
 var music_volume=100
 var sfx_volume=100

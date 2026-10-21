@@ -20,7 +20,10 @@ func _ready() -> void:
 	"App Store":preload("res://Nokia/AppData/Local/App Store/App Store.tscn"),
 	"Book 2":preload("res://Nokia/AppData/Roaming/Book 2/book_2.tscn"),
 	"Hopital App":preload("res://Nokia/AppData/Roaming/Hopital App/hopital_app.tscn"),
-	"Whatsapp":preload("res://Nokia/AppData/Local/Whatsapp/whatsapp.tscn")
+	"Whatsapp":preload("res://Nokia/AppData/Local/Whatsapp/whatsapp.tscn"),
+	"Rhythm Heaven":preload("res://Nokia/AppData/Roaming/Osu/osu.tscn"),
+	"ChadGPT":preload("res://Nokia/AppData/Roaming/CHadGPT/ChadGPT.tscn"),
+	
 }
 var app_cache={}
 func open_app(app_name:String):

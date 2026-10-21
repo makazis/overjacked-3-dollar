@@ -2,16 +2,24 @@
 
 [ext_resource type="PackedScene" uid="uid://c23jbxmldi3sa" path="res://location_scenes/Riga/Phone House/balloon.tscn" id="1_j2h1u"]
 [ext_resource type="Script" uid="uid://d2cktoufadekh" path="res://location_scenes/Riga/Phone House/phone_house.gd" id="1_tkpgu"]
-[ext_resource type="Script" uid="uid://dtiwaymx6ksdx" path="res://location_scenes/Riga/Phone House/balloon.gd" id="2_sjjbk"]
+[ext_resource type="PackedScene" uid="uid://c4f3qr3emk1ga" path="res://GUI.tscn" id="2_tkpgu"]
 [ext_resource type="Resource" uid="uid://cjjrdmcg4b7vw" path="res://location_scenes/Riga/Phone House/phone_house_enter.dialogue" id="3_sjjbk"]
 [ext_resource type="Texture2D" uid="uid://pxs601tbfndy" path="res://location_scenes/Riga/Phone House/Screenshot 2026-08-24 002449.png" id="5_54bha"]
 [ext_resource type="AudioStream" uid="uid://d0m51drljf6xw" path="res://location_scenes/Riga/Phone House/u_xg7ssi08yr-old-telephone-ringing-362034.mp3" id="6_yvn46"]
+[ext_resource type="AudioStream" uid="uid://dx8v8i12vs5c1" path="res://location_scenes/Riga/Phone House/freesound_community-phone-hang-up-46793.mp3" id="7_3c6xa"]
+[ext_resource type="AudioStream" uid="uid://dyiv6gvhh76ve" path="res://location_scenes/Riga/Phone House/Recording.wav" id="7_54bha"]
+[ext_resource type="Script" uid="uid://bw6lf3frnnlhr" path="res://Resources/Music/sfx_script.gd" id="8_r043n"]
+[ext_resource type="AudioStream" uid="uid://b4niuqv747h2" path="res://location_scenes/Riga/Phone House/Recording (2).wav" id="8_yvn46"]
+[ext_resource type="Script" uid="uid://dyo1l7dhsvb4t" path="res://Resources/Music/music_script.gd" id="11_lgb4f"]
+[ext_resource type="AudioStream" uid="uid://dao81wrdmknpj" path="res://location_scenes/Riga/Hospital/loud-incorrect-buzzer.mp3" id="12_lgb4f"]
+[ext_resource type="AudioStream" uid="uid://b8q2jathu34mr" path="res://location_scenes/Riga/Phone House/Recording (6).wav" id="12_r043n"]
 
 [node name="PhoneHouse" type="Node2D" unique_id=1260931209]
 script = ExtResource("1_tkpgu")
 
+[node name="Gui" parent="." unique_id=1657345474 instance=ExtResource("2_tkpgu")]
+
 [node name="ExampleBalloon" parent="." unique_id=38036521 instance=ExtResource("1_j2h1u")]
-script = ExtResource("2_sjjbk")
 dialogue_resource = ExtResource("3_sjjbk")
 start_from_cue = "start"
 
@@ -28,6 +36,7 @@ scale = Vector2(0.31190038, 0.40285605)
 texture = ExtResource("5_54bha")
 
 [node name="Button" type="Button" parent="." unique_id=1515161960]
+visible = false
 offset_left = 560.0
 offset_top = 496.0
 offset_right = 626.0
@@ -37,5 +46,88 @@ text = "Pick Up
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1828580734]
 stream = ExtResource("6_yvn46")
+
+[node name="Hangs The Fuck Up" type="AudioStreamPlayer" parent="." unique_id=234161494]
+stream = ExtResource("7_3c6xa")
+volume_db = 21.287
+script = ExtResource("8_r043n")
+
+[node name="Part 1" type="Node" parent="." unique_id=948648208]
+
+[node name="Recording" type="AudioStreamPlayer" parent="Part 1" unique_id=879126660]
+stream = ExtResource("7_54bha")
+script = ExtResource("8_r043n")
+
+[node name="Button" type="Button" parent="Part 1" unique_id=357780644]
+visible = false
+offset_left = 133.0
+offset_top = 63.0
+offset_right = 534.0
+offset_bottom = 117.0
+text = "My phone is lacking quality apps. 
+Please enhance the apps on my phone this instant!"
+
+[node name="Button2" type="Button" parent="Part 1" unique_id=846961877]
+visible = false
+offset_left = 443.0
+offset_top = 155.0
+offset_right = 715.0
+offset_bottom = 209.0
+text = "I would like to access the internet. 
+NOW!!!"
+
+[node name="Button3" type="Button" parent="Part 1" unique_id=639757834]
+visible = false
+offset_left = 274.0
+offset_top = 245.0
+offset_right = 625.0
+offset_bottom = 276.0
+text = "*sing the entirety of Takyon by Death Grips*"
+
+[node name="Recording(2)" type="AudioStreamPlayer" parent="Part 1/Button3" unique_id=762829436]
+stream = ExtResource("8_yvn46")
+script = ExtResource("11_lgb4f")
+
+[node name="Wifi" type="Node" parent="." unique_id=1341081348]
+
+[node name="LoudIncorrectBuzzer" type="AudioStreamPlayer" parent="Wifi" unique_id=1052121859]
+stream = ExtResource("12_lgb4f")
+max_polyphony = 3
+script = ExtResource("8_r043n")
+
+[node name="Recording(6)" type="AudioStreamPlayer" parent="Wifi" unique_id=1837552414]
+stream = ExtResource("12_r043n")
+script = ExtResource("8_r043n")
+
+[node name="Button" type="Button" parent="Wifi" unique_id=592605805]
+visible = false
+offset_left = 292.0
+offset_top = 153.0
+offset_right = 383.0
+offset_bottom = 184.0
+text = "Pay 16.99$"
+
+[node name="Button2" type="Button" parent="Wifi" unique_id=759362992]
+visible = false
+offset_left = 497.0
+offset_top = 307.0
+offset_right = 737.0
+offset_bottom = 338.0
+text = "I don't have that much money"
+
+[node name="Timer" type="Timer" parent="." unique_id=1938653752]
+wait_time = 12.0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
+[connection signal="finished" from="Hangs The Fuck Up" to="." method="_on_hangs_the_fuck_up_finished"]
+[connection signal="finished" from="Part 1/Recording" to="." method="_on_recording_finished"]
+[connection signal="pressed" from="Part 1/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Part 1/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="finished" from="Wifi/LoudIncorrectBuzzer" to="." method="_on_loud_incorrect_buzzer_finished"]
+[connection signal="finished" from="Wifi/Recording(6)" to="." method="_on_recording_6_finished"]
+[connection signal="pressed" from="Wifi/Button" to="." method="WifiButton1"]
+[connection signal="pressed" from="Wifi/Button2" to="." method="Wifi_button_2"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 
 [editable path="ExampleBalloon"]
