@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://d0g8pj7ja67k6"]
+
+[ext_resource type="Script" uid="uid://wnvlke0vo18j" path="res://Non-Combat/root.gd" id="1_igkdj"]
+[ext_resource type="FontFile" uid="uid://ds1saal6ugufw" path="res://Assets/Excalifont-Regular.woff2" id="2_hjd13"]
+[ext_resource type="Script" uid="uid://odthh67wbej3" path="res://Non-Combat/camera_2d.gd" id="2_mb442"]
+[ext_resource type="PackedScene" uid="uid://wtjqtvkrv78y" path="res://Combat/root.tscn" id="3_hjd13"]
+[ext_resource type="PackedScene" uid="uid://dc58mwayvn1wr" path="res://Non-Combat/progression/map.tscn" id="5_r07rg"]
+[ext_resource type="Script" uid="uid://bisyk4bowdvsf" path="res://addons/simple_cards/deck/manager/card_deck_manager.gd" id="6_3b8bv"]
+[ext_resource type="Script" uid="uid://c8315v58tr66b" path="res://addons/simple_cards/card/card_resource/card_resource.gd" id="7_7olg0"]
+[ext_resource type="Resource" uid="uid://x08r57e1mwbk" path="res://Card Data/John Politiican/defend.tres" id="8_526gw"]
+[ext_resource type="Resource" uid="uid://dkl6wx2h2orm5" path="res://Card Data/John Politiican/Dig.tres" id="9_mb442"]
+[ext_resource type="PackedScene" uid="uid://c0tru4mouci7u" path="res://Non-Combat/post_combat_rewards.tscn" id="10_5htkc"]
+[ext_resource type="Resource" uid="uid://n6abwd277h7o" path="res://Card Data/John Politiican/ShovelStrike.tres" id="10_38q5j"]
+[ext_resource type="Resource" uid="uid://c1jq44mgb3s2n" path="res://Card Data/John Politiican/Strike.tres" id="11_iwoyh"]
+[ext_resource type="Script" uid="uid://lhb5ry3o8icy" path="res://addons/simple_cards/deck/card_deck.gd" id="12_5l04m"]
+[ext_resource type="PackedScene" uid="uid://bbtuayi2137ai" path="res://Non-Combat/card rewards/card_reward_screen.tscn" id="13_7olg0"]
+[ext_resource type="PackedScene" uid="uid://btdkswm55gbmu" path="res://Shitposting/MusicPlayerTrustMeBro.tscn" id="16_38q5j"]
+[ext_resource type="AudioStream" uid="uid://cfapsncjloaq4" path="res://Assets/Billy Joel - We Didnt Start the Fire (Instrumental).mp3" id="16_iwoyh"]
+[ext_resource type="PackedScene" uid="uid://c5rn5w8faxyxm" path="res://Non-Combat/progression/OtherEncounters/campfire.tscn" id="17_iwoyh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_g4v7s"]
+font = ExtResource("2_hjd13")
+font_size = 32
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iwoyh"]
+resource_local_to_scene = true
+size = Vector2(1232, 1241)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5l04m"]
+resource_local_to_scene = true
+size = Vector2(1232, 956)
+
+[sub_resource type="Resource" id="Resource_g4v7s"]
+script = ExtResource("12_5l04m")
+cards = Array[ExtResource("7_7olg0")]([ExtResource("8_526gw"), ExtResource("8_526gw"), ExtResource("8_526gw"), ExtResource("8_526gw"), ExtResource("9_mb442"), ExtResource("10_38q5j"), ExtResource("11_iwoyh"), ExtResource("11_iwoyh"), ExtResource("11_iwoyh"), ExtResource("11_iwoyh"), ExtResource("11_iwoyh")])
+metadata/_custom_type_script = "uid://lhb5ry3o8icy"
+
+[node name="Root" type="Node2D" unique_id=1285266550]
+script = ExtResource("1_igkdj")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=240867382]
+stream = ExtResource("16_iwoyh")
+autoplay = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2069670562]
+texture_filter = 2
+ignore_rotation = false
+script = ExtResource("2_mb442")
+
+[node name="Panel" type="Panel" parent="Camera2D" unique_id=1805718938]
+z_index = 500
+offset_left = -1280.0
+offset_top = -630.0
+offset_right = 1280.0
+offset_bottom = -535.0
+
+[node name="Label" type="Label" parent="Camera2D/Panel" unique_id=1353319901]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 30.0
+offset_right = 326.0
+offset_bottom = 75.0
+text = "HP: 70/70"
+label_settings = SubResource("LabelSettings_g4v7s")
+
+[node name="Screens" type="Node2D" parent="." unique_id=2135864765]
+
+[node name="Card Reward Screen" parent="Screens" unique_id=1909924362 instance=ExtResource("13_7olg0")]
+position = Vector2(3840, -1890)
+
+[node name="Root" parent="Screens" unique_id=1328499140 instance=ExtResource("3_hjd13")]
+position = Vector2(1280, -630)
+
+[node name="Deck" parent="Screens/Root" index="0" unique_id=1917143974]
+offset_left = 2334.0
+offset_top = 1495.0
+offset_right = 2374.0
+offset_bottom = 1535.0
+
+[node name="DiscardPile" parent="Screens/Root" index="2" unique_id=180910201]
+offset_left = 2264.0
+offset_top = 1406.0
+offset_right = 2304.0
+offset_bottom = 1446.0
+
+[node name="CollisionShape2D" parent="Screens/Root/DragArea4" parent_id_path=PackedInt32Array(1328499140, 1743876184) index="0" unique_id=1810447271]
+shape = SubResource("RectangleShape2D_iwoyh")
+
+[node name="CollisionShape2D" parent="Screens/Root/DragArea3" parent_id_path=PackedInt32Array(1328499140, 220950517) index="0" unique_id=30001419]
+shape = SubResource("RectangleShape2D_5l04m")
+
+[node name="PostCombatRewards" parent="Screens" unique_id=130116637 instance=ExtResource("10_5htkc")]
+position = Vector2(3840, -630)
+
+[node name="Map" parent="Screens" unique_id=989293573 instance=ExtResource("5_r07rg")]
+position = Vector2(-1280, -630)
+
+[node name="CollisionShape2D" parent="Screens/Map/Area2D" parent_id_path=PackedInt32Array(989293573, 552724803) index="0" unique_id=1040657782]
+scale = Vector2(0.8356531, 0.8389022)
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=10343137]
+position = Vector2(1665, 0)
+
+[node name="CardDeckManager" type="Node" parent="." unique_id=980548795 node_paths=PackedStringArray("starting_pile")]
+script = ExtResource("6_3b8bv")
+deck = SubResource("Resource_g4v7s")
+starting_pile = NodePath("../Screens/Root/Deck")
+metadata/_custom_type_script = "uid://bisyk4bowdvsf"
+
+[node name="MusicPlayerTrustMeBro" parent="." unique_id=2054029648 instance=ExtResource("16_38q5j")]
+
+[node name="Campfire" parent="." unique_id=2128875683 instance=ExtResource("17_iwoyh")]
+position = Vector2(6400, -630)
+
+[editable path="Screens/Root"]
+[editable path="Screens/Map"]

@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://gblkcelf58m8"]
+
+[ext_resource type="Script" uid="uid://bxkw34pksdtpu" path="res://Creature Data/Other/attack_indicator.gd" id="1_35lex"]
+[ext_resource type="FontFile" uid="uid://ds1saal6ugufw" path="res://Assets/Excalifont-Regular.woff2" id="1_d1j6d"]
+[ext_resource type="Texture2D" uid="uid://iiu0hd2ol35a" path="res://Assets/IMG_2348.png" id="2_35lex"]
+[ext_resource type="Texture2D" uid="uid://bremexj2r3iq4" path="res://Assets/IMG_2347.png" id="3_35lex"]
+[ext_resource type="Texture2D" uid="uid://cr0ol78hfp0ds" path="res://Assets/IMG_2417.png" id="5_4886w"]
+[ext_resource type="Texture2D" uid="uid://bn0iv7dnv5rso" path="res://Assets/IMG_2416.png" id="6_8unyh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5ub26"]
+font = ExtResource("1_d1j6d")
+font_size = 30
+
+[node name="AttackIndicator" type="Node2D" unique_id=2080490692]
+scale = Vector2(0.75, 0.75)
+script = ExtResource("1_35lex")
+
+[node name="Attack" type="Node2D" parent="." unique_id=185874882]
+visible = false
+
+[node name="SwordIcon" type="Sprite2D" parent="Attack" unique_id=486180550]
+position = Vector2(36, 29.000002)
+scale = Vector2(0.057990808, 0.046624493)
+texture = ExtResource("2_35lex")
+
+[node name="Defend" type="Node2D" parent="." unique_id=1670649341]
+visible = false
+
+[node name="ShieldIcon" type="Sprite2D" parent="Defend" unique_id=426324164]
+position = Vector2(26, 22.000002)
+scale = Vector2(0.039618436, 0.030184513)
+texture = ExtResource("3_35lex")
+
+[node name="Label" type="Label" parent="." unique_id=1355395043]
+offset_left = 49.0
+offset_top = 12.0
+offset_right = 125.0
+offset_bottom = 51.0
+text = "120B"
+label_settings = SubResource("LabelSettings_5ub26")
+
+[node name="NegStatus" type="Node2D" parent="." unique_id=1137749768]
+visible = false
+
+[node name="CurseIcon" type="Sprite2D" parent="NegStatus" unique_id=797306503]
+position = Vector2(28, 34.666668)
+scale = Vector2(0.033050343, 0.030827828)
+texture = ExtResource("5_4886w")
+
+[node name="Buff" type="Node2D" parent="." unique_id=648630868]
+visible = false
+
+[node name="Img2416" type="Sprite2D" parent="Buff" unique_id=459600217]
+position = Vector2(26.666662, 36)
+scale = Vector2(0.038968824, 0.038968824)
+texture = ExtResource("6_8unyh")

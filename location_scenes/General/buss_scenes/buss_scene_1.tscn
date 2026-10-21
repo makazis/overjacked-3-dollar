@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://c7kamgffjx6nf"]
+
+[ext_resource type="PackedScene" uid="uid://c4f3qr3emk1ga" path="res://GUI.tscn" id="1_aj52x"]
+[ext_resource type="Script" uid="uid://cg2jc34mkmnrd" path="res://location_scenes/General/buss_scenes/buss_scene_1.gd" id="1_g3nt3"]
+[ext_resource type="Texture2D" uid="uid://cgjteqtboqwcw" path="res://location_scenes/General/buss_scenes/Screenshot 2026-09-16 105516.png" id="2_l0hq6"]
+[ext_resource type="Texture2D" uid="uid://bey0pd02efwd4" path="res://location_scenes/General/buss_scenes/Screenshot 2026-09-16 111150.png" id="3_es7fq"]
+[ext_resource type="Texture2D" uid="uid://c3pjd676r7v7g" path="res://location_scenes/General/buss_scenes/Screenshot 2026-09-16 111421.png" id="5_3ychs"]
+[ext_resource type="Texture2D" uid="uid://cn4ki2xlg8tvp" path="res://location_scenes/General/buss_scenes/Killed the guy.png" id="6_tylcw"]
+
+[node name="Bus Stop 1" type="Node2D" unique_id=1166589871]
+script = ExtResource("1_g3nt3")
+
+[node name="Gui" parent="." unique_id=1657345474 instance=ExtResource("1_aj52x")]
+
+[node name="Not Sitting Down" type="Sprite2D" parent="." unique_id=2033630384]
+position = Vector2(568, 340)
+texture = ExtResource("2_l0hq6")
+
+[node name="Sitting Down" type="Sprite2D" parent="." unique_id=1023236774]
+visible = false
+position = Vector2(530, 376)
+scale = Vector2(1.0132642, 1.0350318)
+texture = ExtResource("3_es7fq")
+
+[node name="huh?" type="Sprite2D" parent="." unique_id=606509302]
+visible = false
+position = Vector2(566.5, 322.25)
+scale = Vector2(0.73773587, 0.7480091)
+texture = ExtResource("5_3ychs")
+
+[node name="Button" type="Button" parent="." unique_id=1481873489]
+visible = false
+offset_left = 511.0
+offset_top = 385.0
+offset_right = 677.0
+offset_bottom = 416.0
+text = "Talk to the ugly man"
+
+[node name="Button2" type="Button" parent="." unique_id=2045937104]
+offset_left = 366.0
+offset_top = 473.0
+offset_right = 441.0
+offset_bottom = 504.0
+text = "Sit down"
+
+[node name="Button3" type="Button" parent="." unique_id=867493729]
+visible = false
+offset_left = 365.0
+offset_top = 439.0
+offset_right = 444.0
+offset_bottom = 470.0
+text = "Stand Up"
+
+[node name="Timer" type="Timer" parent="." unique_id=2102959007]
+wait_time = 20.0
+one_shot = true
+autostart = true
+
+[node name="Button4" type="Button" parent="." unique_id=290018169]
+offset_left = 489.0
+offset_top = 420.0
+offset_right = 742.0
+offset_bottom = 474.0
+text = "Engage in hand to hand combat
+with the ugly man"
+
+[node name="KilledTheGuy" type="Sprite2D" parent="." unique_id=1038968560]
+visible = false
+position = Vector2(531, 388)
+texture = ExtResource("6_tylcw")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]

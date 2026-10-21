@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dteyglb0nefox"]
+
+[ext_resource type="Script" uid="uid://b6v3q467gy7yn" path="res://Resources/Even I Don't Know/transition.gd" id="1_fsegg"]
+
+[node name="Control" type="ColorRect" unique_id=350368538]
+modulate = Color(1, 1, 1, 0)
+z_index = 4096
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5999424.0
+offset_top = -2999676.0
+offset_right = 5999424.0
+offset_bottom = 2999676.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("1_fsegg")

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cn748y00vlyvl"]
+
+[ext_resource type="PackedScene" uid="uid://c4f3qr3emk1ga" path="res://GUI.tscn" id="1_p4573"]
+[ext_resource type="Script" uid="uid://dgyofbkv15omv" path="res://location_scenes/London/Alleyway/london_alleyway.gd" id="1_tps4l"]
+[ext_resource type="Texture2D" uid="uid://dafvke37cfffl" path="res://location_scenes/London/Alleyway/1.webp" id="2_xlhlm"]
+
+[node name="LondonAlleyway" type="Node2D" unique_id=1070292226]
+script = ExtResource("1_tps4l")
+
+[node name="Gui" parent="." unique_id=1657345474 instance=ExtResource("1_p4573")]
+
+[node name="1" type="Sprite2D" parent="." unique_id=1985556019]
+position = Vector2(579, 331.5)
+scale = Vector2(2.4166667, 2.4703703)
+texture = ExtResource("2_xlhlm")
+
+[node name="Label" type="Label" parent="." unique_id=905726895]
+offset_left = 863.0
+offset_top = 209.0
+offset_right = 1053.0
+offset_bottom = 310.0
+text = "You wake up in a familiar alleyway. You notice your wallet is missin all it's cash"
+autowrap_mode = 2

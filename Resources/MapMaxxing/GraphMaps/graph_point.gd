@@ -3,6 +3,7 @@ class_name GraphPoint extends Node2D
 var connected_with:Array[graph_point_with_conditions]=[]
 var you_are_here:bool=false
 @export var loads_scene:String=""
+@export var graph_arguments:Array[GraphArgument]=[]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -35,7 +36,8 @@ func go_here():
 
 func _on_button_pressed() -> void:
 	if Global.where_am_i==self:
-		get_tree().change_scene_to_file(loads_scene)
+		Global.transition_to_scene(loads_scene)
+		#get_tree().change_scene_to_file(loads_scene)
 		return
 	Global.try_to_go_here(self)
 	

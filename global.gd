@@ -53,7 +53,8 @@ func calculate_clothes():
 var where_am_i:GraphPoint=null
 var on_map_where_am_i={
 	"Global":"Livonia",
-	"Riga":"House"
+	"Riga":"House",
+	"London":"Alleyway"
 }
 var what_map_am_i_on="Riga"
 func try_to_go_here(where:GraphPoint):
@@ -66,13 +67,43 @@ func try_to_go_here(where:GraphPoint):
 				break
 var map_paths={
 	"Global":"res://Resources/MapMaxxing/Map.tscn",
-	"Riga":"res://Resources/MapMaxxing/GraphMaps/Riga/RigaMap.tscn"
+	"Riga":"res://Resources/MapMaxxing/GraphMaps/Riga/RigaMap.tscn",
+	"London":"res://location_scenes/London/LondonMap.tscn",
 }
+var all_locations=[
+	"res://location_scenes/General/buss_scenes/buss_scene_1.tscn",
+	"res://location_scenes/Riga/Carnikava/Carnikava.tscn",
+	"res://location_scenes/Riga/Home/root.tscn",
+	"res://location_scenes/Riga/Home/wardrobe.tscn",
+	"res://location_scenes/Riga/Hospital/Waiting Room.tscn",
+	"res://location_scenes/Riga/Phone House/Phone House.tscn",
+	"res://location_scenes/Riga/Poor Man's Pond/poor_man's_pond.tscn",
+	"res://location_scenes/Riga/Soup Store/soup store.tscn",
+	"res://location_scenes/Riga/Soup Store/fishing_in_backrooms.tscn",
+	"res://location_scenes/Riga/The Dice Goblin/rolling dice.tscn",
+]
+
 func return_to_map():
-	get_tree().change_scene_to_file(map_paths[what_map_am_i_on])
+	transition_to_scene(map_paths[what_map_am_i_on])
+	#get_tree().change_scene_to_file()
 var last_money_popup=null
 signal make_money_popup(how_much_money:int,reason:String)
-
+@onready var transitioner=preload("res://Resources/Even I Don't Know/Transition.tscn")
+func transition_to_scene(scene_path):
+	
+	var new_trans=transitioner.instantiate()
+	add_child(new_trans)
+	await new_trans.dies
+	get_tree().change_scene_to_file(scene_path)
+	print(scene_path)
+var pre_combat_scene=""
+func start_combat(_enemies):
+	EffectContext.enemies=_enemies
+	is_combat_going=true
+	transition_to_scene("res://Resources/CardMaxxing/Combat/root.tscn")
+var is_combat_going=false
+func resolve_combat():
+	transition_to_scene(pre_combat_scene)
 var hospital_number=1
 var your_hospital_number=0
 var can_donate_blood=true
@@ -152,6 +183,10 @@ func romanify(num:int):
 func open_link(link:String):
 	OS.shell_open(link)
 func _ready() -> void:
+	print("Get ready to suffer")
+	what_map_am_i_on=str(get_tree().root.get_children()[-1].name)
+	EffectContext.combat_ends.connect(resolve_combat)
+
 	pass # Replace with function body.
 
 
