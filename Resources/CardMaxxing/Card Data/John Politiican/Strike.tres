@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="Gu_Move" format=3 uid="uid://c1jq44mgb3s2n"]
+
+[ext_resource type="Texture2D" uid="uid://cysc27lrq02g" path="res://Resources/CardMaxxing/Assets/IMG_2423.png" id="1_t01oq"]
+[ext_resource type="Script" uid="uid://bp3qpdpnu4oiy" path="res://Resources/CardMaxxing/Card Data/Card Tags/card_tag.gd" id="1_vxg6f"]
+[ext_resource type="Script" uid="uid://c7xhxk6bgq13p" path="res://Resources/CardMaxxing/Card Data/Gu/gu_move.gd" id="2_fc36w"]
+[ext_resource type="Script" uid="uid://drt5po2eht3pn" path="res://Resources/CardMaxxing/Effect Building/Combat/Deal Damage Static.gd" id="3_px5dv"]
+[ext_resource type="Script" uid="uid://co0nojkhbeoum" path="res://Resources/CardMaxxing/Effect Building/Target_Handling/targetCriteria.gd" id="4_xtmxv"]
+
+[sub_resource type="Resource" id="Resource_1ibam"]
+script = ExtResource("3_px5dv")
+damage = 999
+metadata/_custom_type_script = "uid://drt5po2eht3pn"
+
+[sub_resource type="Resource" id="Resource_t01oq"]
+script = ExtResource("4_xtmxv")
+metadata/_custom_type_script = "uid://co0nojkhbeoum"
+
+[resource]
+script = ExtResource("2_fc36w")
+money_cost = 0
+art = ExtResource("1_t01oq")
+card_name = "Strike"
+card_description = "deal 6 damage"
+effect = SubResource("Resource_1ibam")
+target_criteria = SubResource("Resource_t01oq")
+metadata/_custom_type_script = "uid://c7xhxk6bgq13p"

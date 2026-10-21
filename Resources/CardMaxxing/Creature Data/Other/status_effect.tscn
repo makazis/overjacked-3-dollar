@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://d0ommctesty06"]
+
+[ext_resource type="Script" uid="uid://8wb2hnsqyq05" path="res://Creature Data/Other/status_effect.gd" id="1_w3rgf"]
+[ext_resource type="Texture2D" uid="uid://bremexj2r3iq4" path="res://Assets/IMG_2347.png" id="2_0x71u"]
+[ext_resource type="Texture2D" uid="uid://c571470oufef8" path="res://Assets/IMG_2384.png" id="2_8vm10"]
+[ext_resource type="FontFile" uid="uid://ds1saal6ugufw" path="res://Assets/Excalifont-Regular.woff2" id="2_w3rgf"]
+[ext_resource type="Texture2D" uid="uid://7qfkhsu1d45u" path="res://Assets/IMG_2383.png" id="3_0x71u"]
+[ext_resource type="Texture2D" uid="uid://iiu0hd2ol35a" path="res://Assets/IMG_2348.png" id="5_8vm10"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_g4v7s"]
+font = ExtResource("2_w3rgf")
+font_size = 10
+font_color = Color(0.40192744, 0.99999994, 0.9928172, 1)
+outline_size = 2
+outline_color = Color(0, 1, 1, 1)
+
+[node name="Node2D" type="Panel" unique_id=909526048]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = -1
+anchor_right = 0.055000003
+anchor_bottom = 0.079
+offset_right = -0.40000153
+offset_bottom = 0.22999954
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_w3rgf")
+
+[node name="Icon" type="Node2D" parent="." unique_id=1192239607]
+position = Vector2(15, 25)
+rotation = 0.3654006
+scale = Vector2(0.08920445, 0.047435056)
+
+[node name="ShieldIcon" type="Sprite2D" parent="Icon" unique_id=1643762030]
+visible = false
+modulate = Color(0.77, 0.55953336, 0.1386, 1)
+position = Vector2(60.803833, -80.92255)
+rotation = -0.62367177
+scale = Vector2(0.44173807, 0.6881371)
+skew = 0.42297053
+texture = ExtResource("2_0x71u")
+
+[node name="ShackleIcon" type="Sprite2D" parent="Icon" unique_id=223238245]
+visible = false
+position = Vector2(111.800476, 77.56445)
+rotation = -0.62367177
+scale = Vector2(0.32864586, 0.5119626)
+skew = 0.42297053
+texture = ExtResource("2_8vm10")
+
+[node name="BurnIcon" type="Sprite2D" parent="Icon" unique_id=659762800]
+visible = false
+position = Vector2(120.7238, 3.4297028)
+rotation = -0.62367177
+scale = Vector2(0.3861256, 0.60150415)
+skew = 0.42297053
+texture = ExtResource("3_0x71u")
+
+[node name="SwordIcon" type="Sprite2D" parent="Icon" unique_id=2075088410]
+visible = false
+position = Vector2(91.772156, -20.88379)
+rotation = -0.36952853
+scale = Vector2(0.7680663, 0.7680663)
+texture = ExtResource("5_8vm10")
+
+[node name="Label" type="Label" parent="." unique_id=1808601113]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 38.0
+offset_right = 83.0
+offset_bottom = 61.0
+text = "100B"
+label_settings = SubResource("LabelSettings_g4v7s")

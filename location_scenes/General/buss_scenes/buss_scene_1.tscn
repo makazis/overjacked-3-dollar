@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cgjteqtboqwcw" path="res://location_scenes/General/buss_scenes/Screenshot 2026-09-16 105516.png" id="2_l0hq6"]
 [ext_resource type="Texture2D" uid="uid://bey0pd02efwd4" path="res://location_scenes/General/buss_scenes/Screenshot 2026-09-16 111150.png" id="3_es7fq"]
 [ext_resource type="Texture2D" uid="uid://c3pjd676r7v7g" path="res://location_scenes/General/buss_scenes/Screenshot 2026-09-16 111421.png" id="5_3ychs"]
+[ext_resource type="Texture2D" uid="uid://cn4ki2xlg8tvp" path="res://location_scenes/General/buss_scenes/Killed the guy.png" id="6_tylcw"]
 
 [node name="Bus Stop 1" type="Node2D" unique_id=1166589871]
 script = ExtResource("1_g3nt3")
@@ -55,7 +56,21 @@ wait_time = 20.0
 one_shot = true
 autostart = true
 
+[node name="Button4" type="Button" parent="." unique_id=290018169]
+offset_left = 489.0
+offset_top = 420.0
+offset_right = 742.0
+offset_bottom = 474.0
+text = "Engage in hand to hand combat
+with the ugly man"
+
+[node name="KilledTheGuy" type="Sprite2D" parent="." unique_id=1038968560]
+visible = false
+position = Vector2(531, 388)
+texture = ExtResource("6_tylcw")
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]

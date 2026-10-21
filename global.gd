@@ -90,10 +90,20 @@ var last_money_popup=null
 signal make_money_popup(how_much_money:int,reason:String)
 @onready var transitioner=preload("res://Resources/Even I Don't Know/Transition.tscn")
 func transition_to_scene(scene_path):
+	
 	var new_trans=transitioner.instantiate()
 	add_child(new_trans)
 	await new_trans.dies
 	get_tree().change_scene_to_file(scene_path)
+	print(scene_path)
+var pre_combat_scene=""
+func start_combat(_enemies):
+	EffectContext.enemies=_enemies
+	is_combat_going=true
+	transition_to_scene("res://Resources/CardMaxxing/Combat/root.tscn")
+var is_combat_going=false
+func resolve_combat():
+	transition_to_scene(pre_combat_scene)
 var hospital_number=1
 var your_hospital_number=0
 var can_donate_blood=true
@@ -175,6 +185,8 @@ func open_link(link:String):
 func _ready() -> void:
 	print("Get ready to suffer")
 	what_map_am_i_on=str(get_tree().root.get_children()[-1].name)
+	EffectContext.combat_ends.connect(resolve_combat)
+
 	pass # Replace with function body.
 
 

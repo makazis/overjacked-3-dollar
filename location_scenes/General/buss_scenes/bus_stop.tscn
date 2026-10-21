@@ -21,7 +21,7 @@ script = ExtResource("1_3em86")
 [node name="Gui" parent="." unique_id=1657345474 instance=ExtResource("2_mv3dm")]
 
 [node name="Timer" type="Timer" parent="." unique_id=767197609]
-wait_time = 20.0
+wait_time = 10.0
 one_shot = true
 autostart = true
 

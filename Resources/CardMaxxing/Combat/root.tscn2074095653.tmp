@@ -1,0 +1,296 @@
+[gd_scene format=3 uid="uid://wtjqtvkrv78y"]
+
+[ext_resource type="Script" uid="uid://5brbuxyb7kh" path="res://Combat/root.gd" id="1_cgq65"]
+[ext_resource type="Texture2D" uid="uid://lof7bpm44qto" path="res://Assets/IMG_2364.png" id="6_5dw8y"]
+[ext_resource type="Script" uid="uid://bkxlv2512vggc" path="res://Combat/deck.gd" id="9_71fpb"]
+[ext_resource type="Script" uid="uid://cqlyvmgm30540" path="res://Combat/hand.gd" id="15_u8awk"]
+[ext_resource type="Script" uid="uid://cgtxv1fnflwfu" path="res://addons/simple_cards/shape/premade_shapes/arc_shape.gd" id="16_k8i5p"]
+[ext_resource type="Script" uid="uid://bbi8i6vef3f6y" path="res://addons/simple_cards/containers/hand/card_hand.gd" id="16_ls86w"]
+[ext_resource type="Script" uid="uid://b1s6x4iyt2pps" path="res://addons/simple_cards/shape/premade_shapes/line_shape.gd" id="17_5dw8y"]
+[ext_resource type="Script" uid="uid://d2l8uaoel5whd" path="res://addons/simple_cards/containers/pile/card_pile.gd" id="17_b47kv"]
+[ext_resource type="FontFile" uid="uid://ds1saal6ugufw" path="res://Assets/Excalifont-Regular.woff2" id="19_ajjgt"]
+[ext_resource type="Texture2D" uid="uid://yewd04an4bcx" path="res://Assets/IMG_2365.webp" id="19_cf78l"]
+[ext_resource type="Texture2D" uid="uid://b5hnow1oi63sd" path="res://Assets/EndTurnButton.png" id="20_5y3d7"]
+[ext_resource type="BitMap" uid="uid://7k554wiexp0c" path="res://Assets/EndTurnButtonBitmap.bmp" id="21_i8h5o"]
+[ext_resource type="Texture2D" uid="uid://bon7f2i5e3exw" path="res://Assets/IMG_2337.png" id="22_g2ija"]
+[ext_resource type="Texture2D" uid="uid://bmw8g5ig86jth" path="res://Assets/IMG_2338.png" id="23_skhyk"]
+[ext_resource type="Texture2D" uid="uid://irsf7u6y1sor" path="res://Assets/IMG_2339.png" id="25_jlb0g"]
+[ext_resource type="Texture2D" uid="uid://d0f4hmyp4iv34" path="res://Assets/IMG_2340.png" id="26_88goi"]
+[ext_resource type="Texture2D" uid="uid://dljnsp5xuxjkp" path="res://Assets/IMG_2341.png" id="27_u8awk"]
+[ext_resource type="Texture2D" uid="uid://bychlovjo8mo0" path="res://Assets/IMG_2342.png" id="28_k8i5p"]
+[ext_resource type="Texture2D" uid="uid://cfvbal1an5n84" path="res://Assets/IMG_2343.png" id="29_b47kv"]
+
+[sub_resource type="Resource" id="Resource_gd4vy"]
+script = ExtResource("16_k8i5p")
+arc_radius = 12000.0
+arc_angle = 30.0
+card_spacing = 170.0
+metadata/_custom_type_script = "uid://cgtxv1fnflwfu"
+
+[sub_resource type="LabelSettings" id="LabelSettings_g4v7s"]
+font = ExtResource("19_ajjgt")
+font_size = 50
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jsov7"]
+resource_local_to_scene = true
+size = Vector2(1232, 842)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cgq65"]
+resource_local_to_scene = true
+size = Vector2(1232, 754)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_axbwd"]
+size = Vector2(1232, 1241)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(1232, 956)
+
+[sub_resource type="LabelSettings" id="LabelSettings_yf5fn"]
+font = ExtResource("19_ajjgt")
+font_size = 48
+
+[sub_resource type="Resource" id="Resource_g4v7s"]
+script = ExtResource("17_5dw8y")
+metadata/_custom_type_script = "uid://b1s6x4iyt2pps"
+
+[node name="Root" type="Node2D" unique_id=1328499140]
+script = ExtResource("1_cgq65")
+
+[node name="Deck" type="Panel" parent="." unique_id=1917143974]
+offset_left = 2607.0
+offset_top = 1327.0
+offset_right = 2647.0
+offset_bottom = 1367.0
+script = ExtResource("9_71fpb")
+face_up = true
+metadata/_custom_type_script = "uid://d2l8uaoel5whd"
+
+[node name="Hand" type="Panel" parent="." unique_id=219155563]
+self_modulate = Color(1, 1, 1, 0)
+z_index = 30
+offset_left = 906.0
+offset_top = 952.0
+offset_right = 946.0
+offset_bottom = 992.0
+script = ExtResource("15_u8awk")
+enable_reordering = false
+shape = SubResource("Resource_gd4vy")
+max_cards = 10
+metadata/_custom_type_script = "uid://bbi8i6vef3f6y"
+
+[node name="DiscardPile" type="Panel" parent="." unique_id=180910201]
+offset_left = 2676.0
+offset_top = 1346.0
+offset_right = 2716.0
+offset_bottom = 1386.0
+script = ExtResource("17_b47kv")
+metadata/_custom_type_script = "uid://d2l8uaoel5whd"
+
+[node name="ExhaustPile" type="Panel" parent="." unique_id=1055306536]
+offset_left = 2515.0
+offset_top = 1394.0
+offset_right = 2555.0
+offset_bottom = 1434.0
+script = ExtResource("17_b47kv")
+metadata/_custom_type_script = "uid://d2l8uaoel5whd"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2062366301]
+z_index = -999
+offset_right = 2560.0
+offset_bottom = 1261.0
+mouse_filter = 2
+mouse_behavior_recursive = 1
+color = Color(0.14767182, 0.14767179, 0.14767179, 1)
+
+[node name="Img2364" type="Sprite2D" parent="ColorRect" unique_id=1624246839]
+position = Vector2(1276.5001, 628.00006)
+scale = Vector2(0.80361605, 0.9973262)
+texture = ExtResource("6_5dw8y")
+
+[node name="Energy" type="Sprite2D" parent="." unique_id=1178177614]
+z_index = 10
+position = Vector2(2299.0002, 887)
+scale = Vector2(0.7827003, 0.77898544)
+
+[node name="Img2337" type="Sprite2D" parent="Energy" unique_id=1733170338]
+position = Vector2(-77.93579, 211.81396)
+scale = Vector2(0.25552565, 0.25674424)
+texture = ExtResource("22_g2ija")
+
+[node name="Img2338" type="Sprite2D" parent="Energy" unique_id=966312914]
+visible = false
+position = Vector2(-77.93579, 211.81396)
+scale = Vector2(0.25552565, 0.25674424)
+texture = ExtResource("23_skhyk")
+
+[node name="Label" type="Label" parent="Energy" unique_id=176611772]
+offset_left = -132.87357
+offset_top = 11.55349
+offset_right = -14.053986
+offset_bottom = 75.55349
+text = "1"
+label_settings = SubResource("LabelSettings_g4v7s")
+horizontal_alignment = 1
+
+[node name="Time" type="Node2D" parent="Energy" unique_id=1194555998]
+
+[node name="Time1" type="Sprite2D" parent="Energy/Time" unique_id=712616561]
+visible = false
+position = Vector2(152.03738, 15.404629)
+scale = Vector2(0.3044213, 0.3044213)
+texture = ExtResource("25_jlb0g")
+
+[node name="Time2" type="Sprite2D" parent="Energy/Time" unique_id=1026599906]
+visible = false
+position = Vector2(152.03735, 15.404663)
+scale = Vector2(0.30442128, 0.3044213)
+texture = ExtResource("26_88goi")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Energy/Time" unique_id=21135952]
+visible = false
+position = Vector2(152.03738, 15.404629)
+scale = Vector2(0.3044213, 0.3044213)
+texture = ExtResource("27_u8awk")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Energy/Time" unique_id=352112240]
+visible = false
+position = Vector2(152.03738, 15.404629)
+scale = Vector2(0.3044213, 0.3044213)
+texture = ExtResource("28_k8i5p")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Energy/Time" unique_id=1156281558]
+position = Vector2(152.03738, 15.404629)
+scale = Vector2(0.3044213, 0.3044213)
+texture = ExtResource("29_b47kv")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=835085032]
+z_index = 15
+offset_left = 2281.9998
+offset_top = 915.00006
+offset_right = 2804.9998
+offset_bottom = 1117.0
+scale = Vector2(0.52779335, 0.5876445)
+texture_normal = ExtResource("20_5y3d7")
+texture_click_mask = ExtResource("21_i8h5o")
+
+[node name="Timer" type="Timer" parent="." unique_id=2113416048]
+wait_time = 0.2
+one_shot = true
+
+[node name="DragArea4" type="Area2D" parent="." unique_id=1743876184]
+visible = false
+position = Vector2(1880, 602)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DragArea4" unique_id=1810447271]
+position = Vector2(44, -171)
+shape = SubResource("RectangleShape2D_jsov7")
+
+[node name="DragArea3" type="Area2D" parent="." unique_id=220950517]
+visible = false
+position = Vector2(1880, 602)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DragArea3" unique_id=30001419]
+position = Vector2(44, -215)
+shape = SubResource("RectangleShape2D_cgq65")
+
+[node name="DragArea2" type="Area2D" parent="." unique_id=387482346]
+visible = false
+position = Vector2(592, 602)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DragArea2" unique_id=1686199303]
+position = Vector2(44, 28.5)
+shape = SubResource("RectangleShape2D_axbwd")
+
+[node name="DragArea" type="Area2D" parent="." unique_id=1126227568]
+visible = false
+position = Vector2(592, 602)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DragArea" unique_id=1546847182]
+position = Vector2(44, -114)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="Friendly Characters" type="Marker2D" parent="." unique_id=346881410]
+position = Vector2(592, 602)
+
+[node name="Friends" type="Node2D" parent="Friendly Characters" unique_id=1780544753]
+position = Vector2(-472, -210)
+
+[node name="UnFriendly Characters" type="Marker2D" parent="." unique_id=1750648651]
+position = Vector2(1880, 602)
+
+[node name="Friends" type="Node2D" parent="UnFriendly Characters" unique_id=1490923858]
+position = Vector2(-459, -326)
+
+[node name="StartOfTurnGetsPlayed" type="Panel" parent="." unique_id=1248427174]
+offset_left = 2085.0
+offset_top = 1473.0
+offset_right = 2125.0
+offset_bottom = 1513.0
+script = ExtResource("17_b47kv")
+metadata/_custom_type_script = "uid://d2l8uaoel5whd"
+
+[node name="DismountPile" type="Panel" parent="." unique_id=115058703]
+offset_left = 2070.0
+offset_top = 1462.0
+offset_right = 2110.0
+offset_bottom = 1502.0
+script = ExtResource("17_b47kv")
+metadata/_custom_type_script = "uid://d2l8uaoel5whd"
+
+[node name="Control" type="Control" parent="." unique_id=138342914]
+z_index = 20
+layout_mode = 3
+anchors_preset = 0
+offset_top = -1260.0
+offset_right = 2560.0
+
+[node name="Label" type="Label" parent="Control" unique_id=1008773529]
+layout_mode = 0
+offset_left = 1091.0
+offset_top = 13.0
+offset_right = 1663.0
+offset_bottom = 74.0
+text = "Select a card to discard"
+label_settings = SubResource("LabelSettings_yf5fn")
+horizontal_alignment = 1
+
+[node name="CardHand" type="Panel" parent="Control" unique_id=1281123789]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 1352.0
+offset_top = 228.0
+offset_right = 1392.0
+offset_bottom = 268.0
+script = ExtResource("16_ls86w")
+enable_reordering = false
+shape = SubResource("Resource_g4v7s")
+metadata/_custom_type_script = "uid://bbi8i6vef3f6y"
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=1912554902]
+layout_mode = 0
+offset_right = 2560.0
+offset_bottom = 1260.0
+color = Color(0, 0, 0, 0.20784314)
+
+[node name="Button" type="Button" parent="Control" unique_id=1327380349]
+layout_mode = 0
+offset_left = 1133.0
+offset_top = 666.0
+offset_right = 1483.0
+offset_bottom = 788.0
+theme_override_fonts/font = ExtResource("19_ajjgt")
+theme_override_font_sizes/font_size = 90
+text = "Select"
+
+[node name="Img2365" type="Sprite2D" parent="." unique_id=1507899138]
+position = Vector2(1283.5, 625)
+scale = Vector2(0.70904034, 0.8475936)
+texture = ExtResource("19_cf78l")
+
+[connection signal="button_up" from="TextureButton" to="." method="_on_texture_button_button_up"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="mouse_exited" from="DragArea4" to="." method="_on_drag_area2_2_mouse_exited"]
+[connection signal="mouse_entered" from="DragArea3" to="." method="_on_drag_area2_mouse_entered"]
+[connection signal="mouse_exited" from="DragArea2" to="." method="_on_drag_area_mouse_exited"]
+[connection signal="mouse_entered" from="DragArea" to="." method="_on_drag_area_mouse_entered"]
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
