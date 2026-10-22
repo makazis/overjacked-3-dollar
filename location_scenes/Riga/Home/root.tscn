@@ -2,9 +2,14 @@
 
 [ext_resource type="Script" uid="uid://haam60xobg2w" path="res://location_scenes/Riga/Home/root.gd" id="1_lp78p"]
 [ext_resource type="PackedScene" uid="uid://c4f3qr3emk1ga" path="res://GUI.tscn" id="2_dan0d"]
+[ext_resource type="Texture2D" uid="uid://chd77rkd7ps8o" path="res://location_scenes/Riga/Home/f2c97599fd7057ba91a41bcd7117ccf2.jpg" id="2_sg3tk"]
 
 [node name="Node2D" type="Node2D" unique_id=937409004]
 script = ExtResource("1_lp78p")
+
+[node name="F2c97599Fd7057Ba91a41Bcd7117Ccf2" type="Sprite2D" parent="." unique_id=1278735028]
+position = Vector2(559, 331)
+texture = ExtResource("2_sg3tk")
 
 [node name="Gui" parent="." unique_id=1657345474 instance=ExtResource("2_dan0d")]
 
@@ -22,4 +27,12 @@ offset_right = 818.0
 offset_bottom = 334.0
 text = "War-drobe"
 
+[node name="Button3" type="Button" parent="." unique_id=131379821]
+offset_left = 732.0
+offset_top = 336.0
+offset_right = 823.0
+offset_bottom = 367.0
+text = "Car-drobe"
+
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_2_pressed"]
