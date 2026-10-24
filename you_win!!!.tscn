@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cnxfkpeqf1gis"]
 
-[ext_resource type="Script" uid="uid://byefrmay7gvac" path="res://you_win!!!.gd" id="1_83eek"]
+[ext_resource type="Script" uid="uid://byefrmay7gvac" path="res://addons/you_win!!!.gd" id="1_83eek"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_g4v7s"]
 font_size = 50

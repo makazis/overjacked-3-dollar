@@ -35,6 +35,11 @@ func _update_display() -> void:
 			if data.money_cost>5:
 				$SubViewport/DefaultCardSprite/Label3.visible=true
 				$SubViewport/DefaultCardSprite/Label3.text=CombatData.standart_big_number(data.money_cost)
+		if count>0:
+			$SubViewport/DefaultCardSprite/Count.visible=true
+			$SubViewport/DefaultCardSprite/Count/Label.text="x"+str(count)
+		else:
+			$SubViewport/DefaultCardSprite/Count.visible=false
 	if data.art!=null:
 		$SubViewport/DefaultCardSprite/Sprite2D.texture=data.art
 	display_updated.emit()

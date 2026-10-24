@@ -1,18 +1,19 @@
 [gd_scene format=3 uid="uid://csox1ytpbk8ct"]
 
-[ext_resource type="Script" uid="uid://b5umulev15wt4" path="res://Card Data/move.gd" id="1_epxnr"]
-[ext_resource type="Texture2D" uid="uid://cbielbp88fsxr" path="res://Assets/IMG_2326.png" id="2_epxnr"]
-[ext_resource type="FontFile" uid="uid://ds1saal6ugufw" path="res://Assets/Excalifont-Regular.woff2" id="3_45xvj"]
-[ext_resource type="Texture2D" uid="uid://kas7clnooyjs" path="res://Assets/IMG_2327.png" id="4_xg8ua"]
-[ext_resource type="Texture2D" uid="uid://bnw3pf18ojobt" path="res://Assets/IMG_2328.png" id="5_j37yn"]
-[ext_resource type="Texture2D" uid="uid://b62bya3bgwy5w" path="res://Assets/IMG_2329.png" id="6_dx1el"]
-[ext_resource type="Texture2D" uid="uid://du8mnsf4t03o5" path="res://Assets/IMG_2330.png" id="7_xvk3f"]
-[ext_resource type="Texture2D" uid="uid://c8kyg713d2mu" path="res://Assets/IMG_2331.png" id="8_os3pa"]
-[ext_resource type="Texture2D" uid="uid://ch1df4pi6xct5" path="res://Assets/IMG_2332.png" id="9_s4q5b"]
-[ext_resource type="Texture2D" uid="uid://0efuwqd0pnyx" path="res://Assets/IMG_2333.png" id="10_gsk0k"]
-[ext_resource type="Texture2D" uid="uid://cex8i6gifygct" path="res://Assets/IMG_2334.png" id="11_qufvt"]
-[ext_resource type="Texture2D" uid="uid://bvf5khk03niom" path="res://Assets/IMG_2335.png" id="12_deldk"]
-[ext_resource type="Texture2D" uid="uid://b5ntxt013vhxd" path="res://Assets/IMG_2336.png" id="13_gorn4"]
+[ext_resource type="Script" uid="uid://b5umulev15wt4" path="res://Resources/CardMaxxing/Card Data/move.gd" id="1_epxnr"]
+[ext_resource type="Texture2D" uid="uid://cbielbp88fsxr" path="res://Resources/CardMaxxing/Assets/IMG_2326.png" id="2_epxnr"]
+[ext_resource type="FontFile" uid="uid://ds1saal6ugufw" path="res://Resources/CardMaxxing/Assets/Excalifont-Regular.woff2" id="3_45xvj"]
+[ext_resource type="Texture2D" uid="uid://cwcd8dn7qd3ol" path="res://Resources/CardMaxxing/Assets/CardCountOverlay.png" id="3_uads8"]
+[ext_resource type="Texture2D" uid="uid://kas7clnooyjs" path="res://Resources/CardMaxxing/Assets/IMG_2327.png" id="4_xg8ua"]
+[ext_resource type="Texture2D" uid="uid://bnw3pf18ojobt" path="res://Resources/CardMaxxing/Assets/IMG_2328.png" id="5_j37yn"]
+[ext_resource type="Texture2D" uid="uid://b62bya3bgwy5w" path="res://Resources/CardMaxxing/Assets/IMG_2329.png" id="6_dx1el"]
+[ext_resource type="Texture2D" uid="uid://du8mnsf4t03o5" path="res://Resources/CardMaxxing/Assets/IMG_2330.png" id="7_xvk3f"]
+[ext_resource type="Texture2D" uid="uid://c8kyg713d2mu" path="res://Resources/CardMaxxing/Assets/IMG_2331.png" id="8_os3pa"]
+[ext_resource type="Texture2D" uid="uid://ch1df4pi6xct5" path="res://Resources/CardMaxxing/Assets/IMG_2332.png" id="9_s4q5b"]
+[ext_resource type="Texture2D" uid="uid://0efuwqd0pnyx" path="res://Resources/CardMaxxing/Assets/IMG_2333.png" id="10_gsk0k"]
+[ext_resource type="Texture2D" uid="uid://cex8i6gifygct" path="res://Resources/CardMaxxing/Assets/IMG_2334.png" id="11_qufvt"]
+[ext_resource type="Texture2D" uid="uid://bvf5khk03niom" path="res://Resources/CardMaxxing/Assets/IMG_2335.png" id="12_deldk"]
+[ext_resource type="Texture2D" uid="uid://b5ntxt013vhxd" path="res://Resources/CardMaxxing/Assets/IMG_2336.png" id="13_gorn4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_dbv13"]
 font = ExtResource("3_45xvj")
@@ -41,6 +42,19 @@ render_target_update_mode = 4
 position = Vector2(114.49999, 163.99998)
 scale = Vector2(0.17326139, 0.14740367)
 texture = ExtResource("2_epxnr")
+
+[node name="Count" type="Sprite2D" parent="SubViewport/DefaultCardSprite" unique_id=1014251906]
+visible = false
+texture = ExtResource("3_uads8")
+
+[node name="Label" type="Label" parent="SubViewport/DefaultCardSprite/Count" unique_id=1275590217]
+offset_left = -170.26292
+offset_top = -956.55676
+offset_right = 193.34956
+offset_bottom = -829.55676
+text = "x30"
+label_settings = SubResource("LabelSettings_dbv13")
+horizontal_alignment = 1
 
 [node name="Label" type="Label" parent="SubViewport/DefaultCardSprite" unique_id=128678850]
 offset_left = -585.82

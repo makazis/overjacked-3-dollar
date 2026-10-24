@@ -1,19 +1,20 @@
 [gd_scene format=3 uid="uid://dotok77073p27"]
 
 [ext_resource type="Script" uid="uid://car0pw7cwafhp" path="res://addons/simple_cards/card/card_layout/default_card_layout.gd" id="1_13u62"]
-[ext_resource type="Texture2D" uid="uid://cbielbp88fsxr" path="res://Assets/IMG_2326.png" id="2_ngurv"]
-[ext_resource type="FontFile" uid="uid://ds1saal6ugufw" path="res://Assets/Excalifont-Regular.woff2" id="3_6gbdn"]
-[ext_resource type="Texture2D" uid="uid://kas7clnooyjs" path="res://Assets/IMG_2327.png" id="4_f3yi5"]
-[ext_resource type="Texture2D" uid="uid://bnw3pf18ojobt" path="res://Assets/IMG_2328.png" id="5_r8cwh"]
-[ext_resource type="Texture2D" uid="uid://b62bya3bgwy5w" path="res://Assets/IMG_2329.png" id="6_8jvv5"]
-[ext_resource type="Texture2D" uid="uid://du8mnsf4t03o5" path="res://Assets/IMG_2330.png" id="7_l57n2"]
-[ext_resource type="Texture2D" uid="uid://c8kyg713d2mu" path="res://Assets/IMG_2331.png" id="8_8o5ix"]
-[ext_resource type="Texture2D" uid="uid://ch1df4pi6xct5" path="res://Assets/IMG_2332.png" id="9_oaxh4"]
-[ext_resource type="Texture2D" uid="uid://0efuwqd0pnyx" path="res://Assets/IMG_2333.png" id="10_ha3pj"]
-[ext_resource type="Texture2D" uid="uid://cex8i6gifygct" path="res://Assets/IMG_2334.png" id="11_acmvl"]
-[ext_resource type="Texture2D" uid="uid://bvf5khk03niom" path="res://Assets/IMG_2335.png" id="12_ggl7s"]
-[ext_resource type="Texture2D" uid="uid://b5ntxt013vhxd" path="res://Assets/IMG_2336.png" id="13_llcf3"]
-[ext_resource type="Texture2D" uid="uid://cysc27lrq02g" path="res://Assets/IMG_2423.png" id="14_f3yi5"]
+[ext_resource type="Texture2D" uid="uid://cbielbp88fsxr" path="res://Resources/CardMaxxing/Assets/IMG_2326.png" id="2_ngurv"]
+[ext_resource type="FontFile" uid="uid://ds1saal6ugufw" path="res://Resources/CardMaxxing/Assets/Excalifont-Regular.woff2" id="3_6gbdn"]
+[ext_resource type="Texture2D" uid="uid://cwcd8dn7qd3ol" path="res://Resources/CardMaxxing/Assets/CardCountOverlay.png" id="3_r8cwh"]
+[ext_resource type="Texture2D" uid="uid://kas7clnooyjs" path="res://Resources/CardMaxxing/Assets/IMG_2327.png" id="4_f3yi5"]
+[ext_resource type="Texture2D" uid="uid://bnw3pf18ojobt" path="res://Resources/CardMaxxing/Assets/IMG_2328.png" id="5_r8cwh"]
+[ext_resource type="Texture2D" uid="uid://b62bya3bgwy5w" path="res://Resources/CardMaxxing/Assets/IMG_2329.png" id="6_8jvv5"]
+[ext_resource type="Texture2D" uid="uid://du8mnsf4t03o5" path="res://Resources/CardMaxxing/Assets/IMG_2330.png" id="7_l57n2"]
+[ext_resource type="Texture2D" uid="uid://c8kyg713d2mu" path="res://Resources/CardMaxxing/Assets/IMG_2331.png" id="8_8o5ix"]
+[ext_resource type="Texture2D" uid="uid://ch1df4pi6xct5" path="res://Resources/CardMaxxing/Assets/IMG_2332.png" id="9_oaxh4"]
+[ext_resource type="Texture2D" uid="uid://0efuwqd0pnyx" path="res://Resources/CardMaxxing/Assets/IMG_2333.png" id="10_ha3pj"]
+[ext_resource type="Texture2D" uid="uid://cex8i6gifygct" path="res://Resources/CardMaxxing/Assets/IMG_2334.png" id="11_acmvl"]
+[ext_resource type="Texture2D" uid="uid://bvf5khk03niom" path="res://Resources/CardMaxxing/Assets/IMG_2335.png" id="12_ggl7s"]
+[ext_resource type="Texture2D" uid="uid://b5ntxt013vhxd" path="res://Resources/CardMaxxing/Assets/IMG_2336.png" id="13_llcf3"]
+[ext_resource type="Texture2D" uid="uid://cysc27lrq02g" path="res://Resources/CardMaxxing/Assets/IMG_2423.png" id="14_f3yi5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mdmbe"]
 font = ExtResource("3_6gbdn")
@@ -25,6 +26,12 @@ outline_color = Color(0.7581918, 0.7581918, 0.7581917, 1)
 font = ExtResource("3_6gbdn")
 font_size = 80
 font_color = Color(0.23333335, 1, 0, 1)
+outline_size = 1
+outline_color = Color(0.7581918, 0.7581918, 0.7581917, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8jvv5"]
+font = ExtResource("3_6gbdn")
+font_size = 100
 outline_size = 1
 outline_color = Color(0.7581918, 0.7581918, 0.7581917, 1)
 
@@ -127,3 +134,17 @@ vertical_alignment = 1
 show_behind_parent = true
 position = Vector2(14.429111, 74.625114)
 texture = ExtResource("14_f3yi5")
+
+[node name="Count" type="Sprite2D" parent="SubViewport/DefaultCardSprite" unique_id=2073871040]
+visible = false
+scale = Vector2(1, 1.0000001)
+texture = ExtResource("3_r8cwh")
+
+[node name="Label" type="Label" parent="SubViewport/DefaultCardSprite/Count" unique_id=1728160539]
+offset_left = -170.26292
+offset_top = -956.55676
+offset_right = 193.34956
+offset_bottom = -829.55676
+text = "x30"
+label_settings = SubResource("LabelSettings_8jvv5")
+horizontal_alignment = 1

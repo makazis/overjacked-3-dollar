@@ -55,7 +55,12 @@ func setup(_enemies):
 	#for card in get_parent().get_parent().find_child("CardDeckManager").deck.cards:
 	#	$Deck/CardDeckManager.deck.cards.append(card.duplicate())
 	$CardDeckManager.starting_pile=$Deck
-	$CardDeckManager.setup($CardDeckManager.deck)
+	var new_deck=CardDeck.new()
+	for card_count in Global.player_decks[Global.player_deck_selected]:
+		for i in Global.player_decks[Global.player_deck_selected][card_count]:
+			new_deck.cards.append(Global.card_database[card_count])
+	$CardDeckManager.deck=new_deck
+	$CardDeckManager.setup()
 	$Deck.shuffle()
 	start_the_turn.call_deferred()
 	
@@ -171,6 +176,7 @@ func visual_update():
 	#$Energy/Essence/Concentration.text=CombatData.standart_big_number(CombatData.primeval_essence)
 	pass
 	#fuck you
+#region card manipulation
 func draw_cards(card_count:int=1):
 	for i in range(card_count):
 		await get_tree().create_timer(0.2).timeout
@@ -196,6 +202,7 @@ func get_cards_in_piles(piles=["Deck","DiscardPile","Hand"]):
 		for ii in find_child(i).cards:
 			out_cards.append([i,ii])
 	return out_cards
+#endregion
 func _on_texture_button_button_up() -> void:
 	end_the_turn()
 

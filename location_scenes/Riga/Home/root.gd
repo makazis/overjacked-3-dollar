@@ -16,5 +16,6 @@ func _on_button_2_pressed() -> void:
 
 
 func _on_button_3_pressed() -> void:
-	Global.what_map_am_i_on="Riga"
-	get_tree().change_scene_to_file("res://Resources/MapMaxxing/GraphMaps/Riga/RigaMap.tscn")
+	get_tree().change_scene_to_file("res://location_scenes/Riga/Home/cardrobe.tscn")
+	#Global.what_map_am_i_on="Riga"
+	#get_tree().change_scene_to_file("res://Resources/MapMaxxing/GraphMaps/Riga/RigaMap.tscn")

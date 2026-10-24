@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://bdnbyq1ebovpu"]
+
+[ext_resource type="Script" uid="uid://3qrjy18e08m1" path="res://location_scenes/Riga/Home/cardrobe.gd" id="1_j1y77"]
+[ext_resource type="PackedScene" uid="uid://c4f3qr3emk1ga" path="res://GUI.tscn" id="2_cqg5a"]
+[ext_resource type="PackedScene" uid="uid://bxcvl703fm8rw" path="res://location_scenes/Riga/Home/CardSelector.tscn" id="2_of77r"]
+
+[node name="Cardrobe" type="Node2D" unique_id=1865830278]
+script = ExtResource("1_j1y77")
+
+[node name="Gui" parent="." unique_id=1657345474 instance=ExtResource("2_cqg5a")]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1560467108]
+offset_right = 961.0
+offset_bottom = 655.0
+color = Color(0.39089742, 0.23603815, 0.23742002, 1)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=896707728]
+offset_right = 961.0
+offset_bottom = 655.0
+horizontal_scroll_mode = 0
+
+[node name="GridContainer" type="GridContainer" parent="ScrollContainer" unique_id=324733291]
+layout_mode = 2
+columns = 3
+
+[node name="CardsInDeck" type="ScrollContainer" parent="." unique_id=395549576]
+offset_left = 959.0
+offset_top = 37.0
+offset_right = 1151.0
+offset_bottom = 646.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CardsInDeck" unique_id=1234490177]
+layout_mode = 2
+
+[node name="Control" parent="CardsInDeck/VBoxContainer" unique_id=502881643 instance=ExtResource("2_of77r")]
+layout_mode = 2
+
+[node name="Button3" type="Button" parent="." unique_id=1652679646]
+offset_left = 1085.0
+offset_top = 3.0
+offset_right = 1145.0
+offset_bottom = 34.0
+text = "Back
+"
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=2056954564]
+position = Vector2(-999, -999999)
+
+[node name="Label" type="Label" parent="." unique_id=1651816072]
+offset_left = 968.0
+offset_top = 8.0
+offset_right = 1108.0
+offset_bottom = 31.0
+text = "Not Enough Cards"
+
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]

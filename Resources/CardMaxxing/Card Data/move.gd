@@ -3,7 +3,6 @@ extends CardLayout
 
 @onready var name_label: Label = $SubViewport/DefaultCardSprite/Label
 @onready var description_label: Label = $SubViewport/DefaultCardSprite/Label2
-
 @onready var sprite=$SubViewport/DefaultCardSprite
 #@onready var image: TextureRect = %CardImage
 
@@ -30,5 +29,9 @@ func _update_display() -> void:
 			$"SubViewport/DefaultCardSprite/Two Money".visible=true
 		if data.money_cost==1:
 			$"SubViewport/DefaultCardSprite/One Money".visible=true
-		
+		if count>0:
+			$SubViewport/DefaultCardSprite/Count.visible=true
+			$SubViewport/DefaultCardSprite/Count/Label.text="x"+str(count)
+		else:
+			$SubViewport/DefaultCardSprite/Count.visible=false
 	display_updated.emit()

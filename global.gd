@@ -1,6 +1,17 @@
 extends Node
-
-var money=3.00
+#region misc global functions
+func romanify(num:int):
+	var output=""
+	for i in range(13):
+		while num>=[1000,900,500,400,100,90,50,40,10,9,5,4,1][i]:
+			num-=[1000,900,500,400,100,90,50,40,10,9,5,4,1][i]
+			output+=["M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"][i]
+	return output
+func open_link(link:String):
+	OS.shell_open(link)
+#endregion
+#region money handling
+var money=30000.00
 	
 func earn_money(amount:float,affected_by_multipliers=true): 
 	if affected_by_multipliers:
@@ -14,13 +25,17 @@ func convert_to_cash(a:float):
 	b+="$"
 	return b
 var money_multipliers=[1]
+var last_money_popup=null
+signal make_money_popup(how_much_money:int,reason:String)
+#endregion 
+#region time travel
 var time=0
 var timer_running=true
 var timer_multiplier=1 
 var time_acceleration=1 #good luck figuring out which one does what you fucker. 
 #also high value means time is accelerated more
-# Called when the node enters the scene tree for the first time.
-
+#endregion
+#region clothing code
 var clothes:Array[Clothing]=[]
 var equipped_clothes={
 	"Hat":null,
@@ -49,80 +64,6 @@ func calculate_clothes():
 	clear_clothing_sets()
 	check_clothing_sets()
 	money_multipliers[0]=max(aura,official,cute)/50.+1
-	
-var where_am_i:GraphPoint=null
-var on_map_where_am_i={
-	"Global":"Livonia",
-	"Riga":"House",
-	"London":"Alleyway"
-}
-var what_map_am_i_on="Riga"
-func try_to_go_here(where:GraphPoint):
-	for i in where_am_i.connected_with:
-		if i.connects_to==where:
-			if i.check():
-				i.affect()
-				i.connects_to.go_here()
-				#print("I'm going to "+where.name)
-				break
-var map_paths={
-	"Global":"res://Resources/MapMaxxing/Map.tscn",
-	"Riga":"res://Resources/MapMaxxing/GraphMaps/Riga/RigaMap.tscn",
-	"London":"res://location_scenes/London/LondonMap.tscn",
-}
-var all_locations=[
-	"res://location_scenes/General/buss_scenes/buss_scene_1.tscn",
-	"res://location_scenes/Riga/Carnikava/Carnikava.tscn",
-	"res://location_scenes/Riga/Home/root.tscn",
-	"res://location_scenes/Riga/Home/wardrobe.tscn",
-	"res://location_scenes/Riga/Hospital/Waiting Room.tscn",
-	"res://location_scenes/Riga/Phone House/Phone House.tscn",
-	"res://location_scenes/Riga/Poor Man's Pond/poor_man's_pond.tscn",
-	"res://location_scenes/Riga/Soup Store/soup store.tscn",
-	"res://location_scenes/Riga/Soup Store/fishing_in_backrooms.tscn",
-	"res://location_scenes/Riga/The Dice Goblin/rolling dice.tscn",
-]
-
-func return_to_map():
-	transition_to_scene(map_paths[what_map_am_i_on])
-	#get_tree().change_scene_to_file()
-var last_money_popup=null
-signal make_money_popup(how_much_money:int,reason:String)
-@onready var transitioner=preload("res://Resources/Even I Don't Know/Transition.tscn")
-func transition_to_scene(scene_path):
-	
-	var new_trans=transitioner.instantiate()
-	add_child(new_trans)
-	await new_trans.dies
-	get_tree().change_scene_to_file(scene_path)
-	print(scene_path)
-var pre_combat_scene=""
-func start_combat(_enemies):
-	EffectContext.enemies=_enemies
-	is_combat_going=true
-	transition_to_scene("res://Resources/CardMaxxing/Combat/root.tscn")
-var is_combat_going=false
-func resolve_combat():
-	transition_to_scene(pre_combat_scene)
-var hospital_number=1
-var your_hospital_number=0
-var can_donate_blood=true
-
-var action="":
-	set(value):
-		action=value
-		if value=="Donate Blood":
-			can_donate_blood=false
-			get_tree().change_scene_to_file("res://location_scenes/Riga/Hospital/Waiting Room.tscn")
-			money+=30
-			await get_tree().create_timer(0.1).timeout
-			make_money_popup.emit.call_deferred(3000,"From The Vampires")
-		if value=="":
-			return_to_map()
-
-var max_fish_lives=1
-var fish_lives=1
-var extra_fish_lives=0
 @onready var achievable_clothes={
 	"Fisherman's Hat":preload("res://Resources/Clothes/Achievement Clothes/Fisherman's Hat.tscn"),
 	"God Gamer Trophy":preload("res://Resources/Clothes/Achievement Clothes/God Gamer Trophy.tscn")
@@ -172,24 +113,107 @@ func check_clothing_sets():
 					set_bonuses+="\n"+i+" "+romanify(ii+1)+": "+clothing_sets[i][ii]
 	if len(set_bonuses)>0:
 		set_bonuses="Set Bonuses:"+set_bonuses
-func romanify(num:int):
-	var output=""
-	for i in range(13):
-		while num>=[1000,900,500,400,100,90,50,40,10,9,5,4,1][i]:
-			num-=[1000,900,500,400,100,90,50,40,10,9,5,4,1][i]
-			output+=["M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"][i]
-	return output
+#endregion
+#region map movement n shit
+var where_am_i:GraphPoint=null
+var on_map_where_am_i={
+	"Global":"Livonia",
+	"Riga":"House",
+	"London":"Alleyway"
+}
+var what_map_am_i_on="Riga"
+func try_to_go_here(where:GraphPoint):
+	for i in where_am_i.connected_with:
+		if i.connects_to==where:
+			if i.check():
+				i.affect()
+				i.connects_to.go_here()
+				#print("I'm going to "+where.name)
+				break
+var map_paths={
+	"Global":"res://Resources/MapMaxxing/Map.tscn",
+	"Riga":"res://Resources/MapMaxxing/GraphMaps/Riga/RigaMap.tscn",
+	"London":"res://location_scenes/London/LondonMap.tscn",
+}
+var all_locations=[
+	"res://location_scenes/General/buss_scenes/buss_scene_1.tscn",
+	"res://location_scenes/Riga/Carnikava/Carnikava.tscn",
+	"res://location_scenes/Riga/Home/root.tscn",
+	"res://location_scenes/Riga/Home/wardrobe.tscn",
+	"res://location_scenes/Riga/Hospital/Waiting Room.tscn",
+	"res://location_scenes/Riga/Phone House/Phone House.tscn",
+	"res://location_scenes/Riga/Poor Man's Pond/poor_man's_pond.tscn",
+	"res://location_scenes/Riga/Soup Store/soup store.tscn",
+	"res://location_scenes/Riga/Soup Store/fishing_in_backrooms.tscn",
+	"res://location_scenes/Riga/The Dice Goblin/rolling dice.tscn",
+]
 
-func open_link(link:String):
-	OS.shell_open(link)
+func return_to_map():
+	transition_to_scene(map_paths[what_map_am_i_on])
+	#get_tree().change_scene_to_file()
+@onready var transitioner=preload("res://Resources/Even I Don't Know/Transition.tscn")
+func transition_to_scene(scene_path):
+	
+	var new_trans=transitioner.instantiate()
+	add_child(new_trans)
+	await new_trans.dies
+	get_tree().change_scene_to_file(scene_path)
+	print(scene_path)
+#endregion
+#region combat
+var pre_combat_scene=""
+func start_combat(_enemies):
+	EffectContext.enemies=_enemies
+	is_combat_going=true
+	transition_to_scene("res://Resources/CardMaxxing/Combat/root.tscn")
+var is_combat_going=false
+func resolve_combat():
+	transition_to_scene(pre_combat_scene)
+var player_all_cards={
+	"Strike":14,
+	"Defend":14,
+}
+var card_database={
+	"Strike":load("res://Resources/CardMaxxing/Card Data/John Politiican/strike.tres"),
+	"Defend":load("res://Resources/CardMaxxing/Card Data/John Politiican/defend.tres"),
+}
+var player_decks=[
+	{"Strike":7,"Defend":8},
+]
+var player_deck_selected=0
+#endregion
+#region locations
+var action="":
+	set(value):
+		action=value
+		if value=="Donate Blood":
+			can_donate_blood=false
+			get_tree().change_scene_to_file("res://location_scenes/Riga/Hospital/Waiting Room.tscn")
+			money+=30
+			await get_tree().create_timer(0.1).timeout
+			make_money_popup.emit.call_deferred(3000,"From The Vampires")
+		if value=="":
+			return_to_map()
+#region hospital (Riga)
+var hospital_number=1
+var your_hospital_number=0
+var can_donate_blood=true
+#endregion
+#region fish minigame
+var max_fish_lives=1
+var fish_lives=1
+var extra_fish_lives=0
+#endregion
+#endregion
+#region ready
 func _ready() -> void:
 	print("Get ready to suffer")
 	what_map_am_i_on=str(get_tree().root.get_children()[-1].name)
 	EffectContext.combat_ends.connect(resolve_combat)
 
 	pass # Replace with function body.
-
-
+#endregion
+#region process
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	time+=delta*int(timer_running)*timer_multiplier #convert from bool to int for that extra spice. 
@@ -197,3 +221,4 @@ func _process(delta: float) -> void:
 		#random ticker
 		if randi_range(0,8)==0:
 			hospital_number+=1
+#endregion

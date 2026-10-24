@@ -57,7 +57,7 @@ signal setup_completed(card: Card, resource: CardResource)
 @export var flip_in_animation: CardAnimationResource
 @export var flip_out_animation: CardAnimationResource
 
-
+var count=0
 ##Reference to the [Card] used to initialize the layout.
 var card_instance: Card
 

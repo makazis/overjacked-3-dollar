@@ -16,9 +16,7 @@
 [ext_resource type="BitMap" uid="uid://7k554wiexp0c" path="res://Resources/CardMaxxing/Assets/EndTurnButtonBitmap.bmp" id="21_i8h5o"]
 [ext_resource type="Script" uid="uid://c8315v58tr66b" path="res://addons/simple_cards/card/card_resource/card_resource.gd" id="22_8vl8d"]
 [ext_resource type="Texture2D" uid="uid://bon7f2i5e3exw" path="res://Resources/CardMaxxing/Assets/IMG_2337.png" id="22_g2ija"]
-[ext_resource type="Resource" uid="uid://x08r57e1mwbk" path="res://Resources/CardMaxxing/Card Data/John Politiican/defend.tres" id="23_a5ca0"]
 [ext_resource type="Texture2D" uid="uid://bmw8g5ig86jth" path="res://Resources/CardMaxxing/Assets/IMG_2338.png" id="23_skhyk"]
-[ext_resource type="Resource" uid="uid://c1jq44mgb3s2n" path="res://Resources/CardMaxxing/Card Data/John Politiican/Strike.tres" id="24_qsw00"]
 [ext_resource type="Texture2D" uid="uid://irsf7u6y1sor" path="res://Resources/CardMaxxing/Assets/IMG_2339.png" id="25_jlb0g"]
 [ext_resource type="Script" uid="uid://lhb5ry3o8icy" path="res://addons/simple_cards/deck/card_deck.gd" id="25_rmwhy"]
 [ext_resource type="Texture2D" uid="uid://d0f4hmyp4iv34" path="res://Resources/CardMaxxing/Assets/IMG_2340.png" id="26_88goi"]
@@ -61,7 +59,6 @@ metadata/_custom_type_script = "uid://b1s6x4iyt2pps"
 
 [sub_resource type="Resource" id="Resource_yf5fn"]
 script = ExtResource("25_rmwhy")
-cards = Array[ExtResource("22_8vl8d")]([ExtResource("23_a5ca0"), ExtResource("23_a5ca0"), ExtResource("23_a5ca0"), ExtResource("23_a5ca0"), ExtResource("23_a5ca0"), ExtResource("24_qsw00"), ExtResource("24_qsw00"), ExtResource("24_qsw00"), ExtResource("24_qsw00"), ExtResource("24_qsw00")])
 metadata/_custom_type_script = "uid://lhb5ry3o8icy"
 
 [node name="Root" type="Node2D" unique_id=1328499140]

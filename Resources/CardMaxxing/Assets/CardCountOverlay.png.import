@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfml5twrtctps"
-path="res://.godot/imported/Overjacked 3 dollar.apple-touch-icon.png-37cd1245fc749bd0f7eb3fb3c3c1b798.ctex"
+uid="uid://cwcd8dn7qd3ol"
+path="res://.godot/imported/CardCountOverlay.png-bdb83e6e603a09772722cf53f4822249.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Exports/E3/Overjacked 3 dollar.apple-touch-icon.png"
-dest_files=["res://.godot/imported/Overjacked 3 dollar.apple-touch-icon.png-37cd1245fc749bd0f7eb3fb3c3c1b798.ctex"]
+source_file="res://Resources/CardMaxxing/Assets/CardCountOverlay.png"
+dest_files=["res://.godot/imported/CardCountOverlay.png-bdb83e6e603a09772722cf53f4822249.ctex"]
 
 [params]
 

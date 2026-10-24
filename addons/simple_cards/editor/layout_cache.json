@@ -9,7 +9,7 @@
 	},
 	"res://Resources/CardMaxxing/Card Data/move.tscn": {
 		"enabled": true,
-		"last_modified": 1784921629.0,
+		"last_modified": 1792665766,
 		"layout_id": "Move",
 		"tags": [
 			"playable"

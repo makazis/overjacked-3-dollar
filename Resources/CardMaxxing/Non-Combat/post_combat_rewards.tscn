@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c0tru4mouci7u"]
 
-[ext_resource type="Script" uid="uid://dxape0h1oe6tu" path="res://Non-Combat/post_combat_rewards.gd" id="1_qijtu"]
+[ext_resource type="Script" uid="uid://dxape0h1oe6tu" path="res://Resources/CardMaxxing/Non-Combat/post_combat_rewards.gd" id="1_qijtu"]
 
 [node name="Node2D" type="Node2D" unique_id=130116637]
 script = ExtResource("1_qijtu")

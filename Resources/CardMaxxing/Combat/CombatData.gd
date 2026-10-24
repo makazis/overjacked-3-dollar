@@ -25,6 +25,9 @@ signal root_visual_update()
 signal start_turn(turn_index:int)
 signal end_turn(turn_index:int)
 signal end_game()
+
+signal card_interaction()
+signal card_selector_interaction()
 signal I_NEED_MORE_SCREEN_SHAKE(screen_shake:int)
 
 var short_pause=false
@@ -53,6 +56,12 @@ func gu_worm_start_of_turn_effects(turn_number:int):
 	for worm in player_gu_worms:
 		worm.start_turn(turn_number)
 func on_card_clicked(card:Card):
-	if EffectContext.roles["Caster"][0]==null:
-		return
-	EffectContext.roles["Caster"][0].combat_root.on_card_clicked(card)
+	if Global.is_combat_going:
+		if EffectContext.roles["Caster"][0]==null:
+			return
+		EffectContext.roles["Caster"][0].combat_root.on_card_clicked(card)
+	elif Global.on_map_where_am_i[Global.what_map_am_i_on]=="House":
+		#Cardrobe Code
+		#print("THIS")
+		card_interaction.emit(card)
+	#print(Global.on_map_where_am_i[Global.what_map_am_i_on])
