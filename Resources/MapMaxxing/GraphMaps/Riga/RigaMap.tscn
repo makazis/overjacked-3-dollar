@@ -193,7 +193,6 @@ graph_arguments = Array[ExtResource("9_y6n6c")]([SubResource("Resource_fclkh")])
 
 [node name="graph_point_with_conditions3" type="Node2D" parent="Lāčplēša Iela (A)" unique_id=186245671 node_paths=PackedStringArray("connects_to")]
 visible = false
-position = Vector2(-162, -13)
 script = ExtResource("4_gy4n5")
 connects_to = NodePath("../../SteveTheDiceGoblin")
 metadata/_custom_type_script = "uid://crujsi4571xf0"

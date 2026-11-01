@@ -14,6 +14,7 @@ func transition_to_scene(scene_name:String):
 	tween.tween_property($ColorRect,'modulate',Color(1,1,1,1),0.5)
 	await tween.finished
 	get_tree().change_scene_to_file(scene_name)
+var timer=0
 func _process(delta: float) -> void:
 	timer+=delta
 	if randf()<delta*10*pow(Phone.overjacked_setting/100.,6):
