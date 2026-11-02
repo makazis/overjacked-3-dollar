@@ -15,6 +15,13 @@ offset_right = 466.0
 offset_bottom = 133.0
 text = "Visit Steve the dice goblin"
 
+[node name="Button2" type="Button" parent="." unique_id=81959481]
+offset_left = 670.0
+offset_top = 74.0
+offset_right = 875.0
+offset_bottom = 105.0
+text = "Head out"
+
 [node name="Label" type="Label" parent="." unique_id=733865327]
 offset_left = 675.0
 offset_top = 25.0
@@ -23,3 +30,4 @@ offset_bottom = 48.0
 text = "Home"
 
 [connection signal="pressed" from="Button" to="." method="gobbl_button"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

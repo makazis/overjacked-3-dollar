@@ -9,3 +9,7 @@ func _ready() -> void:
 
 func gobbl_button() -> void:
 	get_tree().change_scene_to_file("res://location_scenes/The Dice Goblin/rolling dice.tscn")
+
+
+func _on_button_2_pressed() -> void:
+	get_tree().change_scene_to_file("res://location_scenes/city.tscn")

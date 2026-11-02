@@ -1,0 +1,95 @@
+[gd_scene format=4 uid="uid://bbx8sqtfxtbly"]
+
+[ext_resource type="Material" uid="uid://quompr0cjsiw" path="res://Assets/brick.tres" id="1_81evh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dhklb"]
+size = Vector3(10, 0.2, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nct7k"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_0uilg"]
+_surfaces = [{
+"aabb": AABB(-5, -0.05714285, -5, 10, 0.1, 10),
+"format": 34359742465,
+"index_count": 102,
+"index_data": PackedByteArray("AAABAAIAAAADAAEAAgAEAAAABQACAAEAAgAFAAQABQABAAYABQAHAAQABQAGAAgABQAJAAcACQAKAAcABQAIAAsACQAMAAoADAANAAoADAAOAA0ADwAOAAwADwAMAAkABQAQAAkAEAAPAAkABQALABAAEAARAA8AEAASABEAEAATABIAFAASABMAFAAVABIAFgAUABMAFgATABAACwAWABAACwAXABYACwAYABcACwAZABgAGQAaABgACAAZAAsAGQAbABoACAAbABkA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 28,
+"vertex_data": PackedByteArray("AACgwPuKLz0AAEDAAABAwPuKLz0AAKDAAABAwPuKLz0AAEDAAACgwPuKLz0AAKDAAACgwJ8Oar0AAEDAAABAwJ8Oar0AAEDAAABAwJ8Oar0AAKDAAACgwJ8Oar0AAEBAAABAQJ8Oar0AAKDAAABAwJ8Oar0AAEBAAACgwPuKLz0AAEBAAABAQJ8Oar0AAEDAAABAwPuKLz0AAEBAAACgwPuKLz0AAKBAAABAwPuKLz0AAKBAAABAwJ8Oar0AAKBAAABAQJ8Oar0AAEBAAABAQJ8Oar0AAKBAAABAQPuKLz0AAKBAAABAQPuKLz0AAEBAAACgQPuKLz0AAEBAAACgQPuKLz0AAKBAAACgQJ8Oar0AAEBAAACgQJ8Oar0AAEDAAACgQPuKLz0AAEDAAABAQPuKLz0AAEDAAACgQPuKLz0AAKDAAABAQPuKLz0AAKDA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_vrw1l"]
+resource_name = "City-streets_Plane_001"
+_surfaces = [{
+"aabb": AABB(-5, -0.05714285, -5, 10, 0.1, 10),
+"attribute_data": PackedByteArray("AAAAAAAAgD8AAIA/AAAAAAAAgD8AAIA/AAAAAAAAAAAAAIA/AACAPwAAAAAAAIA/AAAAAAAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAgD8AAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAgD8AAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAAAAAACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/"),
+"format": 34359742487,
+"index_count": 102,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkACAAMAA0ACAANAA4ACAAPAAsACAAOAA8ADwAQAAsADwARABAADgASAA8ADgATABIAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0AMAAxADIAMAAzADEANAA1ADYANAA3ADUAOAA5ADoAOAA7ADkA"),
+"material": SubResource("StandardMaterial3D_nct7k"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 60,
+"vertex_data": PackedByteArray("AACgwPuKLz0AAEDAAABAwPuKLz0AAKDAAABAwPuKLz0AAEDAAACgwPuKLz0AAKDAAABAwPuKLz0AAEDAAACgwJ8Oar0AAEDAAACgwPuKLz0AAEDAAABAwJ8Oar0AAEDAAABAwJ8Oar0AAEDAAACgwJ8Oar0AAEBAAACgwJ8Oar0AAEDAAABAwJ8Oar0AAEBAAABAwJ8Oar0AAKDAAABAQJ8Oar0AAKDAAABAQJ8Oar0AAEDAAABAQJ8Oar0AAEBAAABAwJ8Oar0AAKBAAABAQJ8Oar0AAKBAAACgQJ8Oar0AAEBAAACgQJ8Oar0AAEDAAABAwJ8Oar0AAEBAAACgwPuKLz0AAEBAAACgwJ8Oar0AAEBAAABAwPuKLz0AAEBAAABAwPuKLz0AAEBAAACgwPuKLz0AAKBAAACgwPuKLz0AAEBAAABAwPuKLz0AAKBAAABAwJ8Oar0AAKBAAABAwPuKLz0AAEBAAABAwJ8Oar0AAEBAAABAwPuKLz0AAKBAAABAwJ8Oar0AAEDAAABAwPuKLz0AAKDAAABAwJ8Oar0AAKDAAABAwPuKLz0AAEDAAABAQJ8Oar0AAEDAAACgQPuKLz0AAEDAAACgQJ8Oar0AAEDAAABAQPuKLz0AAEDAAABAQJ8Oar0AAKDAAABAQPuKLz0AAEDAAABAQJ8Oar0AAEDAAABAQPuKLz0AAKDAAABAQPuKLz0AAEDAAACgQPuKLz0AAKDAAACgQPuKLz0AAEDAAABAQPuKLz0AAKDAAACgQJ8Oar0AAEBAAABAQPuKLz0AAEBAAABAQJ8Oar0AAEBAAACgQPuKLz0AAEBAAABAQJ8Oar0AAEBAAABAQPuKLz0AAKBAAABAQJ8Oar0AAKBAAABAQPuKLz0AAEBAAACgQPuKLz0AAEBAAABAQPuKLz0AAKBAAABAQPuKLz0AAEBAAACgQPuKLz0AAKBA/3///////7//f///////v/9///////+//3///////7//f/9/////P/9//3////8//3//f////z//f/9/////P/9///////8//3///////z//f///////P/9///////8//3///////z//f///////P/9///////8//3///////z//f///////P/9///////8//3///////z//f///////P/////////8//////////z//////////P/////////8//3///////z//f///////P/9///////8//3///////z////9/////v////3////+/////f////7////9/////v////3////+/////f////7////9/////v////3////+//3//f////z//f/9/////P/9//3////8//3//f////z8AAP9/////vwAA/3////+/AAD/f////78AAP9/////v/9///////8//3///////z//f///////P/9///////8//////////z//////////P/////////8//////////z8AAP9/////vwAA/3////+/AAD/f////78AAP9/////v/9///////8//3///////z//f///////P/9///////8/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_0uilg")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7dsc2"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_yiyo0"]
+_surfaces = [{
+"aabb": AABB(-5, -0.05714285, -5, 10, 0.1, 10),
+"format": 34896613377,
+"index_count": 30,
+"index_data": PackedByteArray("AAABAAIAAAADAAEAAgAEAAAAAwAFAAEAAgAGAAQABwAEAAYABwAGAAgAAwAJAAUACQAKAAUACQALAAoA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("//8AADMzAAAAAAAAzMwAAAAAAAAzMwAA//8AAMzMAAD/////MzMAAAAA///MzAAAAAD//zMzAAD/////AAAAAAAA//8AAAAA/////8zMAAAAAP////8AAP///////wAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_wobba"]
+resource_name = "City-streets_Plane_002"
+_surfaces = [{
+"aabb": AABB(-5, -0.05714285, -5, 10, 0.1, 10),
+"attribute_data": PackedByteArray("AAD//wAA//8AAP////////////8AAP//AAAAAP//////////AAD//wAA/////////////wAA//8AAP///////wAA////////AAD//wAA//8="),
+"format": 34896613399,
+"index_count": 30,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEA"),
+"material": SubResource("StandardMaterial3D_7dsc2"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 20,
+"vertex_data": PackedByteArray("//8AADMz/z8AAAAAzMz/PwAAAAAzM/8///8AAMzM/z//////AABkwAAA//8zM2TAAAD//wAAZMD/////MzP/P//////MzP8/AAD//////z8AAP//zMz/P/////////8///8AAMzMAAAAAP//zMwAAAAAAADMzAAA/////8zMAAAAAAAAMzP+f/////8zM/5///8AADMz/n8AAP//MzP+f////3////9/////f////39q9ddqavXXamr112r///9/////f////3////9/////f////3////9/////f////3//f////3////9/////f///")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_yiyo0")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ddfb5"]
+size = Vector2(10, 10)
+
+[node name="Node3D" type="StaticBody3D" unique_id=1807645722]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=478199322]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+shape = SubResource("BoxShape3D_dhklb")
+
+[node name="1" type="MeshInstance3D" parent="." unique_id=907427902]
+visible = false
+material_override = ExtResource("1_81evh")
+mesh = SubResource("ArrayMesh_vrw1l")
+
+[node name="2" type="MeshInstance3D" parent="." unique_id=628389512]
+visible = false
+material_override = ExtResource("1_81evh")
+mesh = SubResource("ArrayMesh_wobba")
+
+[node name="3" type="MeshInstance3D" parent="." unique_id=306540675]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
+visible = false
+material_override = ExtResource("1_81evh")
+mesh = SubResource("PlaneMesh_ddfb5")

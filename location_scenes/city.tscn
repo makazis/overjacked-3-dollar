@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://bh1gxoyc0y80a"]
+
+[ext_resource type="Script" uid="uid://cq5m6k3radxm" path="res://scripts/city_gen.gd" id="1_3fdo0"]
+[ext_resource type="Script" uid="uid://cuywc4thn044v" path="res://location_scenes/character_body_3d.gd" id="2_cd7ey"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cd7ey"]
+sky_top_color = Color(0, 1, 1, 1)
+sky_horizon_color = Color(0.91418296, 1.0279084, 1.1328104, 1)
+ground_bottom_color = Color(0.54509807, 0, 0.41960785, 1)
+ground_horizon_color = Color(0.91418296, 1.0279084, 1.1328104, 1)
+energy_multiplier = 1.2
+
+[sub_resource type="Sky" id="Sky_b5o6a"]
+sky_material = SubResource("ProceduralSkyMaterial_cd7ey")
+
+[sub_resource type="Environment" id="Environment_1rpx8"]
+background_mode = 2
+sky = SubResource("Sky_b5o6a")
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_dhklb"]
+radius = 0.2
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dhklb"]
+radius = 0.2
+
+[node name="City" type="Node3D" unique_id=812310673]
+script = ExtResource("1_3fdo0")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=929267130]
+environment = SubResource("Environment_1rpx8")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=960232451]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Tiles" type="Node3D" parent="." unique_id=487294587]
+
+[node name="Player" type="Node3D" parent="." unique_id=140175288]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="Player" unique_id=1266085733]
+script = ExtResource("2_cd7ey")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player/CharacterBody3D" unique_id=317643478]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_dhklb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/CharacterBody3D" unique_id=1189948211]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_dhklb")
+
+[node name="neck" type="Node3D" parent="Player/CharacterBody3D" unique_id=1783202498]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Player/CharacterBody3D/neck" unique_id=100530176]
+current = true
+fov = 125.0

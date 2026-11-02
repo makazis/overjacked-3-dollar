@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://quompr0cjsiw"]
+
+[ext_resource type="Texture2D" uid="uid://dgex0ymams2be" path="res://Assets/vaido-REdbENJmBB8-unsplash.jpg" id="1_qb77b"]
+
+[resource]
+albedo_color = Color(0.42365062, 0.42365065, 0.42365062, 1)
+albedo_texture = ExtResource("1_qb77b")
+metallic_specular = 0.0
+ao_enabled = true
+ao_light_affect = 1.0
+uv1_scale = Vector3(10, 10, 10)
