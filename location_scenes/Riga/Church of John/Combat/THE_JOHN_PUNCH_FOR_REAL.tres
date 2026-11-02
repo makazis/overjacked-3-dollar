@@ -1,0 +1,61 @@
+[gd_resource type="Resource" script_class="Gu_Move" format=3 uid="uid://ltlhet027c6"]
+
+[ext_resource type="Script" uid="uid://bp3qpdpnu4oiy" path="res://Resources/CardMaxxing/Card Data/Card Tags/card_tag.gd" id="1_6vf3h"]
+[ext_resource type="Texture2D" uid="uid://bd0tsvbjbw8j3" path="res://location_scenes/Riga/Church of John/Combat/John Punch.png" id="1_wnhwm"]
+[ext_resource type="Script" uid="uid://c7xhxk6bgq13p" path="res://Resources/CardMaxxing/Card Data/Gu/gu_move.gd" id="2_wnhwm"]
+[ext_resource type="Script" uid="uid://0okdd0vdqmcv" path="res://Resources/CardMaxxing/Card Data/Card Tags/EXHAUST.gd" id="3_dcgi8"]
+[ext_resource type="Script" uid="uid://c05j30rnbu6y7" path="res://Resources/CardMaxxing/Effect Building/Combat/Apply Status.gd" id="4_t1hp3"]
+[ext_resource type="Script" uid="uid://drt5po2eht3pn" path="res://Resources/CardMaxxing/Effect Building/Combat/Deal Damage Static.gd" id="4_wfygh"]
+[ext_resource type="Script" uid="uid://co0nojkhbeoum" path="res://Resources/CardMaxxing/Effect Building/Target_Handling/targetCriteria.gd" id="7_qyl2p"]
+
+[sub_resource type="Resource" id="Resource_3nv23"]
+script = ExtResource("3_dcgi8")
+metadata/_custom_type_script = "uid://0okdd0vdqmcv"
+
+[sub_resource type="Resource" id="Resource_wfygh"]
+script = ExtResource("4_wfygh")
+damage = 10
+metadata/_custom_type_script = "uid://drt5po2eht3pn"
+
+[sub_resource type="Resource" id="Resource_a8p5w"]
+script = ExtResource("4_t1hp3")
+target = "Caster"
+amount = 6
+status_effect = "Burning"
+next_effect = SubResource("Resource_wfygh")
+metadata/_custom_type_script = "uid://c05j30rnbu6y7"
+
+[sub_resource type="Resource" id="Resource_x5mql"]
+script = ExtResource("4_t1hp3")
+target = "Caster"
+amount = 10
+status_effect = "Shackle"
+next_effect = SubResource("Resource_a8p5w")
+metadata/_custom_type_script = "uid://c05j30rnbu6y7"
+
+[sub_resource type="Resource" id="Resource_yds2w"]
+script = ExtResource("4_t1hp3")
+target = "Caster"
+amount = 10
+next_effect = SubResource("Resource_x5mql")
+metadata/_custom_type_script = "uid://c05j30rnbu6y7"
+
+[sub_resource type="Resource" id="Resource_loftv"]
+script = ExtResource("7_qyl2p")
+team = "Enemy"
+metadata/_custom_type_script = "uid://co0nojkhbeoum"
+
+[resource]
+script = ExtResource("2_wnhwm")
+money_cost = 0
+time_cost = 2
+art = ExtResource("1_wnhwm")
+card_name = "The John Punch"
+card_description = "Gain 10 strength this turn
+Gain 6 burning
+Deal 10 damage to the enemy
+Exhaust"
+effect = SubResource("Resource_yds2w")
+target_criteria = SubResource("Resource_loftv")
+card_tags = Array[ExtResource("1_6vf3h")]([SubResource("Resource_3nv23")])
+metadata/_custom_type_script = "uid://c7xhxk6bgq13p"

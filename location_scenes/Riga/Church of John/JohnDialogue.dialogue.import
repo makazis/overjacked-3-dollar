@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://xq6c5dceae0"
+path="res://.godot/imported/JohnDialogue.dialogue-060d139a49905ce0ff84f0ba3004fbed.tres"
+
+[deps]
+
+source_file="res://location_scenes/Riga/Church of John/JohnDialogue.dialogue"
+dest_files=["res://.godot/imported/JohnDialogue.dialogue-060d139a49905ce0ff84f0ba3004fbed.tres"]
+
+[params]
+
+defaults=true

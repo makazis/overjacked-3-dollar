@@ -1,0 +1,19 @@
+~ start
+You kneel down and raise your hands in a prayer. 
+You can hear a voice, somewhere near you.
+Seems that gods might answer your prayer.
+=> pray_selection
+
+~ pray_selection
+What do you pray for?
+- I pray to ascend to the heavens. 
+	$> Global.open_link("https://discord.gg/HY8xPSG9Jp")
+	$> Global.action=""
+- I pray to become wealthy. 
+	God: lol
+	God: lmao even
+	God: Nuh-uh
+	$> Global.action=""
+- I wish to leave
+	$> Global.action=""
+=> END

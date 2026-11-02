@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="Creature" format=3 uid="uid://20301r8nahbi"]
 
-[ext_resource type="Script" uid="uid://b1220yr12wl0u" path="res://Creature Data/Attack_Pattern/EnemyAttackMove.gd" id="1_k3j5a"]
-[ext_resource type="Script" uid="uid://cs1e2lwpafbvf" path="res://Creature Data/creature_layout.gd" id="1_mvw8v"]
-[ext_resource type="Script" uid="uid://crwrqd6c7y8wu" path="res://Creature Data/Attack_Pattern/Attack_Pattern.gd" id="2_nstxp"]
-[ext_resource type="Script" uid="uid://cxk8nxq7mevbi" path="res://Creature Data/Attack_Pattern/new_script.gd" id="2_p6vx8"]
-[ext_resource type="Texture2D" uid="uid://c86gha61x8hk1" path="res://Assets/mss.png" id="3_p6vx8"]
+[ext_resource type="Script" uid="uid://b1220yr12wl0u" path="res://Resources/CardMaxxing/Creature Data/Attack_Pattern/EnemyAttackMove.gd" id="1_k3j5a"]
+[ext_resource type="Script" uid="uid://cs1e2lwpafbvf" path="res://Resources/CardMaxxing/Creature Data/creature_layout.gd" id="1_mvw8v"]
+[ext_resource type="Script" uid="uid://crwrqd6c7y8wu" path="res://Resources/CardMaxxing/Creature Data/Attack_Pattern/Attack_Pattern.gd" id="2_nstxp"]
+[ext_resource type="Script" uid="uid://cxk8nxq7mevbi" path="res://Resources/CardMaxxing/Creature Data/Attack_Pattern/new_script.gd" id="2_p6vx8"]
+[ext_resource type="Texture2D" uid="uid://c86gha61x8hk1" path="res://Resources/CardMaxxing/Assets/mss.png" id="3_p6vx8"]
 
 [sub_resource type="Resource" id="Resource_fv0nq"]
 script = ExtResource("2_p6vx8")

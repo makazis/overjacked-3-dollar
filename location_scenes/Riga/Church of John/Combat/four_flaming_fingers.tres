@@ -1,0 +1,45 @@
+[gd_resource type="Resource" script_class="Gu_Move" format=3 uid="uid://c3yod033dudjy"]
+
+[ext_resource type="Texture2D" uid="uid://cwo6risjcumsm" path="res://location_scenes/Riga/Church of John/Combat/Four Flaming Fingers.png" id="1_li0gk"]
+[ext_resource type="Script" uid="uid://bp3qpdpnu4oiy" path="res://Resources/CardMaxxing/Card Data/Card Tags/card_tag.gd" id="2_20esm"]
+[ext_resource type="Script" uid="uid://c05j30rnbu6y7" path="res://Resources/CardMaxxing/Effect Building/Combat/Apply Status.gd" id="3_b8vi4"]
+[ext_resource type="Script" uid="uid://drt5po2eht3pn" path="res://Resources/CardMaxxing/Effect Building/Combat/Deal Damage Static.gd" id="4_qu6ik"]
+[ext_resource type="Script" uid="uid://bl1kp2n20pfe1" path="res://Resources/CardMaxxing/Effect Building/Logic Oriented/times.gd" id="5_6yxuf"]
+[ext_resource type="Script" uid="uid://c7xhxk6bgq13p" path="res://Resources/CardMaxxing/Card Data/Gu/gu_move.gd" id="6_6v7eq"]
+[ext_resource type="Script" uid="uid://co0nojkhbeoum" path="res://Resources/CardMaxxing/Effect Building/Target_Handling/targetCriteria.gd" id="7_d4udw"]
+
+[sub_resource type="Resource" id="Resource_n2rfx"]
+script = ExtResource("3_b8vi4")
+amount = 2
+status_effect = "Burning"
+metadata/_custom_type_script = "uid://c05j30rnbu6y7"
+
+[sub_resource type="Resource" id="Resource_k56wm"]
+script = ExtResource("4_qu6ik")
+damage = 2
+next_effect = SubResource("Resource_n2rfx")
+metadata/_custom_type_script = "uid://drt5po2eht3pn"
+
+[sub_resource type="Resource" id="Resource_g474n"]
+script = ExtResource("5_6yxuf")
+execute = SubResource("Resource_k56wm")
+times = 5
+metadata/_custom_type_script = "uid://bl1kp2n20pfe1"
+
+[sub_resource type="Resource" id="Resource_0annc"]
+script = ExtResource("7_d4udw")
+team = "Enemy"
+metadata/_custom_type_script = "uid://co0nojkhbeoum"
+
+[resource]
+script = ExtResource("6_6v7eq")
+money_cost = 0
+time_cost = 2
+art = ExtResource("1_li0gk")
+card_name = "Four Flaming Fingers"
+card_description = "Deal 2 damage &
+Apply 2 burning
+five times"
+effect = SubResource("Resource_g474n")
+target_criteria = SubResource("Resource_0annc")
+metadata/_custom_type_script = "uid://c7xhxk6bgq13p"

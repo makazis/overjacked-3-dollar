@@ -14,3 +14,8 @@ class_name Gu_Move extends "res://Resources/CardMaxxing/Card Data/card_super.gd"
 func is_played():
 	if parent_gu!=null:
 		parent_gu.gu_move_used(self)
+func exhausts():
+	for tag in card_tags:
+		if tag is ExhaustCardTag:
+			return true
+	return false

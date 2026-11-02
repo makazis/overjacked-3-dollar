@@ -55,12 +55,9 @@ func check_if_combat_ends():
 			enemies+=1
 	if friendlies==0 or enemies==0: #combat ends
 		won=friendlies>0
-		if !won:
-			await get_tree().process_frame
-			get_tree().change_scene_to_file("res://Menumaxxing/Main Menu/main_menu.tscn")
-			return
 		on_end_game()
 func on_end_game():
+	print("Ending Combat")
 	if 1:
 		for entity in all_entities:
 			entity.queue_free()

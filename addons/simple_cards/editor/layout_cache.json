@@ -1,7 +1,7 @@
 {
 	"res://Resources/CardMaxxing/Card Data/Card Tags/unplayable.tscn": {
 		"enabled": true,
-		"last_modified": 1784905993.0,
+		"last_modified": 1792602255,
 		"layout_id": "unplayable",
 		"tags": [
 			"unplayable"
@@ -9,7 +9,7 @@
 	},
 	"res://Resources/CardMaxxing/Card Data/move.tscn": {
 		"enabled": true,
-		"last_modified": 1792665766,
+		"last_modified": 1793562986,
 		"layout_id": "Move",
 		"tags": [
 			"playable"

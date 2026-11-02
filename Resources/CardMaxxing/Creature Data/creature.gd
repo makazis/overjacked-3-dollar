@@ -145,7 +145,7 @@ func render_attack():
 	update_target_line()
 func update_target_line():
 	if target!=null and len(targets)>0:
-		$Line2D.set_point_position(1,((target.center.global_position-center.global_position)))
+		$Line2D.set_point_position(1,((target.center.global_position-center.global_position)/center.global_scale))
 	else:
 		$Line2D.set_point_position(1,$Line2D.get_point_position(0))
 var target:Creature_Node=null

@@ -49,7 +49,8 @@ func _on_timer_timeout() -> void:
 	$Button3.visible=true
 	$"huh?".visible=false
 	$Gui.can_exit_to_map=true
-	$Button4.visible=true
+	if Global.combat_unlocked:
+		$Button4.visible=true
 
 
 func _on_button_4_pressed() -> void:

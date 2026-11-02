@@ -1,0 +1,125 @@
+[gd_resource type="Resource" script_class="Creature" format=3 uid="uid://b8m2pyvs5atct"]
+
+[ext_resource type="Script" uid="uid://b1220yr12wl0u" path="res://Resources/CardMaxxing/Creature Data/Attack_Pattern/EnemyAttackMove.gd" id="1_4iyfm"]
+[ext_resource type="Script" uid="uid://cs1e2lwpafbvf" path="res://Resources/CardMaxxing/Creature Data/creature_layout.gd" id="1_f4wja"]
+[ext_resource type="Script" uid="uid://cxk8nxq7mevbi" path="res://Resources/CardMaxxing/Creature Data/Attack_Pattern/new_script.gd" id="2_5b743"]
+[ext_resource type="Script" uid="uid://crwrqd6c7y8wu" path="res://Resources/CardMaxxing/Creature Data/Attack_Pattern/Attack_Pattern.gd" id="3_08jj0"]
+[ext_resource type="Texture2D" uid="uid://d2gvwgpincg01" path="res://location_scenes/Riga/Church of John/John Politician (enemy).png" id="4_mb61g"]
+
+[sub_resource type="Resource" id="Resource_mb61g"]
+script = ExtResource("2_5b743")
+type = "Attack"
+amount = 2
+times = 3
+metadata/_custom_type_script = "uid://cxk8nxq7mevbi"
+
+[sub_resource type="Resource" id="Resource_xpyde"]
+script = ExtResource("2_5b743")
+type = "Block"
+amount = 2
+times = 3
+metadata/_custom_type_script = "uid://cxk8nxq7mevbi"
+
+[sub_resource type="Resource" id="Resource_0h2kk"]
+script = ExtResource("1_4iyfm")
+actions = Array[ExtResource("2_5b743")]([SubResource("Resource_mb61g"), SubResource("Resource_xpyde")])
+name = "Karate"
+metadata/_custom_type_script = "uid://b1220yr12wl0u"
+
+[sub_resource type="Resource" id="Resource_wepmc"]
+script = ExtResource("2_5b743")
+type = "Buff"
+amount = 3
+metadata/_custom_type_script = "uid://cxk8nxq7mevbi"
+
+[sub_resource type="Resource" id="Resource_q77on"]
+script = ExtResource("2_5b743")
+type = "Buff"
+amount = 3
+status_type = "Dexterity"
+metadata/_custom_type_script = "uid://cxk8nxq7mevbi"
+
+[sub_resource type="Resource" id="Resource_q0cww"]
+script = ExtResource("1_4iyfm")
+actions = Array[ExtResource("2_5b743")]([SubResource("Resource_wepmc"), SubResource("Resource_q77on")])
+name = "Tai Chi"
+metadata/_custom_type_script = "uid://b1220yr12wl0u"
+
+[sub_resource type="Resource" id="Resource_wr6jy"]
+script = ExtResource("2_5b743")
+type = "Attack"
+amount = 13
+metadata/_custom_type_script = "uid://cxk8nxq7mevbi"
+
+[sub_resource type="Resource" id="Resource_mbmng"]
+script = ExtResource("2_5b743")
+type = "Block"
+amount = 13
+metadata/_custom_type_script = "uid://cxk8nxq7mevbi"
+
+[sub_resource type="Resource" id="Resource_4iyfm"]
+script = ExtResource("1_4iyfm")
+actions = Array[ExtResource("2_5b743")]([SubResource("Resource_wr6jy"), SubResource("Resource_mbmng")])
+name = "Boxing"
+metadata/_custom_type_script = "uid://b1220yr12wl0u"
+
+[sub_resource type="Resource" id="Resource_45npr"]
+script = ExtResource("2_5b743")
+type = "Buff"
+amount = 6
+metadata/_custom_type_script = "uid://cxk8nxq7mevbi"
+
+[sub_resource type="Resource" id="Resource_iva1b"]
+script = ExtResource("2_5b743")
+type = "Buff"
+amount = 8
+status_type = "Burning"
+metadata/_custom_type_script = "uid://cxk8nxq7mevbi"
+
+[sub_resource type="Resource" id="Resource_5b743"]
+script = ExtResource("1_4iyfm")
+actions = Array[ExtResource("2_5b743")]([SubResource("Resource_45npr"), SubResource("Resource_iva1b")])
+name = "Fireball"
+override_helpful = "Helpful"
+metadata/_custom_type_script = "uid://b1220yr12wl0u"
+
+[sub_resource type="Resource" id="Resource_sx1t7"]
+script = ExtResource("2_5b743")
+type = "Attack"
+amount = 10
+metadata/_custom_type_script = "uid://cxk8nxq7mevbi"
+
+[sub_resource type="Resource" id="Resource_11uu6"]
+script = ExtResource("2_5b743")
+type = "Curse"
+amount = 10
+status_type = "Burning"
+metadata/_custom_type_script = "uid://cxk8nxq7mevbi"
+
+[sub_resource type="Resource" id="Resource_1m3bf"]
+script = ExtResource("2_5b743")
+type = "Block"
+amount = 10
+metadata/_custom_type_script = "uid://cxk8nxq7mevbi"
+
+[sub_resource type="Resource" id="Resource_08jj0"]
+script = ExtResource("1_4iyfm")
+actions = Array[ExtResource("2_5b743")]([SubResource("Resource_sx1t7"), SubResource("Resource_11uu6"), SubResource("Resource_1m3bf")])
+name = "Dragon's Punch"
+metadata/_custom_type_script = "uid://b1220yr12wl0u"
+
+[sub_resource type="Resource" id="Resource_eq0o1"]
+script = ExtResource("3_08jj0")
+PatternType = "Random+"
+attacks = Array[ExtResource("1_4iyfm")]([SubResource("Resource_0h2kk"), SubResource("Resource_q0cww"), SubResource("Resource_4iyfm"), SubResource("Resource_5b743"), SubResource("Resource_08jj0")])
+metadata/_custom_type_script = "uid://crwrqd6c7y8wu"
+
+[resource]
+script = ExtResource("1_f4wja")
+name = "John Politics"
+display_size = 2.0
+hp = 220
+image = ExtResource("4_mb61g")
+team = "Enemy"
+attack_pattern = SubResource("Resource_eq0o1")
+metadata/_custom_type_script = "uid://cs1e2lwpafbvf"

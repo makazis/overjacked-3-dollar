@@ -57,6 +57,7 @@ one_shot = true
 autostart = true
 
 [node name="Button4" type="Button" parent="." unique_id=290018169]
+visible = false
 offset_left = 489.0
 offset_top = 420.0
 offset_right = 742.0
