@@ -142,6 +142,9 @@ var movement_flags={
 	"Hell Unlocked":false,
 	"In Hell":false
 }
+var movement_flags={
+	"Defeated John Politician":false
+}
 var all_locations=[
 	"res://location_scenes/General/buss_scenes/buss_scene_1.tscn",
 	"res://location_scenes/Riga/Carnikava/Carnikava.tscn",
