@@ -43,6 +43,28 @@ script = ExtResource("3_lubkk")
 connects_to = NodePath("../../Finland")
 metadata/_custom_type_script = "uid://crujsi4571xf0"
 
+[node name="Livonia_To_finland2" type="Node2D" parent="Livonia" unique_id=1765848508 node_paths=PackedStringArray("connects_to")]
+visible = false
+script = ExtResource("3_lubkk")
+connects_to = NodePath("../../Obojima")
+metadata/_custom_type_script = "uid://crujsi4571xf0"
+
+[node name="Obojima" parent="." unique_id=1991005148 instance=ExtResource("2_s7icw")]
+position = Vector2(2408, 1056)
+loads_scene = "res://Resources/MapMaxxing/GraphMaps/Riga/RigaMap.tscn"
+
+[node name="Livonia_To_finland" type="Node2D" parent="Obojima" unique_id=608603383 node_paths=PackedStringArray("connects_to")]
+visible = false
+script = ExtResource("3_lubkk")
+connects_to = NodePath("../../Livonia")
+metadata/_custom_type_script = "uid://crujsi4571xf0"
+
+[node name="Livonia_To_finland2" type="Node2D" parent="Obojima" unique_id=1539824472 node_paths=PackedStringArray("connects_to")]
+visible = false
+script = ExtResource("3_lubkk")
+connects_to = NodePath("../../Finland")
+metadata/_custom_type_script = "uid://crujsi4571xf0"
+
 [node name="Daugavpils" parent="." unique_id=613455023 instance=ExtResource("2_s7icw")]
 position = Vector2(3231, 1192)
 loads_scene = "res://Resources/MapMaxxing/GraphMaps/Riga/RigaMap.tscn"
@@ -63,6 +85,12 @@ position = Vector2(2470, 771)
 visible = false
 script = ExtResource("3_lubkk")
 connects_to = NodePath("../../Livonia")
+metadata/_custom_type_script = "uid://crujsi4571xf0"
+
+[node name="Finland_To_Livonia2" type="Node2D" parent="Finland" unique_id=1046088942 node_paths=PackedStringArray("connects_to")]
+visible = false
+script = ExtResource("3_lubkk")
+connects_to = NodePath("../../Obojima")
 metadata/_custom_type_script = "uid://crujsi4571xf0"
 
 [node name="Finland_To_Sweden" type="Node2D" parent="Finland" unique_id=1394057681 node_paths=PackedStringArray("connects_to")]

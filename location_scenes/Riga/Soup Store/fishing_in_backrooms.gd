@@ -3,7 +3,14 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	if Global.is_combat_going: #use as preset for combat handling
+		if EffectContext.won:
+			Global.enemies_defeated.append("Lesser Angel")
+			pass
+		else:
+			#lose sequence
+			pass
+		Global.is_combat_going=false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -13,8 +20,15 @@ func _process(delta: float) -> void:
 		$TokenNumber/Label.text="0"+$TokenNumber/Label.text
 
 
+var sips_taken=0
 func _on_button_pressed() -> void:
 	$AudioStreamPlayer.play()
+	sips_taken+=1
+	if sips_taken==5:
+		if Global.combat_unlocked and not "Lesser Angel" in Global.enemies_defeated:
+			Global.pre_combat_scene="res://location_scenes/Riga/Soup Store/fishing_in_backrooms.tscn"
+			Global.start_combat(["Lesser Angel"])
+			
 
 
 func _on_fish_button_pressed() -> void:

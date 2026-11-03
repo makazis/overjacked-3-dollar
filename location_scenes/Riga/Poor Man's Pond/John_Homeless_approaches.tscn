@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://ci17y3ypte8vc"]
+
+[ext_resource type="Script" uid="uid://joqckt3c7hau" path="res://location_scenes/Riga/Poor Man's Pond/john_homeless_approaches.gd" id="1_rsv3l"]
+[ext_resource type="PackedScene" uid="uid://c4f3qr3emk1ga" path="res://GUI.tscn" id="1_tn2ga"]
+[ext_resource type="Texture2D" uid="uid://dvgrvri5r0t4r" path="res://location_scenes/Riga/Poor Man's Pond/V-677-12.jpg" id="2_13pf2"]
+[ext_resource type="Texture2D" uid="uid://cupcf4evem580" path="res://location_scenes/Riga/Poor Man's Pond/John Homeless/John Homeless.png" id="2_rsv3l"]
+[ext_resource type="PackedScene" uid="uid://jcsh5g6w4l03" path="res://Resources/Dialogue/dialogue_shower.tscn" id="3_13pf2"]
+[ext_resource type="Texture2D" uid="uid://dgvkep44w4op2" path="res://Resources/CardMaxxing/Creature Data/Enemies/chupacabra.png" id="4_mqjl7"]
+
+[node name="JohnHomelessApproaches" type="Node2D" unique_id=1526244752]
+script = ExtResource("1_rsv3l")
+
+[node name="V67712" type="Sprite2D" parent="." unique_id=1755298624]
+position = Vector2(455, 286)
+scale = Vector2(1.4991252, 1.1946192)
+texture = ExtResource("2_13pf2")
+
+[node name="Gui" parent="." unique_id=1657345474 instance=ExtResource("1_tn2ga")]
+
+[node name="Chupacabra" type="Sprite2D" parent="." unique_id=1843329825]
+position = Vector2(686, 473)
+texture = ExtResource("4_mqjl7")
+
+[node name="JohnHomeless" type="Sprite2D" parent="." unique_id=1103290515]
+position = Vector2(514, 298)
+scale = Vector2(0.57288134, 0.597561)
+texture = ExtResource("2_rsv3l")
+
+[node name="Control" parent="." unique_id=1981349740 instance=ExtResource("3_13pf2")]

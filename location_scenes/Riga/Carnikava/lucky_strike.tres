@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="Gu_Move" format=3 uid="uid://8mahoits2jig"]
+
+[ext_resource type="Texture2D" uid="uid://bp48qbakqja7v" path="res://location_scenes/Riga/Carnikava/Lucky Strike.png" id="1_3blot"]
+[ext_resource type="Script" uid="uid://bp3qpdpnu4oiy" path="res://Resources/CardMaxxing/Card Data/Card Tags/card_tag.gd" id="1_bfyb4"]
+[ext_resource type="Script" uid="uid://bv3xej4wc1ski" path="res://Resources/CardMaxxing/Effect Building/Combat/DrawCardEffect.gd" id="2_1u8d0"]
+[ext_resource type="Script" uid="uid://c7xhxk6bgq13p" path="res://Resources/CardMaxxing/Card Data/Gu/gu_move.gd" id="2_uxn1y"]
+[ext_resource type="Script" uid="uid://bilwm2ine2q0l" path="res://Resources/CardMaxxing/Effect Building/Combat/chronomancyEffect.gd" id="3_3blot"]
+[ext_resource type="Script" uid="uid://4kcbfceitvsb" path="res://Resources/CardMaxxing/Effect Building/Logic Oriented/RandomChance.gd" id="4_u555n"]
+[ext_resource type="Script" uid="uid://drt5po2eht3pn" path="res://Resources/CardMaxxing/Effect Building/Combat/Deal Damage Static.gd" id="5_tj4ne"]
+
+[sub_resource type="Resource" id="Resource_u555n"]
+script = ExtResource("2_1u8d0")
+metadata/_custom_type_script = "uid://bv3xej4wc1ski"
+
+[sub_resource type="Resource" id="Resource_qijy3"]
+script = ExtResource("3_3blot")
+time = 1
+metadata/_custom_type_script = "uid://bilwm2ine2q0l"
+
+[sub_resource type="Resource" id="Resource_tj4ne"]
+script = ExtResource("4_u555n")
+chance = 0.7
+execute = SubResource("Resource_qijy3")
+metadata/_custom_type_script = "uid://4kcbfceitvsb"
+
+[sub_resource type="Resource" id="Resource_3blot"]
+script = ExtResource("4_u555n")
+chance = 0.7
+execute = SubResource("Resource_u555n")
+next_effect = SubResource("Resource_tj4ne")
+metadata/_custom_type_script = "uid://4kcbfceitvsb"
+
+[sub_resource type="Resource" id="Resource_2wmui"]
+script = ExtResource("5_tj4ne")
+damage = 8
+next_effect = SubResource("Resource_3blot")
+metadata/_custom_type_script = "uid://drt5po2eht3pn"
+
+[resource]
+script = ExtResource("2_uxn1y")
+money_cost = 0
+art = ExtResource("1_3blot")
+card_name = "Lucky Strike"
+card_description = "deal 8 damage
+70% change to draw a card
+70% chance to to gain 1 time"
+effect = SubResource("Resource_2wmui")
+metadata/_custom_type_script = "uid://c7xhxk6bgq13p"

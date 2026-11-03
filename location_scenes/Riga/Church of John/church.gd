@@ -11,8 +11,12 @@ func _ready() -> void:
 			$Camera2D/DialogueLabel.start_dialogue(load("res://location_scenes/Riga/Church of John/Combat/JohnWonDialogue.dialogue"))
 			pass
 		else:
+			$Camera2D/DialogueLabel.visible=true
+			$Camera2D/DialogueLabel.is_listening=true
+			$Camera2D/DialogueLabel.start_dialogue(load("res://location_scenes/Riga/Church of John/Combat/JohnLossDialogue.dialogue"))
 			#lose sequence
 			pass
+		Global.is_combat_going=false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

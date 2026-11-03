@@ -12,7 +12,8 @@ var creature_load_reference={
 	"Mongolian Death Worm":preload("res://Resources/CardMaxxing/Creature Data/Enemies/mgdw.tres"),
 	"Lesser Angel":preload("res://Resources/CardMaxxing/Creature Data/Enemies/lesser_angel.tres"),
 	"Greater Angel":preload("res://Resources/CardMaxxing/Creature Data/Enemies/greater_angel.tres"),
-	"John Politician":preload("res://location_scenes/Riga/Church of John/Combat/john_politician.tres")
+	"John Politician":preload("res://location_scenes/Riga/Church of John/Combat/john_politician.tres"),
+	"John Homeless":preload("res://location_scenes/Riga/Poor Man's Pond/John Homeless/john_homeless.tres")
 }
 func _ready() -> void:
 	CombatData.root_visual_update.connect(visual_update)
@@ -37,7 +38,7 @@ func setup(_enemies):
 	main_character.data=creature_load_reference["Fang Yuan"].duplicate() # use when creating characters
 	main_character.max_hp=main_character.data.hp
 	main_character.data.hp=CombatData.player_hp
-	print(main_character.data.hp," ",main_character.max_hp)
+	#print(main_character.data.hp," ",main_character.max_hp)
 	EffectContext.roles["Caster"]=[main_character]
 	var enemies=[]
 	for i in _enemies:

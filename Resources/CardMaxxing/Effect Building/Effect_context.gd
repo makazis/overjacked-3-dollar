@@ -47,13 +47,13 @@ func check_if_combat_ends():
 	if len(all_entities)==0:
 		return
 	var friendlies=0
-	var enemies=0
+	var _enemies=0
 	for entity in all_entities:
 		if entity.data.team=="Friendly":
 			friendlies+=1
 		else:
-			enemies+=1
-	if friendlies==0 or enemies==0: #combat ends
+			_enemies+=1
+	if friendlies==0 or _enemies==0: #combat ends
 		won=friendlies>0
 		on_end_game()
 func on_end_game():

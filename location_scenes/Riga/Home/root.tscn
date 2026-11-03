@@ -3,6 +3,10 @@
 [ext_resource type="Script" uid="uid://haam60xobg2w" path="res://location_scenes/Riga/Home/root.gd" id="1_lp78p"]
 [ext_resource type="PackedScene" uid="uid://c4f3qr3emk1ga" path="res://GUI.tscn" id="2_dan0d"]
 [ext_resource type="Texture2D" uid="uid://chd77rkd7ps8o" path="res://location_scenes/Riga/Home/f2c97599fd7057ba91a41bcd7117ccf2.jpg" id="2_sg3tk"]
+[ext_resource type="AudioStream" uid="uid://dao81wrdmknpj" path="res://location_scenes/Riga/Hospital/loud-incorrect-buzzer.mp3" id="4_sg3tk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_g4v7s"]
+font_color = Color(0, 0, 0, 1)
 
 [node name="Node2D" type="Node2D" unique_id=937409004]
 script = ExtResource("1_lp78p")
@@ -18,21 +22,45 @@ offset_left = 675.0
 offset_top = 25.0
 offset_right = 722.0
 offset_bottom = 48.0
-text = "Home"
+text = "THis is your home
+Here you can rest
+And change clothes
+and cards"
+label_settings = SubResource("LabelSettings_g4v7s")
+metadata/_edit_use_anchors_ = true
 
 [node name="Button2" type="Button" parent="." unique_id=2026727298]
-offset_left = 732.0
-offset_top = 303.0
-offset_right = 818.0
-offset_bottom = 334.0
+offset_left = 91.0
+offset_top = 112.0
+offset_right = 182.0
+offset_bottom = 143.0
 text = "War-drobe"
 
 [node name="Button3" type="Button" parent="." unique_id=131379821]
-offset_left = 732.0
-offset_top = 336.0
-offset_right = 823.0
-offset_bottom = 367.0
+offset_left = 1025.0
+offset_top = 545.0
+offset_right = 1116.0
+offset_bottom = 576.0
 text = "Car-drobe"
+
+[node name="Button" type="Button" parent="." unique_id=1143751595]
+offset_left = 291.0
+offset_top = 470.0
+offset_right = 386.0
+offset_bottom = 501.0
+text = "Take a Nap"
+
+[node name="Button4" type="Button" parent="." unique_id=1430736752]
+offset_left = 349.0
+offset_top = 342.0
+offset_right = 396.0
+offset_bottom = 373.0
+text = "Stats"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1958248946]
+stream = ExtResource("4_sg3tk")
 
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Button" to="." method="_nap_button"]
+[connection signal="pressed" from="Button4" to="." method="_stats"]

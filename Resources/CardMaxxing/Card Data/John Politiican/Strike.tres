@@ -17,7 +17,6 @@ metadata/_custom_type_script = "uid://co0nojkhbeoum"
 
 [resource]
 script = ExtResource("4_g4yj7")
-money_cost = 0
 art = ExtResource("1_swo3f")
 card_name = "Strike"
 card_description = "deal 6 damage"

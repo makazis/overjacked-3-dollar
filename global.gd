@@ -11,7 +11,7 @@ func open_link(link:String):
 	OS.shell_open(link)
 #endregion
 #region money handling
-var money=30000.00
+var money=3.00
 	
 func earn_money(amount:float,affected_by_multipliers=true): 
 	if affected_by_multipliers:
@@ -135,6 +135,9 @@ var map_paths={
 	"Riga":"res://Resources/MapMaxxing/GraphMaps/Riga/RigaMap.tscn",
 	"London":"res://location_scenes/London/LondonMap.tscn",
 }
+var movement_flags={
+	"Defeated John Politician":false
+}
 var all_locations=[
 	"res://location_scenes/General/buss_scenes/buss_scene_1.tscn",
 	"res://location_scenes/Riga/Carnikava/Carnikava.tscn",
@@ -178,6 +181,7 @@ var player_all_cards={
 	"Strike":14,
 	"Defend":14,
 }
+#region card_database
 var card_database={
 	"Strike":load("res://Resources/CardMaxxing/Card Data/John Politiican/strike.tres"),
 	"Defend":load("res://Resources/CardMaxxing/Card Data/John Politiican/defend.tres"),
@@ -195,7 +199,9 @@ var card_database={
 	"Foldable Chair":load("res://Resources/CardMaxxing/Card Data/John Politiican/buy/foldable_chair.tres"),
 	"Burn™":load("res://Resources/CardMaxxing/Card Data/John Politiican/buy/burn energy drinks.tres"),
 	"Flamethrower":load("res://Resources/CardMaxxing/Card Data/John Politiican/Crafting/Fire Truck/flamethrower.tres"),
+	"Lucky Strike":load("res://location_scenes/Riga/Carnikava/lucky_strike.tres"),
 }
+#endregion
 var player_decks=[
 	{"Strike":7,"Defend":8},
 ]
@@ -217,6 +223,19 @@ func dialogue(dialogue_data:DialogueLine,camera_root=null):
 	
 #endregion
 #region locations
+#region home
+var is_sleepy=true
+
+var player_ball_knowledge_levelups=[10,30,60,100,150,210,280,360,450,550,660,780,910]
+var player_ball_knowledge=0
+var player_ball_knowledge_xp=0:
+	set(value):
+		player_ball_knowledge_xp=value
+		if player_ball_knowledge<10:
+			while player_ball_knowledge_xp>=player_ball_knowledge_levelups[player_ball_knowledge]:
+				player_ball_knowledge_xp-=player_ball_knowledge_levelups[player_ball_knowledge]
+				player_ball_knowledge+=1
+#endregion
 #region hospital (Riga)
 var hospital_number=1
 var your_hospital_number=0
@@ -255,6 +274,14 @@ var john_card_costs={
 	"Hematogen":1.99,
 	"Sugar":39.99,
 	"Burn™":1.09,
+}
+var john_bounties={
+	"Bigfoot":false, #30
+	"Chupacabra":false, #35
+	"Mothman":false, #90
+	"Lesser Angel":false, #120
+	"Greater Angel":false, #150
+	"Mongolian Death Worm":false, #70
 }
 #endregion
 var action="":

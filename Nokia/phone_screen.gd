@@ -23,7 +23,7 @@ func _ready() -> void:
 	"Whatsapp":preload("res://Nokia/AppData/Local/Whatsapp/whatsapp.tscn"),
 	"Rhythm Heaven":preload("res://Nokia/AppData/Roaming/Osu/osu.tscn"),
 	"ChadGPT":preload("res://Nokia/AppData/Roaming/CHadGPT/ChadGPT.tscn"),
-	
+	"Notepad":preload("res://Nokia/AppData/Local/Note App/notepad.tscn"),
 }
 var app_cache={}
 func open_app(app_name:String):

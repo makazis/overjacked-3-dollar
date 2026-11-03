@@ -29,8 +29,10 @@ func next_dialogue_resource(next_id=null):
 			$Options.get_child(response).get_child(0).text=dlabel.dialogue_line.responses[response].text
 			if !dlabel.dialogue_line.responses[response].is_allowed:
 				$Options.get_child(response).modulate=Color(1.0, 0.0, 0.0, 1.0)
+				$Options.get_child(response).get_child(1).visible=false
 			else:
 				$Options.get_child(response).modulate=Color(1.0, 1.0, 1.0, 1.0)
+				$Options.get_child(response).get_child(1).visible=true
 		showing_responses=true
 	elif get_tree()!=null:
 		dlabel.type_out()

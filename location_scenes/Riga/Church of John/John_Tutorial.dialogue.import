@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://bqe1xgcwohk8v"
+path="res://.godot/imported/John_Tutorial.dialogue-71c96f61e5609dcf935389c783b18283.tres"
+
+[deps]
+
+source_file="res://location_scenes/Riga/Church of John/John_Tutorial.dialogue"
+dest_files=["res://.godot/imported/John_Tutorial.dialogue-71c96f61e5609dcf935389c783b18283.tres"]
+
+[params]
+
+defaults=true

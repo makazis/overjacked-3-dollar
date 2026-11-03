@@ -37,3 +37,7 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_released("left click"):
 		is_grabbing=false
 	
+
+
+func _on_button_pressed() -> void:
+	Global.transition_to_scene("res://location_scenes/Riga/Poor Man's Pond/John_Homeless_approaches.tscn")

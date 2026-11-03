@@ -1,0 +1,27 @@
+~ start
+John: So... It seems that you've arrived at the combat tutorial. 
+John: Let me explain everything step by step. 
+John: Imagine... Imagine we had images too, so i could show you how to do this. 
+John: First, imagine an image where the player is shown.
+John: And beneath the player there is a red bar... 
+John: That is your healthbar. 
+John: if it reaches 0, you die. 
+John: In your card, at the bottom of your mental image, are cards. 
+John: You can obtain cards in many ways. 
+John: but mainly by buying them from me!
+John: Each card costs time to play. 
+John: Maybe some cards will cost something else. 
+John: Like health. 
+John: The enemies will also show you what to do. 
+John: If they have a sword above their head, it means they are going to attack.
+John: if they have... I don't know... a shield...
+John: Oh shit, i forgot to explain to you block. 
+John: Block disappears at the start of the turn. 
+John: So you would put on block to shield yourself from an opposing attack. 
+John: And if there is shield on top of an enemy, it means they will be harder to hit. 
+John: Yeah.
+John: And then there's probably some other stuff. 
+John: Basically...
+$> Global.open_link("https://en.wikipedia.org/wiki/Slay_the_Spire")
+
+=> END

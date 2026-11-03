@@ -19,5 +19,15 @@ offset_left = 863.0
 offset_top = 209.0
 offset_right = 1053.0
 offset_bottom = 310.0
-text = "You wake up in a familiar alleyway. You notice your wallet is missin all it's cash"
+text = "You wake up in a familiar alleyway. You notice your wallet is missin all it's cash.
+You see something that looks like Johnny English running away from tthis alleyway"
 autowrap_mode = 2
+
+[node name="Button" type="Button" parent="." unique_id=555937604]
+offset_left = 867.0
+offset_top = 438.0
+offset_right = 1031.0
+offset_bottom = 469.0
+text = "Fight Johnny English"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
