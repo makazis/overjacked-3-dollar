@@ -32,7 +32,7 @@ runtime/balloon_path="res:///balloon.tscn"
 
 [display]
 
-window/stretch/mode="canvas_items"
+window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 
 [editor_plugins]

@@ -11,7 +11,7 @@ func open_link(link:String):
 	OS.shell_open(link)
 #endregion
 #region money handling
-var money=30000.00
+var money=3.00
 	
 func earn_money(amount:float,affected_by_multipliers=true): 
 	if affected_by_multipliers:
@@ -179,7 +179,7 @@ var player_all_cards={
 	"Defend":14,
 }
 var card_database={
-	"Strike":load("res://Resources/CardMaxxing/Card Data/John Politiican/strike.tres"),
+	"Strike":load("res://Resources/CardMaxxing/Card Data/John Politiican/Strike.tres"),
 	"Defend":load("res://Resources/CardMaxxing/Card Data/John Politiican/defend.tres"),
 	"Four Flaming Fingers":load("res://location_scenes/Riga/Church of John/Combat/four_flaming_fingers.tres"),
 	"The John Punch":load("res://location_scenes/Riga/Church of John/Combat/THE_JOHN_PUNCH_FOR_REAL.tres"),
