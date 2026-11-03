@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://b81xjfy4kyn22"]
+
+[ext_resource type="Script" uid="uid://212sfsh1owlx" path="res://location_scenes/Riga/Church of John/church.gd" id="1_cut6p"]
+[ext_resource type="Texture2D" uid="uid://bssxmb8ipcgda" path="res://location_scenes/Riga/Church of John/interiors-and-details-in-catholic-church-modern-and-simple-catholic-church-interior-view-towards-the-altar-2NK6YNE.jpg" id="1_uklw4"]
+[ext_resource type="PackedScene" uid="uid://c4f3qr3emk1ga" path="res://GUI.tscn" id="2_4n247"]
+[ext_resource type="Texture2D" uid="uid://bd2ilfs4c2htm" path="res://Resources/CardMaxxing/Assets/IMG_2351.png" id="2_cut6p"]
+[ext_resource type="PackedScene" uid="uid://jcsh5g6w4l03" path="res://location_scenes/Riga/Church of John/dialogue_shower.tscn" id="4_ale4d"]
+
+[node name="Node2D" type="Node2D" unique_id=1939330868]
+script = ExtResource("1_cut6p")
+
+[node name="Gui" parent="." unique_id=1657345474 instance=ExtResource("2_4n247")]
+
+[node name="InteriorsAndDetailsInCatholicChurchModernAndSimpleCatholicChurchInteriorViewTowardsTheAltar2nk6yne" type="Sprite2D" parent="." unique_id=1861701290]
+z_index = -20
+position = Vector2(580, 358)
+scale = Vector2(1.3425926, 0.5136691)
+texture = ExtResource("1_uklw4")
+
+[node name="John" type="Sprite2D" parent="." unique_id=1478010157]
+position = Vector2(467.99997, 500)
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("2_cut6p")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1667793342]
+anchor_mode = 0
+
+[node name="DialogueLabel" parent="Camera2D" unique_id=718732592 instance=ExtResource("4_ale4d")]
+visible = false
+offset_left = 1.0
+offset_top = -3.0
+offset_right = 1112.0
+offset_bottom = 137.0
+
+[node name="MainSpot" type="Control" parent="." unique_id=180409742]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button2" type="Button" parent="MainSpot" unique_id=16763281]
+layout_mode = 0
+offset_left = 805.0
+offset_top = 482.0
+offset_right = 848.0
+offset_bottom = 513.0
+text = "Pray
+"
+
+[node name="Button" type="Button" parent="MainSpot" unique_id=253480032]
+layout_mode = 0
+offset_left = 415.0
+offset_top = 400.0
+offset_right = 498.0
+offset_bottom = 431.0
+text = "Approach"
+
+[connection signal="chose_response" from="Camera2D/DialogueLabel" to="." method="_on_dialogue_label_chose_response"]
+[connection signal="pressed" from="MainSpot/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="MainSpot/Button" to="." method="_on_button_pressed"]

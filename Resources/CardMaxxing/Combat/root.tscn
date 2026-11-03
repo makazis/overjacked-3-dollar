@@ -122,6 +122,7 @@ position = Vector2(2299.0002, 887)
 scale = Vector2(0.7827003, 0.77898544)
 
 [node name="Img2337" type="Sprite2D" parent="Energy" unique_id=1733170338]
+visible = false
 position = Vector2(-77.93579, 211.81396)
 scale = Vector2(0.25552565, 0.25674424)
 texture = ExtResource("22_g2ija")
@@ -133,6 +134,7 @@ scale = Vector2(0.25552565, 0.25674424)
 texture = ExtResource("23_skhyk")
 
 [node name="Label" type="Label" parent="Energy" unique_id=176611772]
+visible = false
 offset_left = -132.87357
 offset_top = 11.55349
 offset_right = -14.053986

@@ -158,16 +158,21 @@ func transition_to_scene(scene_path):
 	add_child(new_trans)
 	await new_trans.dies
 	get_tree().change_scene_to_file(scene_path)
-	print(scene_path)
 #endregion
 #region combat
+var combat_unlocked=false
+var enemies_defeated=[]
 var pre_combat_scene=""
 func start_combat(_enemies):
+	if combat_unlocked==false:
+		EffectContext.won=false
+		return
 	EffectContext.enemies=_enemies
 	is_combat_going=true
 	transition_to_scene("res://Resources/CardMaxxing/Combat/root.tscn")
 var is_combat_going=false
 func resolve_combat():
+	
 	transition_to_scene(pre_combat_scene)
 var player_all_cards={
 	"Strike":14,
@@ -176,13 +181,82 @@ var player_all_cards={
 var card_database={
 	"Strike":load("res://Resources/CardMaxxing/Card Data/John Politiican/strike.tres"),
 	"Defend":load("res://Resources/CardMaxxing/Card Data/John Politiican/defend.tres"),
+	"Four Flaming Fingers":load("res://location_scenes/Riga/Church of John/Combat/four_flaming_fingers.tres"),
+	"The John Punch":load("res://location_scenes/Riga/Church of John/Combat/THE_JOHN_PUNCH_FOR_REAL.tres"),
+	"Pepper Spray":load("res://Resources/CardMaxxing/Card Data/John Politiican/pepper_spray.tres"),
+	"Bicycle":load("res://Resources/CardMaxxing/Card Data/John Politiican/Mounts/Bicycle/Bicycle.tres"),
+	"Bulldozer":load("res://Resources/CardMaxxing/Card Data/John Politiican/Mounts/Bulldozer/Bulldozer.tres"),
+	"Wooden Chair":load("res://Resources/CardMaxxing/Card Data/John Politiican/wooden_chair.tres"),
+	"Molotov":load("res://Resources/CardMaxxing/Card Data/John Politiican/hell/molotov.tres"),
+	"Steel Sheets":load("res://Resources/CardMaxxing/Card Data/John Politiican/Crafting/Killdozer/steel_sheets.tres"),
+	"Wielder":load("res://Resources/CardMaxxing/Card Data/John Politiican/Crafting/Killdozer/wielder.tres"),
+	"Sugar":load("res://Resources/CardMaxxing/Card Data/John Politiican/buy/sugar.tres"),
+	"Hematogen":load("res://Resources/CardMaxxing/Card Data/John Politiican/buy/hematogen.tres"),
+	"Foldable Chair":load("res://Resources/CardMaxxing/Card Data/John Politiican/buy/foldable_chair.tres"),
+	"Burn™":load("res://Resources/CardMaxxing/Card Data/John Politiican/buy/burn energy drinks.tres"),
+	"Flamethrower":load("res://Resources/CardMaxxing/Card Data/John Politiican/Crafting/Fire Truck/flamethrower.tres"),
 }
 var player_decks=[
 	{"Strike":7,"Defend":8},
 ]
 var player_deck_selected=0
+signal show_gui_card_got(card_name:String)
+func player_gain_card(card_name:String=""):
+	if not card_name in player_all_cards:
+		player_all_cards[card_name]=1
+	else:
+		player_all_cards[card_name]+=1
+	show_gui_card_got.emit(card_name)
+#endregion
+#region dialogue calls
+#how do we structure a dialogue? maybe we just pass the dialogue manager thingy and just base the dialogue off of that? and just finally incorporate dialogue manager into the code. 
+#yeah, that's probably the best way to do that. 
+func dialogue(dialogue_data:DialogueLine,camera_root=null):
+	if camera_root==null:
+		pass
+	
 #endregion
 #region locations
+#region hospital (Riga)
+var hospital_number=1
+var your_hospital_number=0
+var can_donate_blood=true
+#endregion
+#region fish minigame
+var max_fish_lives=1
+var fish_lives=1
+var extra_fish_lives=0
+#endregion
+#region Church of John
+var john_sells_cards={
+	"Pepper Spray":2,
+	"Wooden Chair":3,
+	"Bicycle":1,
+	"Bulldozer":1,
+	"Molotov":2,
+	"Flamethrower":1,
+	"Steel Sheets":1,
+	"Wielder":1,
+	"Foldable Chair":3,
+	"Hematogen":3,
+	"Sugar":1,
+	"Burn™":2,
+}
+var john_card_costs={
+	"Pepper Spray":6.99,
+	"Wooden Chair":3.99,
+	"Bicycle":49.99,
+	"Bulldozer":99.99,
+	"Molotov":19.99,
+	"Flamethrower":99.99,
+	"Steel Sheets":19.99,
+	"Wielder":39.99,
+	"Foldable Chair":4.99,
+	"Hematogen":1.99,
+	"Sugar":39.99,
+	"Burn™":1.09,
+}
+#endregion
 var action="":
 	set(value):
 		action=value
@@ -194,16 +268,6 @@ var action="":
 			make_money_popup.emit.call_deferred(3000,"From The Vampires")
 		if value=="":
 			return_to_map()
-#region hospital (Riga)
-var hospital_number=1
-var your_hospital_number=0
-var can_donate_blood=true
-#endregion
-#region fish minigame
-var max_fish_lives=1
-var fish_lives=1
-var extra_fish_lives=0
-#endregion
 #endregion
 #region ready
 func _ready() -> void:

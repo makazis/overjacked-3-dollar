@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://40613hr76j3x"]
+
+[ext_resource type="Script" uid="uid://bspkn5g2fl154" path="res://Resources/CardMaxxing/Non-Combat/card rewards/card_unlocked.gd" id="1_nu6li"]
+[ext_resource type="FontFile" uid="uid://ds1saal6ugufw" path="res://Resources/CardMaxxing/Assets/Excalifont-Regular.woff2" id="2_inmb6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nu6li"]
+font = ExtResource("2_inmb6")
+font_size = 20
+
+[node name="CardShower" type="Node2D" unique_id=447901783]
+modulate = Color(1, 1, 1, 0.05882353)
+script = ExtResource("1_nu6li")
+
+[node name="Label" type="Label" parent="." unique_id=232788775]
+offset_right = 129.0
+offset_bottom = 23.0
+text = "CARD UNLOCKED!!!"
+label_settings = SubResource("LabelSettings_nu6li")

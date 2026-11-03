@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://cilxoxfjnure8"]
+
+[ext_resource type="Script" uid="uid://duxc8208w105k" path="res://location_scenes/Riga/Church of John/John Shop/shop.gd" id="1_3e42m"]
+[ext_resource type="PackedScene" uid="uid://c4f3qr3emk1ga" path="res://GUI.tscn" id="2_7ja4e"]
+[ext_resource type="FontFile" uid="uid://ds1saal6ugufw" path="res://Resources/CardMaxxing/Assets/Excalifont-Regular.woff2" id="3_57wuu"]
+[ext_resource type="Texture2D" uid="uid://bssxmb8ipcgda" path="res://location_scenes/Riga/Church of John/interiors-and-details-in-catholic-church-modern-and-simple-catholic-church-interior-view-towards-the-altar-2NK6YNE.jpg" id="4_37ypa"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7ja4e"]
+font = ExtResource("3_57wuu")
+font_size = 30
+font_color = Color(1, 0, 0, 1)
+
+[node name="Node2D" type="Node2D" unique_id=387250337]
+script = ExtResource("1_3e42m")
+
+[node name="Gui" parent="." unique_id=1657345474 instance=ExtResource("2_7ja4e")]
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1094479931]
+offset_top = 57.0
+offset_right = 1135.0
+offset_bottom = 640.0
+
+[node name="GridContainer" type="GridContainer" parent="ScrollContainer" unique_id=887928362]
+layout_mode = 2
+columns = 4
+
+[node name="Label" type="Label" parent="." unique_id=1504908510]
+offset_left = 15.0
+offset_right = 259.0
+offset_bottom = 39.0
+text = "THE JOHN SHOP"
+label_settings = SubResource("LabelSettings_7ja4e")
+
+[node name="InteriorsAndDetailsInCatholicChurchModernAndSimpleCatholicChurchInteriorViewTowardsTheAltar2nk6yne" type="Sprite2D" parent="." unique_id=1958384567]
+z_index = -20
+position = Vector2(576, 323.50003)
+scale = Vector2(1.3402778, 0.47122306)
+texture = ExtResource("4_37ypa")

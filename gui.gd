@@ -4,6 +4,7 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Global.make_money_popup.connect(make_money_popup)
+	Global.show_gui_card_got.connect(make_card_popup)
 	$ColorRect.visible=true
 	var tween=create_tween()
 	tween.tween_property($ColorRect,'modulate',Color(1,1,1,0),0.5)
@@ -39,6 +40,7 @@ func _process(delta: float) -> void:
 				$Phone.position=Vector2(0,142)
 func shake_phone(time:int):
 	phone_shakes_for=time
+
 @onready var money_popup=preload("res://Resources/money_popup.tscn")
 func make_money_popup(money:int,reason:String):
 	var new_money_popup=money_popup.instantiate()
@@ -53,6 +55,12 @@ func make_money_popup(money:int,reason:String):
 		a="0"+a
 	new_money_popup.set_text("+"+str(int(money/100.))+"."+a+"$ "+reason)
 
+@onready var card_popup=preload("res://Resources/CardMaxxing/Non-Combat/card rewards/Card_Unlocked.tscn")
+func make_card_popup(card_name:String):
+	var new_card_popup=card_popup.instantiate()
+	new_card_popup.setup(card_name)
+	new_card_popup.position=Vector2(1152-180,648-188)
+	add_child(new_card_popup)
 var phone_out=false
 var phone_fullscreen=false
 var phone_shakes_for=0

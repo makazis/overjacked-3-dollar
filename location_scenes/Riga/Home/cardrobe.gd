@@ -27,6 +27,7 @@ var timer=0
 func _process(delta: float) -> void:
 	$Button3.visible=cards_in_deck>=15
 	$Label.visible=!$Button3.visible
+	$Label.text=str(cards_in_deck)+"/15 non-exhausting cards"
 @onready var cselector=preload("res://location_scenes/Riga/Home/CardSelector.tscn")
 var cards_in_deck=0
 func update_deck():
@@ -46,7 +47,7 @@ func add_card(card:Card):
 	else:
 		Global.player_decks[Global.player_deck_selected][card.card_data.card_name]+=1
 	card._layout.count-=1
-	cards_in_deck+=1
+	cards_in_deck+=1*int(!card.card_data.exhausts())
 	card.refresh_layout()
 	if card._layout.count==0:
 		$ScrollContainer/GridContainer.remove_child(card)
@@ -59,13 +60,15 @@ func remove_card(card_selector):
 	if card_selector.count==0:
 		card_selector.queue_free()
 	Global.player_decks[Global.player_deck_selected][card_selector.card_name]-=1
+	if Global.player_decks[Global.player_deck_selected][card_selector.card_name]==0:
+		Global.player_decks[Global.player_deck_selected].erase(card_selector.card_name)
 	loaded_cards[card_selector.card_name]._layout.count+=1
 	loaded_cards[card_selector.card_name].refresh_layout()
 	if loaded_cards[card_selector.card_name].get_parent()==$Marker2D:
 		$Marker2D.remove_child(loaded_cards[card_selector.card_name])
 		$ScrollContainer/GridContainer.add_child(loaded_cards[card_selector.card_name])
-	cards_in_deck-=1
-
+	cards_in_deck-=1*int(!loaded_cards[card_selector.card_name].card_data.exhausts())
+	update_deck()
 
 func _on_button_3_pressed() -> void:
 	get_tree().change_scene_to_file("res://location_scenes/Riga/Home/root.tscn")

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://tnwqppmlagge"
+path="res://.godot/imported/God.dialogue-423b626e080453661d70dd52ec7e52c2.tres"
+
+[deps]
+
+source_file="res://location_scenes/Riga/Church of John/God.dialogue"
+dest_files=["res://.godot/imported/God.dialogue-423b626e080453661d70dd52ec7e52c2.tres"]
+
+[params]
+
+defaults=true

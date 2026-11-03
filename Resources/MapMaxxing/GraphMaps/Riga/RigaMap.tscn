@@ -6,15 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://bqvvbvpdnt7dc" path="res://Resources/MapMaxxing/GraphMaps/GraphPoint.tscn" id="3_er5ts"]
 [ext_resource type="Script" uid="uid://crujsi4571xf0" path="res://Resources/Conditions/Graph_point_with_conditions.gd" id="4_gy4n5"]
 [ext_resource type="Script" uid="uid://d14n6xyehew5m" path="res://Resources/Conditions/condition.gd" id="5_jo2ha"]
-[ext_resource type="Script" uid="uid://ju33licv4gg2" path="res://Resources/Conditions/Conditions/Checks/has_money.gd" id="7_u1nsh"]
 [ext_resource type="Script" uid="uid://ciqes2gk5v1y2" path="res://Resources/Conditions/Conditions/Checks/is_wearing.gd" id="8_r4g8y"]
 [ext_resource type="Script" uid="uid://dceyvpdj3na2m" path="res://Resources/MapMaxxing/GraphMaps/Graph Arguments/Graph Argument Base.gd" id="9_y6n6c"]
 [ext_resource type="Script" uid="uid://dyingl04aiw5p" path="res://Resources/MapMaxxing/GraphMaps/Graph Arguments/BusStopArgument.gd" id="10_62ky2"]
-
-[sub_resource type="Resource" id="Resource_h1fea"]
-script = ExtResource("7_u1nsh")
-money_amount = 100.0
-metadata/_custom_type_script = "uid://ju33licv4gg2"
 
 [sub_resource type="Resource" id="Resource_u1nsh"]
 script = ExtResource("8_r4g8y")
@@ -65,7 +59,6 @@ metadata/_custom_type_script = "uid://crujsi4571xf0"
 [node name="graph_point_with_conditions2" type="Node2D" parent="House" unique_id=1569022776 node_paths=PackedStringArray("connects_to")]
 visible = false
 script = ExtResource("4_gy4n5")
-conditions = Array[ExtResource("5_jo2ha")]([SubResource("Resource_h1fea")])
 connects_to = NodePath("../../Clothing Store")
 metadata/_custom_type_script = "uid://crujsi4571xf0"
 
@@ -82,7 +75,7 @@ metadata/_custom_type_script = "uid://crujsi4571xf0"
 [node name="graph_point_with_conditions2" type="Node2D" parent="Clothing Store" unique_id=206211660 node_paths=PackedStringArray("connects_to")]
 visible = false
 script = ExtResource("4_gy4n5")
-connects_to = NodePath("../../The Church of the Broken god")
+connects_to = NodePath("../../Church of John")
 metadata/_custom_type_script = "uid://crujsi4571xf0"
 
 [node name="graph_point_with_conditions3" type="Node2D" parent="Clothing Store" unique_id=1538903880 node_paths=PackedStringArray("connects_to")]
@@ -91,11 +84,11 @@ script = ExtResource("4_gy4n5")
 connects_to = NodePath("../../Bruņinieku Iela (A)")
 metadata/_custom_type_script = "uid://crujsi4571xf0"
 
-[node name="The Church of the Broken god" parent="." unique_id=1732122512 instance=ExtResource("3_er5ts")]
+[node name="Church of John" parent="." unique_id=1732122512 instance=ExtResource("3_er5ts")]
 position = Vector2(1295, 1569)
-loads_scene = "res://location_scenes/Riga/Drip Store/looking_dapper.tscn"
+loads_scene = "res://location_scenes/Riga/Church of John/church.tscn"
 
-[node name="graph_point_with_conditions" type="Node2D" parent="The Church of the Broken god" unique_id=1507881808 node_paths=PackedStringArray("connects_to")]
+[node name="graph_point_with_conditions" type="Node2D" parent="Church of John" unique_id=1507881808 node_paths=PackedStringArray("connects_to")]
 visible = false
 script = ExtResource("4_gy4n5")
 connects_to = NodePath("../../Clothing Store")

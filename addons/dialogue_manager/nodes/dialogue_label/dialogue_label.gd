@@ -91,7 +91,7 @@ func _update_text() -> void:
 	if is_instance_valid(dialogue_line):
 		text = dialogue_line.text
 	else:
-		text = ""
+		text = "INVALID DIALOGUE LINE"
 
 
 ## Start typing out the text

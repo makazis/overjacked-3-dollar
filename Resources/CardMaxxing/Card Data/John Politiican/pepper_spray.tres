@@ -4,8 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://dftg8mpma4trp" path="res://Resources/CardMaxxing/Assets/IMG_2428.png" id="1_uu5ji"]
 [ext_resource type="Script" uid="uid://bv3xej4wc1ski" path="res://Resources/CardMaxxing/Effect Building/Combat/DrawCardEffect.gd" id="2_gryvq"]
 [ext_resource type="Script" uid="uid://c7xhxk6bgq13p" path="res://Resources/CardMaxxing/Card Data/Gu/gu_move.gd" id="2_r7vg7"]
+[ext_resource type="Script" uid="uid://0okdd0vdqmcv" path="res://Resources/CardMaxxing/Card Data/Card Tags/EXHAUST.gd" id="3_ng1eq"]
 [ext_resource type="Script" uid="uid://udmx0spixt2u" path="res://Resources/CardMaxxing/Effect Building/Combat/Apply Block Static.gd" id="3_uu5ji"]
 [ext_resource type="Script" uid="uid://co0nojkhbeoum" path="res://Resources/CardMaxxing/Effect Building/Target_Handling/targetCriteria.gd" id="5_65i0p"]
+
+[sub_resource type="Resource" id="Resource_tyqsi"]
+script = ExtResource("3_ng1eq")
+metadata/_custom_type_script = "uid://0okdd0vdqmcv"
 
 [sub_resource type="Resource" id="Resource_uu5ji"]
 script = ExtResource("2_gryvq")
@@ -23,11 +28,14 @@ metadata/_custom_type_script = "uid://co0nojkhbeoum"
 
 [resource]
 script = ExtResource("2_r7vg7")
+money_cost = 0
 time_cost = 0
 art = ExtResource("1_uu5ji")
 card_name = "Pepper Spray"
 card_description = "gain 6 block
-draw 1 card"
+draw 1 card
+Exhaust"
 effect = SubResource("Resource_0omcl")
 target_criteria = SubResource("Resource_gryvq")
+card_tags = Array[ExtResource("1_oexx6")]([SubResource("Resource_tyqsi")])
 metadata/_custom_type_script = "uid://c7xhxk6bgq13p"

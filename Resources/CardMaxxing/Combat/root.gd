@@ -11,7 +11,8 @@ var creature_load_reference={
 	"Mothman":preload("res://Resources/CardMaxxing/Creature Data/Enemies/mthman.tres"),
 	"Mongolian Death Worm":preload("res://Resources/CardMaxxing/Creature Data/Enemies/mgdw.tres"),
 	"Lesser Angel":preload("res://Resources/CardMaxxing/Creature Data/Enemies/lesser_angel.tres"),
-	"Greater Angel":preload("res://Resources/CardMaxxing/Creature Data/Enemies/greater_angel.tres")
+	"Greater Angel":preload("res://Resources/CardMaxxing/Creature Data/Enemies/greater_angel.tres"),
+	"John Politician":preload("res://location_scenes/Riga/Church of John/Combat/john_politician.tres")
 }
 func _ready() -> void:
 	CombatData.root_visual_update.connect(visual_update)
@@ -105,7 +106,7 @@ func summon_entity(_creature:Creature_Node):
 			uf_space_y-=uf_y_window_size
 			uf_y_window_size=256*_creature.data.display_size+200
 		_creature.position.x=uf_space_x+random_x_bonus
-		_creature.position.y=uf_space_y+random_y_bonus+200
+		_creature.position.y=uf_space_y+random_y_bonus
 		uf_space_x+=_creature.data.display_size*256+random_x_bonus
 		$"UnFriendly Characters/Friends".add_child(_creature)
 func setup_entities(Friendly,Enemy): #expects 2 arrays of creature nodes, but breaks if it's added in the code, idk why
@@ -163,12 +164,12 @@ func visual_update():
 		$Energy/Time/Time1.visible=true
 	if CombatData.money==0:
 		$Energy/Img2337.visible=false
-		$Energy/Img2338.visible=true
+		$Energy/Img2338.visible=false
 		$Energy/Label.visible=false
 	else:
-		$Energy/Img2337.visible=true
+		$Energy/Img2337.visible=false
 		$Energy/Img2338.visible=false
-		$Energy/Label.visible=true
+		$Energy/Label.visible=false
 		$Energy/Label.text=CombatData.standart_big_number(CombatData.money)
 	#$Energy/Conc/MaxConcentration.text=CombatData.standart_big_number(CombatData.max_concentration)
 	#$Energy/Conc/Concentration.text=CombatData.standart_big_number(CombatData.concentration)

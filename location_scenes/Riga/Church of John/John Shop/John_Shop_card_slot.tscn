@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://dxqj1yw5uyrmt"]
+
+[ext_resource type="Script" uid="uid://cl8q22jg5xpgf" path="res://location_scenes/Riga/Church of John/John Shop/control.gd" id="1_nk8k5"]
+[ext_resource type="Script" uid="uid://dowgud10rp5yf" path="res://addons/simple_cards/card/card.gd" id="2_3arpn"]
+[ext_resource type="FontFile" uid="uid://ds1saal6ugufw" path="res://Resources/CardMaxxing/Assets/Excalifont-Regular.woff2" id="3_6w5um"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_g4v7s"]
+font = ExtResource("3_6w5um")
+font_size = 30
+
+[node name="Control" type="Panel" unique_id=260320042]
+self_modulate = Color(1, 1, 1, 0.32941177)
+custom_minimum_size = Vector2(276, 411)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -876.0
+offset_bottom = -237.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nk8k5")
+
+[node name="Card" type="Button" parent="." unique_id=2117283355]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(240, 336)
+layout_mode = 0
+offset_left = 20.0
+offset_top = 18.0
+offset_right = 260.0
+offset_bottom = 354.0
+pivot_offset = Vector2(120, 168)
+script = ExtResource("2_3arpn")
+metadata/_custom_type_script = "uid://dowgud10rp5yf"
+
+[node name="Label" type="Label" parent="." unique_id=611228556]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 350.0
+offset_right = 275.0
+offset_bottom = 410.0
+text = "30.00$"
+label_settings = SubResource("LabelSettings_g4v7s")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=1128167555]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 275.0
+offset_bottom = 410.0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

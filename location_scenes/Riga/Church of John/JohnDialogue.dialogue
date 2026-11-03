@@ -1,0 +1,29 @@
+~ start
+John: [[Greetings!|Zdraztvitķe!|Labas Dienas!]] You have come to my church.
+John: Even though i am the supreme leader, i can afford to spare you some time.
+=> selection
+
+~ selection
+John: Now, what is it that you came to tell me?
+- I wish to leave
+	John: ... ok.
+	$> Global.action=""
+- Teach me how to defend myself! [if !Global.combat_unlocked /]
+
+	John: You have been granted the power of punching your enemies until they die!
+	$> Global.combat_unlocked=true
+	=> selection
+- I've heard you're selling some better cards. [if Global.combat_unlocked /]
+	John: Mmm... So you have... 
+	John: I've aqquired a couple from a... world beyond this one..
+	John: Wouldn't call them quite... Exotic...
+	John: But you won't find these ones anywhere else.
+	$> Global.transition_to_scene("res://location_scenes/Riga/Church of John/John Shop/shop.tscn")
+	=> start
+- I have outgrown you, sensei! [if Global.combat_unlocked and !("John Politician" in Global.enemies_defeated) /]
+	John: JUNIOR! 
+	John: You are courting death!
+	$> Global.pre_combat_scene="res://location_scenes/Riga/Church of John/church.tscn"
+	$> Global.start_combat(["John Politician"])
+=> END
+
