@@ -143,7 +143,9 @@ var movement_flags={
 	"In Hell":false
 }
 var movement_flags={
-	"Defeated John Politician":false
+	"Defeated John Politician":false,
+	"Hell Unlocked":false,
+	"In Hell":false
 }
 var all_locations=[
 	"res://location_scenes/General/buss_scenes/buss_scene_1.tscn",
