@@ -9,7 +9,7 @@ func _ready() -> void:
 			if i.name==Global.on_map_where_am_i["Riga"]:
 				i.go_here()
 				break
-
+	Global.movement_flags["In Hell"]=false
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

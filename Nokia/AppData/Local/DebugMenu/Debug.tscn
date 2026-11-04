@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://bup0unppve3m1"]
+
+[ext_resource type="FontFile" uid="uid://m0vqq8du060s" path="res://Nokia/AppData/System32/Orbitron-VariableFont_wght.ttf" id="1_rra5t"]
+[ext_resource type="Script" uid="uid://bk0nrfafvf0mn" path="res://Nokia/AppData/Local/DebugMenu/debug.gd" id="1_vy4oq"]
+[ext_resource type="PackedScene" uid="uid://c7r6lx6eiurai" path="res://Nokia/AppData/Local/DebugMenu/Widgets/Flags.tscn" id="2_pyp6h"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pyp6h"]
+font = ExtResource("1_rra5t")
+font_size = 32
+
+[node name="Debug" type="Node2D" unique_id=2146464229]
+script = ExtResource("1_vy4oq")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=138184119]
+offset_right = 366.0
+offset_bottom = 768.0
+color = Color(0.37413925, 0.37413928, 0.37413922, 1)
+
+[node name="Label" type="Label" parent="ColorRect" unique_id=2064573635]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 22.0
+offset_right = 351.0
+offset_bottom = 70.0
+text = "Debug Menu"
+label_settings = SubResource("LabelSettings_pyp6h")
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ColorRect" unique_id=1807161807]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 78.0
+offset_right = 363.0
+offset_bottom = 748.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/ScrollContainer" unique_id=1180834683]
+layout_mode = 2
+
+[node name="FoldableContainer" parent="ColorRect/ScrollContainer/VBoxContainer" unique_id=1119059731 instance=ExtResource("2_pyp6h")]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="ColorRect/ScrollContainer/VBoxContainer" unique_id=1184483838]
+custom_minimum_size = Vector2(342, 40)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/ScrollContainer/VBoxContainer/Panel" unique_id=1835967121]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 8.0
+offset_right = 68.0
+offset_bottom = 31.0
+text = "Money"
+
+[node name="LineEdit" type="LineEdit" parent="ColorRect/ScrollContainer/VBoxContainer/Panel" unique_id=1620866343]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 5.0
+offset_right = 333.0
+offset_bottom = 36.0
+virtual_keyboard_type = 3
+
+[connection signal="text_submitted" from="ColorRect/ScrollContainer/VBoxContainer/Panel/LineEdit" to="." method="_on_line_edit_text_submitted"]

@@ -12,6 +12,7 @@ John: Now, what is it that you came to tell me?
 - Teach me how to defend myself! [if !Global.combat_unlocked /]
 
 	John: Would you like me to give you a little tutorial of how to do combat?
+	...
 	- Yea sure man, i would love that. 
 		John: So... It seems that you've arrived at the combat tutorial. 
 		John: Let me explain everything step by step. 
@@ -45,10 +46,11 @@ John: Now, what is it that you came to tell me?
 	John: have fun out there!
 	=> selection
 - I've heard you're selling some better cards. [if Global.combat_unlocked /]
-	John: Mmm... So you have... 
-	John: I've aqquired a couple from a... world beyond this one..
-	John: Wouldn't call them quite... Exotic...
-	John: But you won't find these ones anywhere else.
+	if !Global.movement_flags["Defeated John Politician"]:
+		John: Mmm... So you have... 
+		John: I've aqquired a couple from a... world beyond this one..
+		John: Wouldn't call them quite... Exotic...
+		John: But you won't find these ones anywhere else.
 	$> Global.transition_to_scene("res://location_scenes/Riga/Church of John/John Shop/shop.tscn")
 	=> start
 - Do you have a quest for me?
@@ -77,16 +79,16 @@ John: Now, what is it that you came to tell me?
 		$> Global.money+=30
 		$> Global.john_bounties["Bigfoot"]=true
 	- A Chupacabra [if ("Chupacabra" in Global.enemies_defeated and !Global.john_bounties["Chupacabra"]) /]
-		John: Cool, here's 35 dollars 
-		$> Global.money+=35
+		John: Cool, here's 12 dollars 
+		$> Global.money+=12
 		$> Global.john_bounties["Chupacabra"]=true
 	- A Mongolian Death Worm  [if ("Mongolian Death Worm" in Global.enemies_defeated and !Global.john_bounties["Mongolian Death Worm"]) /]
 		John: Cool, here's 70 dollars 
 		$> Global.money+=70
 		$> Global.john_bounties["Mongolian Death Worm"]=true
 	- Mothman [if ("Mothman" in Global.enemies_defeated and !Global.john_bounties["Mothman"]) /]
-		John: Cool, here's 90 dollars 
-		$> Global.money+=90
+		John: Cool, here's 70 dollars 
+		$> Global.money+=70
 		$> Global.john_bounties["Mothman"]=true
 	- A Lesser Angel [if ("Lesser Angel" in Global.enemies_defeated and !Global.john_bounties["Lesser Angel"]) /]
 		John: Cool, here's 60 dollars 
@@ -96,7 +98,6 @@ John: Now, what is it that you came to tell me?
 		John: Cool, here's 350 dollars 
 		$> Global.money+=350
 		$> Global.john_bounties["Greater Angel"]=true
-		
 	- Nevermind apparently I lied.
 		John: Do not lie to god, I know when you lie to me.  
 	=> selection

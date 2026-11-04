@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cqbrbbcnin1ci"]
+
+[ext_resource type="Script" uid="uid://bqnw30w5gv78e" path="res://Nokia/AppData/Local/DebugMenu/Widgets/flag.gd" id="1_dfrk1"]
+
+[node name="Control" type="Panel" unique_id=1093483923]
+custom_minimum_size = Vector2(342, 40)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -810.0
+offset_bottom = -608.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dfrk1")
+
+[node name="Label" type="Label" parent="." unique_id=604974778]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 9.0
+offset_right = 116.0
+offset_bottom = 32.0
+text = "Flag 001"
+
+[node name="CheckButton" type="CheckButton" parent="." unique_id=1309666293]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 9.0
+offset_right = 51.0
+offset_bottom = 33.0
+
+[connection signal="pressed" from="CheckButton" to="." method="_on_check_button_pressed"]
+[connection signal="toggled" from="CheckButton" to="." method="_on_check_button_toggled"]

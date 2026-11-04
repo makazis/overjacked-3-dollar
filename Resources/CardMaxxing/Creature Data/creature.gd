@@ -204,17 +204,17 @@ func execute_attack():
 						continue
 					if self==null:
 						continue
-					CombatFunctions.deal_damage(data,iter_target.data,action_iter.amount)
+					Global.deal_damage(data,iter_target.data,action_iter.amount)
 					tween=create_tween()
 					tween.tween_property($S,"position",og_pos,0.2).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 					await tween.finished
 					iter_target.visual_update()
 				if action_iter.type=="Block":
-					CombatFunctions.apply_block(iter_target.data,data,action_iter.amount)
+					Global.apply_block(iter_target.data,data,action_iter.amount)
 					visual_update()
 				if action_iter.type=="Curse" or action_iter.type=="Buff":
 					var t1=not action_iter.status_type in iter_target.data.statuses
-					CombatFunctions.apply_status(iter_target.data,data,action_iter.status_type,action_iter.amount)
+					Global.apply_status(iter_target.data,data,action_iter.status_type,action_iter.amount)
 					if t1:
 						iter_target.add_new_status_effect_visual(action_iter.status_type)
 					iter_target.update_status_effects()

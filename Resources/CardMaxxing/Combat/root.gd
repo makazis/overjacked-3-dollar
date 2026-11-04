@@ -296,9 +296,12 @@ func _on_button_pressed() -> void:
 	$Control.position=Vector2(0,-1260)
 	if hen_effect!=null:
 		hen_effect.process()
+
 func on_card_clicked(card:Card):
-	if card in $Hand.cards:
-		if len($Control/CardHand.cards)<max_selected_cards:
-			card.move_to($Control/CardHand, Card.MoveConfig.new(0))
-	else:
-		card.move_to($Hand, Card.MoveConfig.new(0))
+	if CombatData.is_select_sequence_open:
+		if card in $Hand.cards:
+			
+			if len($Control/CardHand.cards)<max_selected_cards:
+				card.move_to($Control/CardHand, Card.MoveConfig.new(0))
+		else:
+			card.move_to($Hand, Card.MoveConfig.new(0))

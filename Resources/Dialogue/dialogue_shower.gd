@@ -6,13 +6,13 @@ signal chose_response(response_id:int)
 var is_listening=false
 var loaded_dialogue_resource=null
 var showing_responses=false
-func next_dialogue_resource(next_id=null):
+func next_dialogue_resource(next_id=null,start_id="start"):
 	if loaded_dialogue_resource==null:
 		loaded_dialogue_resource=dialogue_resource
 		if loaded_dialogue_resource==null:
 			return
 	if dlabel.dialogue_line==null:
-		dlabel.dialogue_line=await loaded_dialogue_resource.get_next_dialogue_line("start")
+		dlabel.dialogue_line=await loaded_dialogue_resource.get_next_dialogue_line(start_id)
 	else:
 		if next_id==null:
 			dlabel.dialogue_line=await loaded_dialogue_resource.get_next_dialogue_line(dlabel.dialogue_line.next_id)
@@ -36,6 +36,10 @@ func next_dialogue_resource(next_id=null):
 		showing_responses=true
 	elif get_tree()!=null:
 		dlabel.type_out()
+	else:
+		visible=false
+		dlabel.dialogue_line=null #prepare for the next dialogue. Yipee. 
+		#Although one object would benefit from having only one resource. 
 func _on_button_pressed() -> void:
 	if showing_responses:
 		return
@@ -53,9 +57,9 @@ func handle_response_clicked():
 		child.visible=false
 	showing_responses=false
 		
-func start_dialogue(resource):
+func start_dialogue(resource,que="start"):
 	dialogue_resource=resource
-	next_dialogue_resource()
+	next_dialogue_resource(null,que)
 	
 func response_1() -> void:
 	handle_response_clicked()

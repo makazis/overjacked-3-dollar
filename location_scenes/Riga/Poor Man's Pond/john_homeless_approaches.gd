@@ -14,8 +14,7 @@ func _ready() -> void:
 			pass
 		Global.is_combat_going=false
 	$Control.is_listening=true
-	$Control.start_dialogue(load("res://location_scenes/Riga/Poor Man's Pond/John Homeless/Homeless_John.dialogue"))
-
+	$Control.start_dialogue(load("res://location_scenes/Riga/Poor Man's Pond/John Homeless/Homeless_John.dialogue"),"loss")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

@@ -119,7 +119,8 @@ var where_am_i:GraphPoint=null
 var on_map_where_am_i={
 	"Global":"Livonia",
 	"Riga":"House",
-	"London":"Alleyway"
+	"Riga-Limbo":"The World Above",
+	"London":"Alleyway",
 }
 var what_map_am_i_on="Riga"
 func try_to_go_here(where:GraphPoint):
@@ -136,7 +137,9 @@ var map_paths={
 	"London":"res://location_scenes/London/LondonMap.tscn",
 }
 var movement_flags={
-	"Defeated John Politician":false
+	"Defeated John Politician":false,
+	"Hell Unlocked":false,
+	"In Hell":false
 }
 var all_locations=[
 	"res://location_scenes/General/buss_scenes/buss_scene_1.tscn",
@@ -174,9 +177,9 @@ func start_combat(_enemies):
 	is_combat_going=true
 	transition_to_scene("res://Resources/CardMaxxing/Combat/root.tscn")
 var is_combat_going=false
-func resolve_combat():
-	
+func resolve_combat():	
 	transition_to_scene(pre_combat_scene)
+	might_be_a_good_idea_to_save()
 var player_all_cards={
 	"Strike":14,
 	"Defend":14,
@@ -296,17 +299,128 @@ var action="":
 		if value=="":
 			return_to_map()
 #endregion
+#region saving
+func save_data():
+	var saved_data={
+		"Money":money,
+		"Time":time,
+		"Clothes":[],
+		"equipped_clothes":{},
+		"omwai":on_map_where_am_i,
+		"wmaio":what_map_am_i_on,
+		"Movement Flags":movement_flags,
+		"Combat Unlocked":combat_unlocked,
+		"Enemies Defeated":enemies_defeated,
+		"Player All Cards":player_all_cards,
+		"john_sells_cards":john_sells_cards,
+		"is_sleepy":is_sleepy,
+		"player_ball_knowledge":player_ball_knowledge,
+		"player_ball_knowledge_xp":player_ball_knowledge_xp,
+		"can_donate_blood":can_donate_blood,
+		"hospital_number":hospital_number,
+		"john_bounties":john_bounties,
+		#region CombatData
+		"player_hp":CombatData.player_hp,
+		"player_max_hp":CombatData.player_max_hp,
+		#endregion
+		#region Phone
+		"Apps":Phone.apps,
+		"Notepad Text":Phone.notepad_text,
+		"music_volume":Phone.music_volume,
+		"sfx_volume":Phone.sfx_volume,
+		"overjacked_setting":Phone.overjacked_setting,
+		"combat_settings_unlocked":Phone.combat_settings_unlocked,
+		#endregion
+	}
+	var save_file = FileAccess.open("user://savegame.save", FileAccess.WRITE)
+	save_file.store_line(JSON.stringify(saved_data))
+var asked_to_load_data=false
+
+func load_data():
+	if not FileAccess.file_exists("user://savegame.save"):
+		return # Error! We don't have a save to load.
+	var save_file = FileAccess.open("user://savegame.save", FileAccess.READ)
+	var json=JSON.new()
+	var recieved_stuff=save_file.get_as_text()
+	var parse_result=json.parse(recieved_stuff)
+	if not parse_result == OK:
+		print("JSON Parse Error: ", json.get_error_message(), " in ", save_file, " at line ", json.get_error_line())
+		return
+	
+		# Get the data from the JSON object.
+	var data = json.data
+	#region Global
+	money=data["Money"]
+	time=data["Time"]
+	on_map_where_am_i=data["omwai"]
+	what_map_am_i_on=data["wmaio"]
+	movement_flags=data["Movement Flags"]
+	combat_unlocked=data["Combat Unlocked"]
+	enemies_defeated=data["Enemies Defeated"]
+	player_all_cards=data["Player All Cards"]
+	john_sells_cards=data["john_sells_cards"]
+	is_sleepy=data["is_sleepy"]
+	player_ball_knowledge=data["player_ball_knowledge"]
+	player_ball_knowledge_xp=data["player_ball_knowledge_xp"]
+	can_donate_blood=data["can_donate_blood"]
+	hospital_number=data["hospital_number"]
+	john_bounties=data["john_bounties"]
+	#endregion
+	#region CombatData
+	CombatData.player_hp=data["player_hp"]
+	CombatData.player_max_hp=data["player_max_hp"]
+	#endregion
+	#region Phone
+	Phone.music_volume=data["music_volume"]
+	Phone.apps=data["Apps"]
+	Phone.notepad_text=data["Notepad Text"]
+	Phone.sfx_volume=data["sfx_volume"]
+	Phone.overjacked_setting=data["overjacked_setting"]
+	Phone.combat_settings_unlocked=data["combat_settings_unlocked"]
+	#endregion
+	
+	#print(recieved_stuff)
+var time_since_last_save=0
+func might_be_a_good_idea_to_save():
+	if time_since_last_save>30:
+		save_data()
+		time_since_last_save=0
+#endregion
+#region Combat Functions
+func deal_damage(attacker:Creature,defender:Creature,damage:int,times:int=1):
+	var total_damage=damage
+	if "Strength" in attacker.statuses:
+		total_damage+=attacker.statuses["Strength"]
+	total_damage*=times
+	defender.block-=total_damage
+	if defender.block<0:
+		defender.hp+=defender.block
+		defender.block=0
+	if Phone.screen_shake_on_hitting:
+		CombatData.I_NEED_MORE_SCREEN_SHAKE.emit(total_damage)
+func apply_block(target:Creature,source:Creature,block:int,times:int=1):
+	var gained_block=block
+	if "Dexterity" in source.statuses:
+		gained_block+=source.statuses["Dexterity"]
+	target.block+=gained_block*times
+func apply_status(target:Creature,source:Creature,_type:String,amount:int=1,times:int=1):
+	if not _type in target.statuses:
+		target.statuses[_type]=0
+	target.statuses[_type]+=amount*times
+#endregion
 #region ready
 func _ready() -> void:
 	print("Get ready to suffer")
-	what_map_am_i_on=str(get_tree().root.get_children()[-1].name)
+	
+	#what_map_am_i_on="Riga"#str(get_tree().root.get_children()[-1].name)
 	EffectContext.combat_ends.connect(resolve_combat)
-
+	#load_data()
 	pass # Replace with function body.
 #endregion
 #region process
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	time_since_last_save+=delta
 	time+=delta*int(timer_running)*timer_multiplier #convert from bool to int for that extra spice. 
 	if randf()<delta: #Will trigger on average once per second
 		#random ticker

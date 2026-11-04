@@ -23,7 +23,6 @@ metadata/_custom_type_script = "uid://bilwm2ine2q0l"
 
 [resource]
 script = ExtResource("2_yn1dk")
-money_cost = 0
 time_cost = 0
 art = ExtResource("1_3kjc7")
 card_name = "Hematogen"

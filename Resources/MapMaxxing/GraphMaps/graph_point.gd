@@ -32,6 +32,7 @@ func go_here():
 	Global.on_map_where_am_i[Global.what_map_am_i_on]=self.name
 	for i in connected_with:
 		i.visible=true
+	Global.might_be_a_good_idea_to_save()
 
 
 func _on_button_pressed() -> void:
@@ -40,4 +41,3 @@ func _on_button_pressed() -> void:
 		#get_tree().change_scene_to_file(loads_scene)
 		return
 	Global.try_to_go_here(self)
-	

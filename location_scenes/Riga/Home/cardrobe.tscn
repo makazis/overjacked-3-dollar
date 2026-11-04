@@ -1,13 +1,10 @@
 [gd_scene format=3 uid="uid://bdnbyq1ebovpu"]
 
 [ext_resource type="Script" uid="uid://3qrjy18e08m1" path="res://location_scenes/Riga/Home/cardrobe.gd" id="1_j1y77"]
-[ext_resource type="PackedScene" uid="uid://c4f3qr3emk1ga" path="res://GUI.tscn" id="2_cqg5a"]
 [ext_resource type="PackedScene" uid="uid://bxcvl703fm8rw" path="res://location_scenes/Riga/Home/CardSelector.tscn" id="2_of77r"]
 
 [node name="Cardrobe" type="Node2D" unique_id=1865830278]
 script = ExtResource("1_j1y77")
-
-[node name="Gui" parent="." unique_id=1657345474 instance=ExtResource("2_cqg5a")]
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1560467108]
 offset_right = 961.0

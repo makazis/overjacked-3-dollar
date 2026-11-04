@@ -26,5 +26,6 @@ func _on_button_pressed() -> void:
 		Global.money-=_cost
 		_amount-=1
 		Global.player_gain_card(crd_name)
+		Global.john_sells_cards[crd_name]-=1
 		if _amount==0:
 			queue_free()

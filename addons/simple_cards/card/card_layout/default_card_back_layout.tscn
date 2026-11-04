@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://crmpow3v5eirx"]
+[gd_scene format=3 uid="uid://crmpow3v5eirx"]
 
 [ext_resource type="Script" uid="uid://dm115oleoggyt" path="res://addons/simple_cards/card/card_layout/card_layout.gd" id="1_ay1pi"]
 

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b0251m4gbq2ng"]
+
+[ext_resource type="Texture2D" uid="uid://bdt6f3ukhahhn" path="res://location_scenes/Riga/Limbo/Gates of Hell/2308-w026-n002-3732B-p1-3732.jpg" id="1_nrhn5"]
+[ext_resource type="PackedScene" uid="uid://c4f3qr3emk1ga" path="res://GUI.tscn" id="1_yxsru"]
+
+[node name="Gates Of Hell" type="Node2D" unique_id=2006471327]
+
+[node name="Gui" parent="." unique_id=1657345474 instance=ExtResource("1_yxsru")]
+
+[node name="2308W026N0023732bP13732" type="Sprite2D" parent="." unique_id=1165514399]
+position = Vector2(-200, 0)
+texture = ExtResource("1_nrhn5")
+centered = false

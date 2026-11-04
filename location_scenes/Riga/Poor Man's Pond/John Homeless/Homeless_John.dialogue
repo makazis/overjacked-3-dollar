@@ -38,7 +38,7 @@ John Homeless: What can I do for a fine lady like you?
 	John Homeless: And die!
 	=> duel
 - *Display dominance by beating his dog to death* [if Global.combat_unlocked and !("Chupacabra" in Global.enemies_defeated) /]
-	$> Global.pre_combat_scene="res://location_scenes/Riga/Poor Man's Pond/poor_man's_pond.tscn"
+	$> Global.pre_combat_scene="res://location_scenes/Riga/Poor Man's Pond/John_Homeless_approaches.tscn"
 	$> Global.start_combat(["Chupacabra"])
 => END
 
@@ -74,8 +74,23 @@ John Homeless: What can I do for a fine lady like you?
 	John Homeless: *Raises an eyebrow*
 	=> split2
 - Is there a John Fighter that can teach me how to fight?
-
+	John Homeless: There most likely is, but it is quite hard to get to him.
+	John Homeless: It'd be a lot easier to learn how to battle from John Politician. 
+	John Homeless: She's my ex <3. 
+	John Homeless: If you meet him, tell her to get the fuck out of this city, 
+	John Homeless: Because once I get accepted into a clan. 
+	John Homeless: He's fucked. 
+	John Homeless: As in i'mma beat his shit.
+	=> split2 
 ~ duel
-$> Global.pre_combat_scene="res://location_scenes/Riga/Poor Man's Pond/John Homeless/node_2d.tscn"
+$> Global.pre_combat_scene="res://location_scenes/Riga/Poor Man's Pond/John_Homeless_approaches.tscn"
 $> Global.start_combat(["John Homeless"])
 => END
+
+~ loss
+John Homeless: Looks like you're outta luck, buckaroo. 
+John Homeless: Means i get to take your money. 
+John Homeless: Now, luckily for you, I won't do that
+John Homeless: Because I'm a nice guy
+John Homeless: And most ladies like nice guys. 
+=> split1

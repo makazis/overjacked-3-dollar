@@ -31,6 +31,11 @@ metadata/_custom_type_script = "uid://ciqes2gk5v1y2"
 script = ExtResource("10_62ky2")
 metadata/_custom_type_script = "uid://dyingl04aiw5p"
 
+[sub_resource type="Resource" id="Resource_xkssr"]
+script = ExtResource("7_62ky2")
+global_flag = "Defeated John Politician"
+metadata/_custom_type_script = "uid://b1thoxpd0jbk3"
+
 [sub_resource type="Resource" id="Resource_62ky2"]
 script = ExtResource("10_62ky2")
 stop_index = 1
@@ -270,6 +275,24 @@ graph_arguments = Array[ExtResource("9_y6n6c")]([SubResource("Resource_mbxn7")])
 visible = false
 script = ExtResource("4_gy4n5")
 connects_to = NodePath("../../SteveTheDiceGoblin")
+metadata/_custom_type_script = "uid://crujsi4571xf0"
+
+[node name="graph_point_with_conditions4" type="Node2D" parent="Lāčplēša Iela (A)" unique_id=913460876 node_paths=PackedStringArray("connects_to")]
+visible = false
+script = ExtResource("4_gy4n5")
+conditions = Array[ExtResource("5_jo2ha")]([SubResource("Resource_xkssr")])
+connects_to = NodePath("../../Sufficiently Deep Hole")
+metadata/_custom_type_script = "uid://crujsi4571xf0"
+
+[node name="Sufficiently Deep Hole" parent="." unique_id=352083493 instance=ExtResource("3_er5ts")]
+position = Vector2(2527, 1915)
+loads_scene = "res://location_scenes/Riga/Limbo/hell.tscn"
+graph_arguments = Array[ExtResource("9_y6n6c")]([SubResource("Resource_mbxn7")])
+
+[node name="graph_point_with_conditions3" type="Node2D" parent="Sufficiently Deep Hole" unique_id=1640172085 node_paths=PackedStringArray("connects_to")]
+visible = false
+script = ExtResource("4_gy4n5")
+connects_to = NodePath("../../Lāčplēša Iela (A)")
 metadata/_custom_type_script = "uid://crujsi4571xf0"
 
 [node name="Bruņinieku Iela (A)" parent="." unique_id=2036301157 instance=ExtResource("3_er5ts")]

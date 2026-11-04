@@ -10,7 +10,7 @@ var all_apps=[
 	"Hopital App",
 	"Rhythm Heaven",
 	"ChadGPT",
-	"Notepad"
+	"Notepad",
 ]
 @onready var app_in_app_store=preload("res://Nokia/AppData/Local/App Store/app_in_app_store.tscn")
 func _ready() -> void:
