@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://pes6v2phv0p7"]
+
+[ext_resource type="Script" uid="uid://ddey0jkhyptwa" path="res://location_scenes/Riga/AVG sautuve/node_2d.gd" id="1_tmkfg"]
+[ext_resource type="PackedScene" uid="uid://c4f3qr3emk1ga" path="res://GUI.tscn" id="2_otofa"]
+[ext_resource type="Texture2D" uid="uid://bw7uowf3u8nm3" path="res://Resources/CardMaxxing/Creature Data/Enemies/mothman.png" id="3_otofa"]
+
+[node name="Node2D" type="Node2D" unique_id=517436384]
+script = ExtResource("1_tmkfg")
+
+[node name="Gui" parent="." unique_id=1657345474 instance=ExtResource("2_otofa")]
+
+[node name="Button" type="Button" parent="." unique_id=488455381]
+offset_left = 583.0
+offset_top = 422.0
+offset_right = 710.0
+offset_bottom = 453.0
+text = "Fight Mothman"
+
+[node name="Mothman" type="Sprite2D" parent="." unique_id=1627051382]
+position = Vector2(688, 309)
+texture = ExtResource("3_otofa")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

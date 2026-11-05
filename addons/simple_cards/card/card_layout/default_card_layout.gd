@@ -22,19 +22,6 @@ func _update_display() -> void:
 			$"SubViewport/DefaultCardSprite/Three Time".visible=true
 		if data.time_cost==4:
 			$"SubViewport/DefaultCardSprite/Four Time".visible=true
-		if data.money_cost==4:
-			$"SubViewport/DefaultCardSprite/Four Money".visible=true
-		if data.money_cost==3:
-			$"SubViewport/DefaultCardSprite/Three Money".visible=true
-		if data.money_cost==2:
-			$"SubViewport/DefaultCardSprite/Two Money".visible=true
-		if data.money_cost==1:
-			$"SubViewport/DefaultCardSprite/One Money".visible=true
-		if data.money_cost>=5:
-			$"SubViewport/DefaultCardSprite/Five Money".visible=true
-			if data.money_cost>5:
-				$SubViewport/DefaultCardSprite/Label3.visible=true
-				$SubViewport/DefaultCardSprite/Label3.text=CombatData.standart_big_number(data.money_cost)
 		if count>0:
 			$SubViewport/DefaultCardSprite/Count.visible=true
 			$SubViewport/DefaultCardSprite/Count/Label.text="x"+str(count)

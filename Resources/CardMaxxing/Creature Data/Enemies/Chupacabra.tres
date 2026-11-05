@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://b1220yr12wl0u" path="res://Resources/CardMaxxing/Creature Data/Attack_Pattern/EnemyAttackMove.gd" id="1_7pe36"]
 [ext_resource type="Script" uid="uid://cxk8nxq7mevbi" path="res://Resources/CardMaxxing/Creature Data/Attack_Pattern/new_script.gd" id="2_055il"]
 [ext_resource type="Script" uid="uid://crwrqd6c7y8wu" path="res://Resources/CardMaxxing/Creature Data/Attack_Pattern/Attack_Pattern.gd" id="3_3f0rl"]
+[ext_resource type="Script" uid="uid://c80v18wdftalr" path="res://Resources/CardMaxxing/Creature Data/Attack_Pattern/AutomataConditions/AutomataCondition.gd" id="3_aenin"]
 [ext_resource type="Texture2D" uid="uid://dgvkep44w4op2" path="res://Resources/CardMaxxing/Creature Data/Enemies/chupacabra.png" id="4_7pe36"]
 
 [sub_resource type="Resource" id="Resource_ayucu"]

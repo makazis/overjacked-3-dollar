@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://b6k3acd8x1w4y"]
+
+[ext_resource type="FontFile" uid="uid://ds1saal6ugufw" path="res://Resources/CardMaxxing/Assets/Excalifont-Regular.woff2" id="1_gidmu"]
+[ext_resource type="Script" uid="uid://b82ieuxfjpcan" path="res://Resources/Main Menu/main_menu.gd" id="1_le451"]
+[ext_resource type="PackedScene" uid="uid://c4f3qr3emk1ga" path="res://GUI.tscn" id="2_502vm"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_g4v7s"]
+font = ExtResource("1_gidmu")
+font_size = 60
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Node2D" type="Node2D" unique_id=437470090]
+script = ExtResource("1_le451")
+
+[node name="Gui" parent="." unique_id=1657345474 instance=ExtResource("2_502vm")]
+
+[node name="Label" type="Label" parent="." unique_id=903255930]
+offset_left = 300.0
+offset_top = 105.0
+offset_right = 451.0
+offset_bottom = 128.0
+rotation = -0.08195138
+text = "Overjacked 3 dollar"
+label_settings = SubResource("LabelSettings_g4v7s")
+
+[node name="Button" type="Button" parent="." unique_id=1417224024]
+offset_left = 653.0
+offset_top = 360.0
+offset_right = 746.0
+offset_bottom = 391.0
+text = "Load game"
+
+[node name="Button2" type="Button" parent="." unique_id=615660305]
+offset_left = 387.0
+offset_top = 376.0
+offset_right = 480.0
+offset_bottom = 407.0
+text = "New Game"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b8l7vksbayqek" path="res://location_scenes/Riga/Poor Man's Pond/reach for it.png" id="4_tq5d3"]
 [ext_resource type="AudioStream" uid="uid://cm385kv3id1j5" path="res://location_scenes/Riga/Poor Man's Pond/Sneaky Snitch.mp3" id="6_tq5d3"]
 [ext_resource type="Script" uid="uid://dyo1l7dhsvb4t" path="res://Resources/Music/music_script.gd" id="7_034dr"]
+[ext_resource type="Texture2D" uid="uid://cupcf4evem580" path="res://location_scenes/Riga/Poor Man's Pond/John Homeless/John Homeless.png" id="8_qvuao"]
 
 [node name="Poor Man\'s Pond" type="Node2D" unique_id=2100011655]
 script = ExtResource("1_bfscw")
@@ -18,10 +19,23 @@ position = Vector2(576.49994, 320.99997)
 scale = Vector2(1.1650001, 0.99550235)
 texture = ExtResource("1_ak8c5")
 
+[node name="JohnHomeless" type="Sprite2D" parent="." unique_id=1747243971]
+position = Vector2(1068, 281)
+scale = Vector2(0.166767, 0.166767)
+texture = ExtResource("8_qvuao")
+
+[node name="Button" type="Button" parent="." unique_id=1719553370]
+offset_left = 910.0
+offset_top = 323.0
+offset_right = 1137.0
+offset_bottom = 354.0
+text = "Aprroach the homeless man"
+
 [node name="Marker2D" type="Marker2D" parent="." unique_id=132929294]
 position = Vector2(703, 492)
 
 [node name="GrabIt" type="Sprite2D" parent="Marker2D" unique_id=1364671224]
+visible = false
 position = Vector2(-32.000046, 223.00003)
 scale = Vector2(1.4187763, 1.4187763)
 texture = ExtResource("4_p4ikp")
@@ -37,3 +51,5 @@ stream = ExtResource("6_tq5d3")
 autoplay = true
 parameters/looping = true
 script = ExtResource("7_034dr")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://v87ysjcdyw3l"]
+
+[ext_resource type="PackedScene" uid="uid://c4f3qr3emk1ga" path="res://GUI.tscn" id="1_m7g0p"]
+[ext_resource type="Script" uid="uid://bg7cmpyvq64qr" path="res://location_scenes/Riga/Home/sleeping.gd" id="1_s1d57"]
+
+[node name="Node2D" type="Node2D" unique_id=188403592]
+script = ExtResource("1_s1d57")
+
+[node name="Gui" parent="." unique_id=1657345474 instance=ExtResource("1_m7g0p")]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1892681147]
+offset_right = 1160.0
+offset_bottom = 653.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="ColorRect" unique_id=1981369609]
+layout_mode = 0
+offset_left = 508.0
+offset_top = 4.0
+offset_right = 646.0
+offset_bottom = 27.0
+text = "You are dreaming"

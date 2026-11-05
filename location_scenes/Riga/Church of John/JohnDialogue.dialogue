@@ -5,22 +5,103 @@ John: Even though i am the supreme leader, i can afford to spare you some time.
 
 ~ selection
 John: Now, what is it that you came to tell me?
+...
 - I wish to leave
 	John: ... ok.
 	$> Global.action=""
 - Teach me how to defend myself! [if !Global.combat_unlocked /]
 
-	John: You have been granted the power of punching your enemies until they die!
+	John: Would you like me to give you a little tutorial of how to do combat?
+	...
+	- Yea sure man, i would love that. 
+		John: So... It seems that you've arrived at the combat tutorial. 
+		John: Let me explain everything step by step. 
+		John: Imagine... Imagine we had images too, so i could show you how to do this. 
+		John: First, imagine an image where the player is shown.
+		John: And beneath the player there is a red bar... 
+		John: That is your healthbar. 
+		John: if it reaches 0, you die. 
+		John: In your card, at the bottom of your mental image, are cards. 
+		John: You can obtain cards in many ways. 
+		John: but mainly by buying them from me!
+		John: Each card costs time to play. 
+		John: Maybe some cards will cost something else. 
+		John: Like health. 
+		John: The enemies will also show you what to do. 
+		John: If they have a sword above their head, it means they are going to attack.
+		John: if they have... I don't know... a shield...
+		John: Oh shit, i forgot to explain to you block. 
+		John: Block disappears at the start of the turn. 
+		John: So you would put on block to shield yourself from an opposing attack. 
+		John: And if there is shield on top of an enemy, it means they will be harder to hit. 
+		John: Yeah.
+		John: And then there's probably some other stuff. 
+		John: Basically...
+		$> Global.open_link("https://en.wikipedia.org/wiki/Slay_the_Spire")
+		John: So that's my tutorial. 
+		John: Give me a review on my linkedin.
+	- Naw bro, just let me fistfight bigfoot already. 
+		John: Now that's my language. Here's the license. 
 	$> Global.combat_unlocked=true
+	John: have fun out there!
 	=> selection
 - I've heard you're selling some better cards. [if Global.combat_unlocked /]
-	John: Mmm... So you have... 
-	John: I've aqquired a couple from a... world beyond this one..
-	John: Wouldn't call them quite... Exotic...
-	John: But you won't find these ones anywhere else.
+	if !Global.movement_flags["Defeated John Politician"]:
+		John: Mmm... So you have... 
+		John: I've aqquired a couple from a... world beyond this one..
+		John: Wouldn't call them quite... Exotic...
+		John: But you won't find these ones anywhere else.
 	$> Global.transition_to_scene("res://location_scenes/Riga/Church of John/John Shop/shop.tscn")
 	=> start
-- I have outgrown you, sensei! [if Global.combat_unlocked and !("John Politician" in Global.enemies_defeated) /]
+- Do you have a quest for me?
+	John: In fact I do. 
+	John: Due to an... accident...
+	John: There are several... Monsters...
+	John: Roaming this city...
+	John: If you could... take them out...
+	John: I would reward you greatly. 
+	John: Capiche?
+- I want to go out the back.
+	if  ("John Politician" in Global.enemies_defeated):
+		John: Alright, you've proven your strength. You may pass off to the greater world. 
+		John: Never forget about us, back at home!
+		John: And if you are able, bring back the box!
+		John: We need that box. 
+	else:
+		John: First, you must defeat me in combat. 
+		John: After that, you'll be able to go to the back of the church. 
+		=> selection
+- I've defeated a monster. 
+	John: Oh cool, what monster?
+	What monster
+	- Bigfoot [if ("Bigfoot" in Global.enemies_defeated and !Global.john_bounties["Bigfoot"]) /]
+		John: Cool, here's 30 dollars
+		$> Global.money+=30
+		$> Global.john_bounties["Bigfoot"]=true
+	- A Chupacabra [if ("Chupacabra" in Global.enemies_defeated and !Global.john_bounties["Chupacabra"]) /]
+		John: Cool, here's 12 dollars 
+		$> Global.money+=12
+		$> Global.john_bounties["Chupacabra"]=true
+	- A Mongolian Death Worm  [if ("Mongolian Death Worm" in Global.enemies_defeated and !Global.john_bounties["Mongolian Death Worm"]) /]
+		John: Cool, here's 70 dollars 
+		$> Global.money+=70
+		$> Global.john_bounties["Mongolian Death Worm"]=true
+	- Mothman [if ("Mothman" in Global.enemies_defeated and !Global.john_bounties["Mothman"]) /]
+		John: Cool, here's 70 dollars 
+		$> Global.money+=70
+		$> Global.john_bounties["Mothman"]=true
+	- A Lesser Angel [if ("Lesser Angel" in Global.enemies_defeated and !Global.john_bounties["Lesser Angel"]) /]
+		John: Cool, here's 60 dollars 
+		$> Global.money+=60
+		$> Global.john_bounties["Lesser Angel"]=true
+	- A Greater Angel [if ("Greater Angel" in Global.enemies_defeated and !Global.john_bounties["Greater Angel"]) /]
+		John: Cool, here's 350 dollars 
+		$> Global.money+=350
+		$> Global.john_bounties["Greater Angel"]=true
+	- Nevermind apparently I lied.
+		John: Do not lie to god, I know when you lie to me.  
+	=> selection
+- There's only one monster left in this town, and that is you! [if Global.combat_unlocked and !("John Politician" in Global.enemies_defeated) /]
 	John: JUNIOR! 
 	John: You are courting death!
 	$> Global.pre_combat_scene="res://location_scenes/Riga/Church of John/church.tscn"

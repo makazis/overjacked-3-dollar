@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b1220yr12wl0u" path="res://Resources/CardMaxxing/Creature Data/Attack_Pattern/EnemyAttackMove.gd" id="1_f3k2x"]
 [ext_resource type="Script" uid="uid://cs1e2lwpafbvf" path="res://Resources/CardMaxxing/Creature Data/creature_layout.gd" id="1_jp1g4"]
 [ext_resource type="Script" uid="uid://cxk8nxq7mevbi" path="res://Resources/CardMaxxing/Creature Data/Attack_Pattern/new_script.gd" id="2_lfnsb"]
+[ext_resource type="Script" uid="uid://c80v18wdftalr" path="res://Resources/CardMaxxing/Creature Data/Attack_Pattern/AutomataConditions/AutomataCondition.gd" id="3_vqowq"]
 [ext_resource type="Script" uid="uid://crwrqd6c7y8wu" path="res://Resources/CardMaxxing/Creature Data/Attack_Pattern/Attack_Pattern.gd" id="3_wkis7"]
 [ext_resource type="Texture2D" uid="uid://dno17io2f1i56" path="res://Resources/CardMaxxing/Creature Data/Enemies/mongolian_death_worm.png" id="4_enivm"]
 

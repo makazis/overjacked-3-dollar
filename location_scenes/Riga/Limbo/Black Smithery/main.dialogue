@@ -1,0 +1,23 @@
+~ first_encounter
+The Blacksmith: Aye, it's been twelve years since I've seen the steps of a human down here.
+The Blacksmith: The name's mr. Amalon. 
+=> base
+
+~ base
+Mr. Amalon: Now, what can i do for a lad like ye?
+...
+- I'd love to chat a bit before getting down to buisness. 
+	Mr. Amalon: Aye, What's on ye mind?
+	=> chat
+- I have a crazy idea, and I am waiting for the right man for the job. 
+	Mr. Amalon: Oh? what is the idea?
+	=> craft
+- Ya can not do anythin.
+=> END
+
+~ chat
+
+=> base
+~ craft
+
+=> base

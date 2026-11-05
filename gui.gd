@@ -73,6 +73,7 @@ func _input(event: InputEvent) -> void:
 		if get_tree().current_scene.has_method('on_exit'):
 			get_tree().current_scene.on_exit()
 		Global.return_to_map()
+		Global.might_be_a_good_idea_to_save()
 	if event.is_action_pressed("phone"):
 		if phone_fullscreen:
 			return 

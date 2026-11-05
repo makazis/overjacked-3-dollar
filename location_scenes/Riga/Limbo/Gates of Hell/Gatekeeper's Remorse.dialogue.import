@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://byfvop5uchoqf"
+path="res://.godot/imported/Gatekeeper's Remorse.dialogue-9a9416f471878512c8ad61de7cffe304.tres"
+
+[deps]
+
+source_file="res://location_scenes/Riga/Limbo/Gates of Hell/Gatekeeper's Remorse.dialogue"
+dest_files=["res://.godot/imported/Gatekeeper's Remorse.dialogue-9a9416f471878512c8ad61de7cffe304.tres"]
+
+[params]
+
+defaults=true

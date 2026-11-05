@@ -2,7 +2,6 @@
 class_name Gu_Move extends "res://Resources/CardMaxxing/Card Data/card_super.gd"
 
 @export var parent_gu: Gu_card = null;
-@export var money_cost: int = 1;
 @export var time_cost: int = 1;
 @export var art: Texture2D
 @export var card_name:String=""

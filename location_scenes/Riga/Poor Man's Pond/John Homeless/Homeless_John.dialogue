@@ -1,0 +1,96 @@
+~ start
+John Homeless: The name's John. 
+John Homeless: Homeless John.
+John Homeless: What can I do for a fine lady like you?
+=> split1
+
+~ split1
+...
+- Are you related to John Politician?
+	John Homeless: Ah, you are a man of culture!
+	John Homeless: Indeed, we used to be buisness partners.
+	John Homeless: But that worthless scum, upon striking gold he discarded me to the side. 
+	John Homeless: Reducing me to this... this...
+	John Homeless: This NOBODY...
+	John Homeless: When I see his ugly mug again, I'll kick him. 
+	=> split2
+- Do you know where to buy some... sugar?
+	John Homeless: I'm sorry, as an AI language model, I cannot provide inappropriate or offensive content. If you have other questions, I'd be happy to help.
+	=> split1
+- Wanna go out on a date?
+	if Global.money<=0:
+		John Homeless: We can date alright
+		John Homeless: But you'll have to ask the devs to finish implementing this feature
+		John Homeless: Right now this is unfinished
+		John Homeless: But you can have my number
+		John Homeless: My number is 29636
+	else:
+		John Homeless: Mmmm... Nahhh....
+		John Homeless: My family heritage requires me to stay dressed the part. 
+		John Homeless: You see, being homeless isn't as simple as people think. 
+		John Homeless: Only if you can prove your homelessness, then I will date you. 
+		John Homeless: Come back here with no money to your name, and we can date. 
+	=> split1
+- *Challenge him to a duel* [if Global.combat_unlocked and !("John Homeless" in Global.enemies_defeated) /]
+	John Homeless: A duel?
+	John Homeless: A duel we shall have!
+	John Homeless: Come forth, child of man
+	John Homeless: And die!
+	=> duel
+- *Display dominance by beating his dog to death* [if Global.combat_unlocked and !("Chupacabra" in Global.enemies_defeated) /]
+	$> Global.pre_combat_scene="res://location_scenes/Riga/Poor Man's Pond/John_Homeless_approaches.tscn"
+	$> Global.start_combat(["Chupacabra"])
+=> END
+
+~ split2
+...
+- Isn't that a bit too agressive?
+	John Homeless: Agressive?
+	John Homeless: I'll show you agressive!
+	John Homeless: I'll show you such agression that hasn't been seen before in this side of earth. 
+	...
+	- *Engage in a duel with the homeless person* [if Global.combat_unlocked and !("John Homeless" in Global.enemies_defeated) /]
+		=> duel
+	- Nevermind
+		=> split2
+- What did he do?
+	John Homeless: We were buisness partners. 
+	John Homeless: That was a long time ago. 
+	John Homeless: Like the scum she is, she discarded me to the streets. 
+	John Homeless: Left me homeless the first opportunity she had. 
+	John Homeless: Not like I care. 
+	John Homeless: I don't care. 
+	=> split2
+- Why do you need him, aren't you a strong independant woman?
+	John Homeless: I don't need no man in my life. 
+	John Homeless: But there are some things that one man cannot do. 
+	John Homeless: Especially a homeless one. 
+	John Homeless: Like the box.
+	John Homeless: I need that box. 
+	John Homeless: And for that box I'd be willing to do anything. 
+	John Homeless: ANYTHING. 
+	=> split2
+- Go Go Gadget Homeless Remover
+	John Homeless: *Raises an eyebrow*
+	=> split2
+- Is there a John Fighter that can teach me how to fight?
+	John Homeless: There most likely is, but it is quite hard to get to him.
+	John Homeless: It'd be a lot easier to learn how to battle from John Politician. 
+	John Homeless: She's my ex <3. 
+	John Homeless: If you meet him, tell her to get the fuck out of this city, 
+	John Homeless: Because once I get accepted into a clan. 
+	John Homeless: He's fucked. 
+	John Homeless: As in i'mma beat his shit.
+	=> split2 
+~ duel
+$> Global.pre_combat_scene="res://location_scenes/Riga/Poor Man's Pond/John_Homeless_approaches.tscn"
+$> Global.start_combat(["John Homeless"])
+=> END
+
+~ loss
+John Homeless: Looks like you're outta luck, buckaroo. 
+John Homeless: Means i get to take your money. 
+John Homeless: Now, luckily for you, I won't do that
+John Homeless: Because I'm a nice guy
+John Homeless: And most ladies like nice guys. 
+=> split1

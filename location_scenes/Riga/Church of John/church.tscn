@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bssxmb8ipcgda" path="res://location_scenes/Riga/Church of John/interiors-and-details-in-catholic-church-modern-and-simple-catholic-church-interior-view-towards-the-altar-2NK6YNE.jpg" id="1_uklw4"]
 [ext_resource type="PackedScene" uid="uid://c4f3qr3emk1ga" path="res://GUI.tscn" id="2_4n247"]
 [ext_resource type="Texture2D" uid="uid://bd2ilfs4c2htm" path="res://Resources/CardMaxxing/Assets/IMG_2351.png" id="2_cut6p"]
-[ext_resource type="PackedScene" uid="uid://jcsh5g6w4l03" path="res://location_scenes/Riga/Church of John/dialogue_shower.tscn" id="4_ale4d"]
+[ext_resource type="PackedScene" uid="uid://jcsh5g6w4l03" path="res://Resources/Dialogue/dialogue_shower.tscn" id="4_ale4d"]
 
 [node name="Node2D" type="Node2D" unique_id=1939330868]
 script = ExtResource("1_cut6p")

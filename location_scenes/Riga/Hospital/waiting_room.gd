@@ -8,8 +8,15 @@ func _ready() -> void:
 		while len($HandWithNumber/Label.text)<3:
 			$HandWithNumber/Label.text="0"+$HandWithNumber/Label.text
 		$HandWithNumber.visible=true
-
-
+	if Global.is_combat_going: #use as preset for combat handling
+		if EffectContext.won:
+			Global.enemies_defeated.append("Mongolian Death Worm")
+			pass
+		else:
+			#lose sequence
+			pass
+		Global.is_combat_going=false
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	$TokenNumber/Label.text=str(Global.hospital_number)

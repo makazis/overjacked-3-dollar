@@ -4,17 +4,19 @@
 [ext_resource type="Script" uid="uid://cs1e2lwpafbvf" path="res://Resources/CardMaxxing/Creature Data/creature_layout.gd" id="1_l1i2v"]
 [ext_resource type="Script" uid="uid://cxk8nxq7mevbi" path="res://Resources/CardMaxxing/Creature Data/Attack_Pattern/new_script.gd" id="2_n7y3q"]
 [ext_resource type="Script" uid="uid://crwrqd6c7y8wu" path="res://Resources/CardMaxxing/Creature Data/Attack_Pattern/Attack_Pattern.gd" id="3_g3fiy"]
+[ext_resource type="Script" uid="uid://c80v18wdftalr" path="res://Resources/CardMaxxing/Creature Data/Attack_Pattern/AutomataConditions/AutomataCondition.gd" id="3_sk7in"]
 [ext_resource type="Texture2D" uid="uid://435hgjts40qf" path="res://Resources/CardMaxxing/Creature Data/Enemies/lesser_angel.png" id="4_2nnln"]
 
 [sub_resource type="Resource" id="Resource_n7y3q"]
 script = ExtResource("2_n7y3q")
 type = "Curse"
-amount = -1
+amount = -2
 metadata/_custom_type_script = "uid://cxk8nxq7mevbi"
 
 [sub_resource type="Resource" id="Resource_g3fiy"]
 script = ExtResource("2_n7y3q")
 type = "Buff"
+amount = 2
 target_perhaps = "ECaster"
 metadata/_custom_type_script = "uid://cxk8nxq7mevbi"
 
@@ -45,7 +47,7 @@ metadata/_custom_type_script = "uid://crwrqd6c7y8wu"
 script = ExtResource("1_l1i2v")
 name = "Lesser Angel"
 display_size = 1.2
-hp = 70
+hp = 100
 image = ExtResource("4_2nnln")
 team = "Enemy"
 attack_pattern = SubResource("Resource_e7g0r")

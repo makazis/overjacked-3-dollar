@@ -23,7 +23,8 @@ func _ready() -> void:
 	"Whatsapp":preload("res://Nokia/AppData/Local/Whatsapp/whatsapp.tscn"),
 	"Rhythm Heaven":preload("res://Nokia/AppData/Roaming/Osu/osu.tscn"),
 	"ChadGPT":preload("res://Nokia/AppData/Roaming/CHadGPT/ChadGPT.tscn"),
-	
+	"Notepad":preload("res://Nokia/AppData/Local/Note App/notepad.tscn"),
+	"Debug":preload("res://Nokia/AppData/Local/DebugMenu/Debug.tscn")
 }
 var app_cache={}
 func open_app(app_name:String):
@@ -52,6 +53,10 @@ func update_time():
 	var seconds=str(int(Global.time)%60)
 	if len(seconds)==1:
 		seconds="0"+seconds
+	if Global.movement_flags["In Hell"]:
+		hours="66"
+		seconds="66"
+		minutes="66"
 	$"PhoneControl/Lock Screen/Label".text=hours+":"+minutes+":"+seconds
 	$"PhoneControl/Lock Screen/Money".text=str(round(Global.money*100)/100.)
 	if $"PhoneControl/Lock Screen/Money".text[-2]==".":
@@ -67,6 +72,11 @@ func update_app_time():
 	var seconds=str(int(Global.time)%60)
 	if len(seconds)==1:
 		seconds="0"+seconds
+	if Global.movement_flags["In Hell"]:
+		hours="66"
+		seconds="66"
+		minutes="66"
+	
 	$Time.text=hours+":"+minutes+":"+seconds
 	$Money.text=str(round(Global.money*100)/100.)
 	if $Money.text[-2]==".":

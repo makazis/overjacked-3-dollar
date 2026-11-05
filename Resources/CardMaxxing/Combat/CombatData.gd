@@ -14,7 +14,14 @@ var dig=40:
 		if dig<=0:
 			end_game.emit()
 ## Variables that stay between combats:
-var player_hp=70
+var player_hp=70:
+	set(value):
+		if value<player_hp:
+			Global.is_sleepy=true
+		player_hp=value
+		if player_hp<0:
+			player_hp=0
+var player_max_hp=70
 var player_companions=[] # a list containing data of every companion that the player has. 
 var player_gu_worms:Array[Gu_card]=[load("res://Resources/CardMaxxing/Card Data/Gu/Strength Path/Dog Strength Gu/dog_strength_gu.tres")]
 

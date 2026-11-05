@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://drk5ycxfg388n"
+path="res://.godot/imported/Homeless_John.dialogue-0022c71d9eaaf6f003bd7e4b3383c898.tres"
+
+[deps]
+
+source_file="res://location_scenes/Riga/Poor Man's Pond/John Homeless/Homeless_John.dialogue"
+dest_files=["res://.godot/imported/Homeless_John.dialogue-0022c71d9eaaf6f003bd7e4b3383c898.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,13 @@
+~ start
+John: Lol
+John: Lmao Even
+John: Let this be a lesson to you.
+John: Do not mess with the church of John. 
+if Global.money>=10:
+	John: Oh and i'll be taking 10 dollars from ya. 
+	$> Global.money-=10
+else:
+	John: Oh and i'll be taking all your money >:)
+	$> Global.money=0
+$> Global.action=""
+=> END

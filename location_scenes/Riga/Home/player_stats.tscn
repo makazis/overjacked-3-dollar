@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://cdryw2pxk0ll8"]
+
+[ext_resource type="Script" uid="uid://c7oci5tx4ssci" path="res://location_scenes/Riga/Home/player_stats.gd" id="1_dgl3o"]
+[ext_resource type="PackedScene" uid="uid://c4f3qr3emk1ga" path="res://GUI.tscn" id="1_kaeh8"]
+[ext_resource type="Texture2D" uid="uid://bko2mugvkgjes" path="res://location_scenes/Riga/Home/gettyimages-1714404601-612x612.jpg" id="2_nr5n6"]
+[ext_resource type="FontFile" uid="uid://ds1saal6ugufw" path="res://Resources/CardMaxxing/Assets/Excalifont-Regular.woff2" id="3_1vs01"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_g4v7s"]
+font = ExtResource("3_1vs01")
+font_size = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yf5fn"]
+bg_color = Color(0.40784314, 0, 0, 1)
+skew = Vector2(0.4, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_57qmd"]
+bg_color = Color(0.82, 0.19680001, 0.43569323, 1)
+skew = Vector2(0.4, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_bottom = 3
+border_color = Color(0.8156863, 0, 0, 1)
+border_blend = true
+
+[sub_resource type="Theme" id="Theme_g4v7s"]
+ProgressBar/styles/background = SubResource("StyleBoxFlat_yf5fn")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_57qmd")
+
+[node name="Node2D" type="Node2D" unique_id=1497927626]
+script = ExtResource("1_dgl3o")
+
+[node name="Gui" parent="." unique_id=1657345474 instance=ExtResource("1_kaeh8")]
+
+[node name="Label" type="Label" parent="." unique_id=1093669288]
+offset_left = 40.0
+offset_top = 39.0
+offset_right = 80.0
+offset_bottom = 62.0
+
+[node name="Gettyimages1714404601612x612" type="Sprite2D" parent="." unique_id=898572539]
+position = Vector2(579, 325)
+scale = Vector2(1.9084967, 1.637255)
+texture = ExtResource("2_nr5n6")
+
+[node name="Panel" type="Panel" parent="." unique_id=112562222]
+offset_left = 25.0
+offset_top = 14.0
+offset_right = 519.0
+offset_bottom = 316.0
+
+[node name="Label" type="Label" parent="Panel" unique_id=1538064705]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 91.0
+offset_bottom = 36.0
+text = "HP: 70/70
+
+Ball Knowledge: 0"
+label_settings = SubResource("LabelSettings_g4v7s")
+
+[node name="ProgressBar" type="ProgressBar" parent="Panel" unique_id=1585861569]
+layout_mode = 0
+offset_left = 219.0
+offset_top = 84.0
+offset_right = 486.0
+offset_bottom = 111.0
+theme = SubResource("Theme_g4v7s")
+value = 100.0
+show_percentage = false

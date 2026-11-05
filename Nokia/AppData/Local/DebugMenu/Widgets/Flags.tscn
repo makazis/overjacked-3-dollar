@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://c7r6lx6eiurai"]
+
+[ext_resource type="Script" uid="uid://b88w0ldarunw7" path="res://Nokia/AppData/Local/DebugMenu/Widgets/flags.gd" id="1_m8ots"]
+
+[node name="FlagContainer" type="FoldableContainer" unique_id=1119059731]
+custom_minimum_size = Vector2(342, 0)
+offset_right = 227.0
+offset_bottom = 275.0
+folded = true
+title = "Flags"
+script = ExtResource("1_m8ots")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1476339043]
+visible = false
+layout_mode = 2
+
+[node name="Combat Unlocked" type="Panel" parent="VBoxContainer" unique_id=1093483923]
+custom_minimum_size = Vector2(342, 40)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Combat Unlocked" unique_id=604974778]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 9.0
+offset_right = 116.0
+offset_bottom = 32.0
+text = "Combat Unlocked"
+
+[node name="CheckButton" type="CheckButton" parent="VBoxContainer/Combat Unlocked" unique_id=1309666293]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 9.0
+offset_right = 51.0
+offset_bottom = 33.0
+
+[node name="Is Sleepy" type="Panel" parent="VBoxContainer" unique_id=1899779176]
+custom_minimum_size = Vector2(342, 40)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Is Sleepy" unique_id=1752570913]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 9.0
+offset_right = 116.0
+offset_bottom = 32.0
+text = "Is Sleepy"
+
+[node name="CheckButton" type="CheckButton" parent="VBoxContainer/Is Sleepy" unique_id=1115499993]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 9.0
+offset_right = 51.0
+offset_bottom = 33.0
+
+[node name="Can Donate Blood" type="Panel" parent="VBoxContainer" unique_id=1095934591]
+custom_minimum_size = Vector2(342, 40)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Can Donate Blood" unique_id=636021503]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 9.0
+offset_right = 116.0
+offset_bottom = 32.0
+text = "Can Donate Blood"
+
+[node name="CheckButton" type="CheckButton" parent="VBoxContainer/Can Donate Blood" unique_id=796483363]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 9.0
+offset_right = 51.0
+offset_bottom = 33.0
+
+[connection signal="pressed" from="VBoxContainer/Combat Unlocked/CheckButton" to="VBoxContainer/Combat Unlocked" method="_on_check_button_pressed"]
+[connection signal="toggled" from="VBoxContainer/Combat Unlocked/CheckButton" to="." method="_combat_unlocked"]
+[connection signal="pressed" from="VBoxContainer/Is Sleepy/CheckButton" to="VBoxContainer/Is Sleepy" method="_on_check_button_pressed"]
+[connection signal="toggled" from="VBoxContainer/Is Sleepy/CheckButton" to="." method="_is_sleepy"]
+[connection signal="pressed" from="VBoxContainer/Can Donate Blood/CheckButton" to="VBoxContainer/Can Donate Blood" method="_on_check_button_pressed"]
+[connection signal="toggled" from="VBoxContainer/Can Donate Blood/CheckButton" to="." method="_can_donate_blood"]

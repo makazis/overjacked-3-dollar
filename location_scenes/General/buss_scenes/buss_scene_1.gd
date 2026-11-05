@@ -10,15 +10,20 @@ func _ready() -> void:
 		else:
 			#lose sequence
 			pass
+	Global.is_combat_going=false
 	if Global.is_combat_going: #use as preset for combat handling
 		if EffectContext.won:
 			guy_is_dead=true
 			$KilledTheGuy.visible=true
+			if not "Bigfoot" in Global.enemies_defeated:
+				Global.enemies_defeated.append("Bigfoot")
 			pass
 		else:
 			#lose sequence
 			pass
-
+	if "Bigfoot" in Global.enemies_defeated:
+		guy_is_dead=true
+		$KilledTheGuy.visible=true
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
