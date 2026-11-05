@@ -4,7 +4,7 @@ extends Node
 # Called when the node enters the scene tree for the first time.
 signal open_app(app_path:String)
 ## Add app named "Debug" to the list to access debug mode
-var apps=["App Store","Whatsapp","Settings","Notepad"]
+var apps=["App Store","Whatsapp","Settings","Notepad","Debug"]
 
 signal apps_changed()
 signal shake_phone(time:int)
