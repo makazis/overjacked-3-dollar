@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://bptmxvpcdus6p"
+path="res://.godot/imported/main.dialogue-0aea1e1ee6c87dc2ff5ba2d591705ef9.tres"
+
+[deps]
+
+source_file="res://location_scenes/Riga/Limbo/Black Smithery/main.dialogue"
+dest_files=["res://.godot/imported/main.dialogue-0aea1e1ee6c87dc2ff5ba2d591705ef9.tres"]
+
+[params]
+
+defaults=true

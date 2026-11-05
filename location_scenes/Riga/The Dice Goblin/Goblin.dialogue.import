@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://eqeb0i0mecch"
+path="res://.godot/imported/Goblin.dialogue-b32fc317177e83cb7e634f87bb89abce.tres"
+
+[deps]
+
+source_file="res://location_scenes/Riga/The Dice Goblin/Goblin.dialogue"
+dest_files=["res://.godot/imported/Goblin.dialogue-b32fc317177e83cb7e634f87bb89abce.tres"]
+
+[params]
+
+defaults=true

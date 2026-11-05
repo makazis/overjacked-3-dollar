@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://cs1e2lwpafbvf" path="res://Resources/CardMaxxing/Creature Data/creature_layout.gd" id="1_rp7r0"]
 [ext_resource type="Script" uid="uid://cxk8nxq7mevbi" path="res://Resources/CardMaxxing/Creature Data/Attack_Pattern/new_script.gd" id="2_o0we6"]
 [ext_resource type="Script" uid="uid://crwrqd6c7y8wu" path="res://Resources/CardMaxxing/Creature Data/Attack_Pattern/Attack_Pattern.gd" id="3_5sj8g"]
+[ext_resource type="Script" uid="uid://c80v18wdftalr" path="res://Resources/CardMaxxing/Creature Data/Attack_Pattern/AutomataConditions/AutomataCondition.gd" id="3_jbwd5"]
 [ext_resource type="Texture2D" uid="uid://cqh4qdeexii1s" path="res://Resources/CardMaxxing/Creature Data/Enemies/greater_angel.png" id="4_w3c3r"]
 
 [sub_resource type="Resource" id="Resource_7lrxv"]

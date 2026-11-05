@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cs1e2lwpafbvf" path="res://Resources/CardMaxxing/Creature Data/creature_layout.gd" id="1_ijwuc"]
 [ext_resource type="Script" uid="uid://b1220yr12wl0u" path="res://Resources/CardMaxxing/Creature Data/Attack_Pattern/EnemyAttackMove.gd" id="1_tdyje"]
 [ext_resource type="Script" uid="uid://cxk8nxq7mevbi" path="res://Resources/CardMaxxing/Creature Data/Attack_Pattern/new_script.gd" id="2_d6q77"]
+[ext_resource type="Script" uid="uid://c80v18wdftalr" path="res://Resources/CardMaxxing/Creature Data/Attack_Pattern/AutomataConditions/AutomataCondition.gd" id="3_d6q77"]
 [ext_resource type="Script" uid="uid://crwrqd6c7y8wu" path="res://Resources/CardMaxxing/Creature Data/Attack_Pattern/Attack_Pattern.gd" id="3_pbbw0"]
 [ext_resource type="Texture2D" uid="uid://uew4ammadlra" path="res://location_scenes/Riga/Poor Man's Pond/John Homeless/John Homeless (2).png" id="4_tdyje"]
 

@@ -119,7 +119,7 @@ lmb={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://location_scenes/Riga/Church of John/Combat/JohnLossDialogue.dialogue", "res://location_scenes/Riga/Church of John/Combat/JohnWonDialogue.dialogue", "res://location_scenes/Riga/Church of John/God.dialogue", "res://location_scenes/Riga/Church of John/JohnDialogue.dialogue", "res://location_scenes/Riga/Church of John/John_Tutorial.dialogue", "res://location_scenes/Riga/Hospital/Dialogue/test.dialogue", "res://location_scenes/Riga/Phone House/phone_house_enter.dialogue", "res://location_scenes/Riga/Poor Man\'s Pond/John Homeless/Homeless_John.dialogue", "res://location_scenes/Riga/Limbo/Gates of Hell/Gatekeeper\'s Remorse.dialogue")
+locale/translations_pot_files=PackedStringArray("res://location_scenes/Riga/Church of John/Combat/JohnLossDialogue.dialogue", "res://location_scenes/Riga/Church of John/Combat/JohnWonDialogue.dialogue", "res://location_scenes/Riga/Church of John/God.dialogue", "res://location_scenes/Riga/Church of John/JohnDialogue.dialogue", "res://location_scenes/Riga/Church of John/John_Tutorial.dialogue", "res://location_scenes/Riga/Hospital/Dialogue/test.dialogue", "res://location_scenes/Riga/Phone House/phone_house_enter.dialogue", "res://location_scenes/Riga/Poor Man\'s Pond/John Homeless/Homeless_John.dialogue", "res://location_scenes/Riga/Limbo/Gates of Hell/Gatekeeper\'s Remorse.dialogue", "res://location_scenes/Riga/Limbo/Black Smithery/main.dialogue", "res://location_scenes/Riga/The Dice Goblin/Goblin.dialogue")
 
 [physics]
 

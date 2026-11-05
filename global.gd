@@ -135,6 +135,7 @@ var map_paths={
 	"Global":"res://Resources/MapMaxxing/Map.tscn",
 	"Riga":"res://Resources/MapMaxxing/GraphMaps/Riga/RigaMap.tscn",
 	"London":"res://location_scenes/London/LondonMap.tscn",
+	"Riga-Limbo":"res://location_scenes/Riga/Limbo/hell.tscn"
 }
 var movement_flags={
 	"Defeated John Politician":false,
@@ -223,6 +224,8 @@ func player_gain_card(card_name:String=""):
 func dialogue(dialogue_data:DialogueLine,camera_root=null):
 	if camera_root==null:
 		pass
+func d_randi_range(a:int,b:int):
+	return randi_range(a,b)
 	
 #endregion
 #region locations
@@ -238,6 +241,7 @@ var player_ball_knowledge_xp=0:
 			while player_ball_knowledge_xp>=player_ball_knowledge_levelups[player_ball_knowledge]:
 				player_ball_knowledge_xp-=player_ball_knowledge_levelups[player_ball_knowledge]
 				player_ball_knowledge+=1
+var goblin_losses=0
 #endregion
 #region hospital (Riga)
 var hospital_number=1

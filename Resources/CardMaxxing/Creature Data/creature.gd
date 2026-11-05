@@ -73,7 +73,7 @@ func individual_end_turn():
 		update_status_effects()
 var attack_data:EnemyAttackMove=null # a list containing every current action on runtime. 
 var attack_counter=0 # used for Cycle attack pattern
-var last_attack=0 # used for 
+var last_attack=0 # used for Random+ And Automata
 
 var action_is_helpful=true
 ## Variable that determines whether or not an action will harm the individual, or will it help them instead (mostly for enemy AI)
@@ -95,8 +95,11 @@ func first_attack():
 	if data.attack_pattern.PatternType=="Random":
 		attack_data=data.attack_pattern.attacks.pick_random()
 	if data.attack_pattern.PatternType=="Random+":
-		last_attack=randi_range(0,len(data.attack_pattern.attacks)-1)
+		if data.attack_pattern.starts_at==0: #YOU CAN't START AT 0, FUCK YOU
+			last_attack=randi_range(0,len(data.attack_pattern.attacks)-1)
 		attack_data=data.attack_pattern.attacks[last_attack]
+	if data.attack_pattern.PatternType=="Automata":
+		attack_data=data.attack_pattern.attacks[data.attack_pattern.starts_at]
 	render_attack()
 
 #loads every subsequent attack, and displays it
@@ -117,6 +120,18 @@ func next_attack():
 			temp_last_attack+=1
 		last_attack=temp_last_attack
 		attack_data=data.attack_pattern.attacks[last_attack]
+	if data.attack_pattern.PatternType=="Automata":
+		#This will hurt, both me and you
+		var possible_vertices=[]
+		for condition in data.attack_pattern.automata_vertices:
+			if condition.test_condition(data,EffectContext.roles["Caster"][0]):
+				if last_attack in condition.input_nodes:
+					possible_vertices.append_array(condition.output_nodes)
+		if len(possible_vertices)==0:
+			possible_vertices.append(0)
+		last_attack=possible_vertices.pick_random()
+		attack_data=data.attack_pattern.attacks[last_attack]
+		pass
 	render_attack()
 var targets=[]
 @onready var AttackIndicator=preload("res://Resources/CardMaxxing/Creature Data/Other/attack_indicator.tscn")

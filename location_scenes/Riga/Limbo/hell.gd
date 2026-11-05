@@ -9,7 +9,7 @@ func _ready() -> void:
 				i.go_here()
 				break
 	Global.movement_flags["In Hell"]=true
-
+	Global.what_map_am_i_on="Riga-Limbo"
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

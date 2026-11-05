@@ -10,6 +10,7 @@ font = ExtResource("1_f7pug")
 font_size = 20
 
 [node name="Control" type="Control" unique_id=1981349740]
+z_index = 15
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
