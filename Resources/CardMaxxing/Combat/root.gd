@@ -13,7 +13,8 @@ var creature_load_reference={
 	"Lesser Angel":preload("res://Resources/CardMaxxing/Creature Data/Enemies/lesser_angel.tres"),
 	"Greater Angel":preload("res://Resources/CardMaxxing/Creature Data/Enemies/greater_angel.tres"),
 	"John Politician":preload("res://location_scenes/Riga/Church of John/Combat/john_politician.tres"),
-	"John Homeless":preload("res://location_scenes/Riga/Poor Man's Pond/John Homeless/john_homeless.tres")
+	"John Homeless":preload("res://location_scenes/Riga/Poor Man's Pond/John Homeless/john_homeless.tres"),
+	"Dice Goblin":preload("res://location_scenes/Riga/The Dice Goblin/goblin.tres")
 }
 func _ready() -> void:
 	CombatData.root_visual_update.connect(visual_update)
@@ -184,6 +185,7 @@ func draw_cards(card_count:int=1):
 		await get_tree().create_timer(0.2).timeout
 		$Deck.deal_to($Hand,1)
 		$Hand.arrange()
+
 func create_card_in(card_resource:CardResource,card_pile:String="Hand"):
 	var card = Card.new(card_resource)
 	if card_pile=="Hand":

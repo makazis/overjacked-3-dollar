@@ -7,9 +7,13 @@ class_name PatternAction extends Resource
 ## Buff: buff itself
 ## Dig: Deprecated
 ## Flee: run away from the combat, instantly winning. 
-@export_enum("Attack","Block","Curse","Buff","Dig","Flee") var type:String
+@export_enum("Attack","Block","Curse","Buff","Dig","Flee","Add Cards To Their Deck") var type:String
 ##
 @export var amount:int=5
 @export var times:int=1
 @export_enum("Strength","Dexterity","Burning") var status_type:String="Strength"
 @export var target_perhaps:String=""
+
+@export_category("Adding Cards")
+@export var card_added:Gu_Move=null
+@export_enum("DiscardPile","Hand","Deck","StartOfTurnGetsPlayed") var where_to_add_card:String="DiscardPile"

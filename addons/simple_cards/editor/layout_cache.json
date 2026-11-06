@@ -1,4 +1,10 @@
 {
+	"res://New Card/Card Layouts/hidden_meaning.tscn": {
+		"enabled": true,
+		"last_modified": 1793973676,
+		"layout_id": "Hidden_Meaning",
+		"tags": []
+	},
 	"res://Resources/CardMaxxing/Card Data/Card Tags/unplayable.tscn": {
 		"enabled": true,
 		"last_modified": 1792602255.0,

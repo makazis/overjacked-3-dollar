@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://gblkcelf58m8"]
 
-[ext_resource type="Script" uid="uid://bxkw34pksdtpu" path="res://Creature Data/Other/attack_indicator.gd" id="1_35lex"]
-[ext_resource type="FontFile" uid="uid://ds1saal6ugufw" path="res://Assets/Excalifont-Regular.woff2" id="1_d1j6d"]
-[ext_resource type="Texture2D" uid="uid://iiu0hd2ol35a" path="res://Assets/IMG_2348.png" id="2_35lex"]
-[ext_resource type="Texture2D" uid="uid://bremexj2r3iq4" path="res://Assets/IMG_2347.png" id="3_35lex"]
-[ext_resource type="Texture2D" uid="uid://cr0ol78hfp0ds" path="res://Assets/IMG_2417.png" id="5_4886w"]
-[ext_resource type="Texture2D" uid="uid://bn0iv7dnv5rso" path="res://Assets/IMG_2416.png" id="6_8unyh"]
+[ext_resource type="Script" uid="uid://bxkw34pksdtpu" path="res://Resources/CardMaxxing/Creature Data/Other/attack_indicator.gd" id="1_35lex"]
+[ext_resource type="FontFile" uid="uid://ds1saal6ugufw" path="res://Resources/CardMaxxing/Assets/Excalifont-Regular.woff2" id="1_d1j6d"]
+[ext_resource type="Texture2D" uid="uid://iiu0hd2ol35a" path="res://Resources/CardMaxxing/Assets/IMG_2348.png" id="2_35lex"]
+[ext_resource type="Texture2D" uid="uid://bremexj2r3iq4" path="res://Resources/CardMaxxing/Assets/IMG_2347.png" id="3_35lex"]
+[ext_resource type="Texture2D" uid="uid://cr0ol78hfp0ds" path="res://Resources/CardMaxxing/Assets/IMG_2417.png" id="5_4886w"]
+[ext_resource type="Texture2D" uid="uid://bn0iv7dnv5rso" path="res://Resources/CardMaxxing/Assets/IMG_2416.png" id="6_8unyh"]
+[ext_resource type="Texture2D" uid="uid://cplscrqepwrwv" path="res://Resources/CardMaxxing/Creature Data/Other/WinIcons_48.png" id="7_ytqfo"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5ub26"]
 font = ExtResource("1_d1j6d")
@@ -54,3 +55,13 @@ visible = false
 position = Vector2(26.666662, 36)
 scale = Vector2(0.038968824, 0.038968824)
 texture = ExtResource("6_8unyh")
+
+[node name="WinIcons" type="Node2D" parent="." unique_id=301390560]
+visible = false
+
+[node name="WinIcons48" type="Sprite2D" parent="WinIcons" unique_id=1605613548]
+texture_filter = 1
+texture = ExtResource("7_ytqfo")
+centered = false
+region_enabled = true
+region_rect = Rect2(336, 720, 48, 48)

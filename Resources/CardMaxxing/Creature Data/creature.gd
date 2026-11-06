@@ -196,6 +196,9 @@ func execute_attack():
 					$S.region_rect=Rect2(0,256*miner_skin_color,256,256)
 					CombatData.dig-=action_iter.amount
 					continue
+			if action_iter.type=="Add Cards To Their Deck":
+				for ii in range(action_iter.amount):
+					EffectContext.combat_scene.create_card_in(action_iter.card_added,action_iter.where_to_add_card)
 			#await get_tree().create_timer(0.2).timeout
 			if not (action_iter.target_perhaps==null or action_iter.target_perhaps==""):
 				iteratable_targets=EffectContext.roles[action_iter.target_perhaps]

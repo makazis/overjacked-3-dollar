@@ -3,6 +3,7 @@
 
 class_name LayoutID
 
+const HIDDEN_MEANING: StringName = &"Hidden_Meaning"
 const MOVE: StringName = &"Move"
 const DEFAULT: StringName = &"default"
 const DEFAULT_BACK: StringName = &"default_back"
@@ -12,6 +13,7 @@ const UNPLAYABLE: StringName = &"unplayable"
 ## Returns all available layout IDs
 static func get_all() -> Array[StringName]:
 	return [
+		HIDDEN_MEANING,
 		MOVE,
 		DEFAULT,
 		DEFAULT_BACK,

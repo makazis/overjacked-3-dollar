@@ -1,0 +1,128 @@
+[gd_scene format=3 uid="uid://ckdfnirbo7743"]
+
+[ext_resource type="Script" uid="uid://car0pw7cwafhp" path="res://addons/simple_cards/card/card_layout/default_card_layout.gd" id="1_13u62"]
+[ext_resource type="Texture2D" uid="uid://cbielbp88fsxr" path="res://Resources/CardMaxxing/Assets/IMG_2326.png" id="2_ngurv"]
+[ext_resource type="FontFile" uid="uid://ds1saal6ugufw" path="res://Resources/CardMaxxing/Assets/Excalifont-Regular.woff2" id="3_6gbdn"]
+[ext_resource type="Texture2D" uid="uid://cwcd8dn7qd3ol" path="res://Resources/CardMaxxing/Assets/CardCountOverlay.png" id="3_r8cwh"]
+[ext_resource type="Texture2D" uid="uid://ch1df4pi6xct5" path="res://Resources/CardMaxxing/Assets/IMG_2332.png" id="9_oaxh4"]
+[ext_resource type="Texture2D" uid="uid://0efuwqd0pnyx" path="res://Resources/CardMaxxing/Assets/IMG_2333.png" id="10_ha3pj"]
+[ext_resource type="Texture2D" uid="uid://cex8i6gifygct" path="res://Resources/CardMaxxing/Assets/IMG_2334.png" id="11_acmvl"]
+[ext_resource type="Texture2D" uid="uid://bvf5khk03niom" path="res://Resources/CardMaxxing/Assets/IMG_2335.png" id="12_ggl7s"]
+[ext_resource type="Texture2D" uid="uid://b5ntxt013vhxd" path="res://Resources/CardMaxxing/Assets/IMG_2336.png" id="13_llcf3"]
+[ext_resource type="Texture2D" uid="uid://cysc27lrq02g" path="res://Resources/CardMaxxing/Assets/IMG_2423.png" id="14_f3yi5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mdmbe"]
+font = ExtResource("3_6gbdn")
+font_size = 100
+outline_size = 1
+outline_color = Color(0.7581918, 0.7581918, 0.7581917, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ngurv"]
+font = ExtResource("3_6gbdn")
+font_size = 80
+font_color = Color(0.23333335, 1, 0, 1)
+outline_size = 1
+outline_color = Color(0.7581918, 0.7581918, 0.7581917, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8jvv5"]
+font = ExtResource("3_6gbdn")
+font_size = 100
+outline_size = 1
+outline_color = Color(0.7581918, 0.7581918, 0.7581917, 1)
+
+[node name="CardLayout" type="SubViewportContainer" unique_id=1099597718]
+offset_right = 80.0
+offset_bottom = 112.0
+script = ExtResource("1_13u62")
+card_size = Vector2i(240, 336)
+metadata/is_layout = true
+metadata/layout_id = "Hidden_Meaning"
+metadata/tags = []
+metadata/_custom_type_script = "uid://dm115oleoggyt"
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=67010053]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(240, 336)
+render_target_update_mode = 4
+
+[node name="DefaultCardSprite" type="Sprite2D" parent="SubViewport" unique_id=874854697]
+position = Vector2(114.49999, 163.99998)
+scale = Vector2(0.17326139, 0.14740367)
+texture = ExtResource("2_ngurv")
+
+[node name="Label" type="Label" parent="SubViewport/DefaultCardSprite" unique_id=1577459816]
+offset_left = -585.82
+offset_top = -52.52182
+offset_right = 614.67816
+offset_bottom = 150.56326
+text = "Strike"
+label_settings = SubResource("LabelSettings_mdmbe")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="SubViewport/DefaultCardSprite" unique_id=222008928]
+custom_maximum_size = Vector2(1005, -1)
+offset_left = -580.04834
+offset_top = 227.59555
+offset_right = 425.1764
+offset_bottom = 892.87415
+scale = Vector2(1.2, 1.2)
+text = "first line
+second line
+deal 6 damage
+fourth line
+fifth line"
+label_settings = SubResource("LabelSettings_mdmbe")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="No Time" type="Sprite2D" parent="SubViewport/DefaultCardSprite" unique_id=174923892]
+visible = false
+texture = ExtResource("9_oaxh4")
+
+[node name="One Time" type="Sprite2D" parent="SubViewport/DefaultCardSprite" unique_id=1041034308]
+visible = false
+texture = ExtResource("10_ha3pj")
+
+[node name="Two Time" type="Sprite2D" parent="SubViewport/DefaultCardSprite" unique_id=1932288325]
+visible = false
+texture = ExtResource("11_acmvl")
+
+[node name="Three Time" type="Sprite2D" parent="SubViewport/DefaultCardSprite" unique_id=1031466466]
+visible = false
+texture = ExtResource("12_ggl7s")
+
+[node name="Four Time" type="Sprite2D" parent="SubViewport/DefaultCardSprite" unique_id=2106135767]
+visible = false
+texture = ExtResource("13_llcf3")
+
+[node name="Label3" type="Label" parent="SubViewport/DefaultCardSprite" unique_id=877142535]
+visible = false
+offset_left = -631.99304
+offset_top = -719.1136
+offset_right = -366.4982
+offset_bottom = -516.0285
+label_settings = SubResource("LabelSettings_ngurv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="SubViewport/DefaultCardSprite" unique_id=304383900]
+show_behind_parent = true
+position = Vector2(14.429111, 74.625114)
+texture = ExtResource("14_f3yi5")
+
+[node name="Count" type="Sprite2D" parent="SubViewport/DefaultCardSprite" unique_id=2073871040]
+visible = false
+scale = Vector2(1, 1.0000001)
+texture = ExtResource("3_r8cwh")
+
+[node name="Label" type="Label" parent="SubViewport/DefaultCardSprite/Count" unique_id=1728160539]
+offset_left = -170.26292
+offset_top = -956.55676
+offset_right = 193.34956
+offset_bottom = -829.55676
+text = "x30"
+label_settings = SubResource("LabelSettings_8jvv5")
+horizontal_alignment = 1

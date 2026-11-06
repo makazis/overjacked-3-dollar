@@ -138,7 +138,7 @@ var map_paths={
 	"Riga-Limbo":"res://location_scenes/Riga/Limbo/hell.tscn"
 }
 var movement_flags={
-	"Defeated John Politician":false,
+	"Defeated John Politician":true,
 	"Hell Unlocked":false,
 	"In Hell":false
 }

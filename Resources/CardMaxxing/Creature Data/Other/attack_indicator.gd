@@ -21,6 +21,10 @@ func setup(parent:Creature_Node,type="Attack",ammount=1,times=1,effect_type="Str
 	if type=="Buff":
 		$Buff.visible=true
 		$Label.text=""
+	if type=="Add Cards To Their Deck":
+		$WinIcons.visible=true
+		$WinIcons/WinIcons48.region_rect=Rect2(336.0,720.0,48.,48.)
+		$Label.text=CombatData.standart_big_number(total_ammount)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.

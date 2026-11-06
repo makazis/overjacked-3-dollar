@@ -1,0 +1,329 @@
+[gd_scene format=3 uid="uid://dj4ijxdpi1028"]
+
+[ext_resource type="FontFile" uid="uid://ds1saal6ugufw" path="res://Resources/CardMaxxing/Assets/Excalifont-Regular.woff2" id="1_f7pug"]
+[ext_resource type="Script" uid="uid://ba7jwbbm08hxn" path="res://Resources/Dialogue/dialogue_shower.gd" id="2_f7pug"]
+[ext_resource type="Script" uid="uid://g32um0mltv5d" path="res://addons/dialogue_manager/nodes/dialogue_label/dialogue_label.gd" id="2_iobet"]
+[ext_resource type="Texture2D" uid="uid://3xqsltcq3n8v" path="res://location_scenes/Riga/Church of John/Untitled.png" id="3_iobet"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_g4v7s"]
+font = ExtResource("1_f7pug")
+font_size = 20
+
+[node name="Control" type="Control" unique_id=1981349740]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_f7pug")
+
+[node name="Untitled" type="Sprite2D" parent="." unique_id=1479649960]
+show_behind_parent = true
+position = Vector2(561, 569)
+texture = ExtResource("3_iobet")
+
+[node name="DialogueLabel" type="RichTextLabel" parent="Untitled" unique_id=718732592]
+offset_left = -535.0
+offset_top = -61.0
+offset_right = 550.0
+offset_bottom = 61.0
+theme_override_fonts/normal_font = ExtResource("1_f7pug")
+theme_override_font_sizes/normal_font_size = 24
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_iobet")
+skip_pause_at_abbreviations = PackedStringArray("Mr", "Mrs", "Ms", "Dr", "etc", "eg", "ex")
+metadata/_custom_type_script = "uid://g32um0mltv5d"
+
+[node name="Label" type="Label" parent="Untitled" unique_id=1184928272]
+offset_left = -522.0
+offset_top = -53.0
+offset_right = -250.0
+offset_bottom = -27.0
+text = "ERROR"
+label_settings = SubResource("LabelSettings_g4v7s")
+
+[node name="Options" type="Control" parent="." unique_id=404748831]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Option 1" type="Sprite2D" parent="Options" unique_id=116360300]
+visible = false
+position = Vector2(563, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_iobet")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Options/Option 1" unique_id=485340530]
+offset_left = -532.0
+offset_top = -56.0
+offset_right = 546.0
+offset_bottom = 60.0
+theme_override_fonts/normal_font = ExtResource("1_f7pug")
+theme_override_font_sizes/normal_font_size = 32
+text = "mad respect bro"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Options/Option 1" unique_id=1377282591]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -550.0
+offset_top = -68.0
+offset_right = 564.0
+offset_bottom = 72.0
+
+[node name="Option 2" type="Sprite2D" parent="Options" unique_id=442504574]
+visible = false
+position = Vector2(559, 127)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_iobet")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Options/Option 2" unique_id=1294797616]
+offset_left = -532.0
+offset_top = -56.0
+offset_right = 546.0
+offset_bottom = 60.0
+theme_override_fonts/normal_font = ExtResource("1_f7pug")
+theme_override_font_sizes/normal_font_size = 32
+text = "rad mespect bro"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Options/Option 2" unique_id=1269231809]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -550.0
+offset_top = -68.0
+offset_right = 564.0
+offset_bottom = 72.0
+
+[node name="Option 3" type="Sprite2D" parent="Options" unique_id=271506891]
+visible = false
+position = Vector2(561, 203)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_iobet")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Options/Option 3" unique_id=1309273761]
+offset_left = -532.0
+offset_top = -56.0
+offset_right = 546.0
+offset_bottom = 60.0
+theme_override_fonts/normal_font = ExtResource("1_f7pug")
+theme_override_font_sizes/normal_font_size = 32
+text = "rad mespect bro"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Options/Option 3" unique_id=2034651213]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -550.0
+offset_top = -68.0
+offset_right = 564.0
+offset_bottom = 72.0
+
+[node name="Option 4" type="Sprite2D" parent="Options" unique_id=506162298]
+visible = false
+position = Vector2(559, 282)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_iobet")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Options/Option 4" unique_id=1685217985]
+offset_left = -532.0
+offset_top = -56.0
+offset_right = 546.0
+offset_bottom = 60.0
+theme_override_fonts/normal_font = ExtResource("1_f7pug")
+theme_override_font_sizes/normal_font_size = 32
+text = "rad mespect bro"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Options/Option 4" unique_id=1398440163]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -550.0
+offset_top = -68.0
+offset_right = 564.0
+offset_bottom = 72.0
+
+[node name="Option 5" type="Sprite2D" parent="Options" unique_id=1524183409]
+visible = false
+position = Vector2(568, 358)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_iobet")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Options/Option 5" unique_id=618670846]
+offset_left = -532.0
+offset_top = -56.0
+offset_right = 546.0
+offset_bottom = 60.0
+theme_override_fonts/normal_font = ExtResource("1_f7pug")
+theme_override_font_sizes/normal_font_size = 32
+text = "rad mespect bro"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Options/Option 5" unique_id=658774243]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -550.0
+offset_top = -68.0
+offset_right = 564.0
+offset_bottom = 72.0
+
+[node name="Option 6" type="Sprite2D" parent="Options" unique_id=1860430443]
+visible = false
+position = Vector2(536, 435)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_iobet")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Options/Option 6" unique_id=1737966488]
+offset_left = -532.0
+offset_top = -56.0
+offset_right = 546.0
+offset_bottom = 60.0
+theme_override_fonts/normal_font = ExtResource("1_f7pug")
+theme_override_font_sizes/normal_font_size = 32
+text = "rad mespect bro"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Options/Option 6" unique_id=1067077473]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -550.0
+offset_top = -68.0
+offset_right = 564.0
+offset_bottom = 72.0
+
+[node name="Option 7" type="Sprite2D" parent="Options" unique_id=1340045147]
+visible = false
+position = Vector2(926.00006, 262)
+rotation = 1.3637092
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_iobet")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Options/Option 7" unique_id=1186823298]
+offset_left = -532.0
+offset_top = -56.0
+offset_right = 546.0
+offset_bottom = 60.0
+theme_override_fonts/normal_font = ExtResource("1_f7pug")
+theme_override_font_sizes/normal_font_size = 32
+text = "rad mespect bro"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Options/Option 7" unique_id=2123817895]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -550.0
+offset_top = -68.0
+offset_right = 564.0
+offset_bottom = 72.0
+
+[node name="Option 8" type="Sprite2D" parent="Options" unique_id=238495030]
+visible = false
+position = Vector2(464.99994, 480.99997)
+rotation = -0.4105302
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_iobet")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Options/Option 8" unique_id=1718557291]
+offset_left = -532.0
+offset_top = -56.0
+offset_right = 546.0
+offset_bottom = 60.0
+theme_override_fonts/normal_font = ExtResource("1_f7pug")
+theme_override_font_sizes/normal_font_size = 32
+text = "rad mespect bro"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Options/Option 8" unique_id=1316029516]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -550.0
+offset_top = -68.0
+offset_right = 564.0
+offset_bottom = 72.0
+
+[node name="Option 9" type="Sprite2D" parent="Options" unique_id=701514657]
+visible = false
+position = Vector2(441, 221)
+rotation = 0.41781336
+scale = Vector2(0.97253823, 0.97253823)
+texture = ExtResource("3_iobet")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Options/Option 9" unique_id=344029259]
+offset_left = -532.0
+offset_top = -56.0
+offset_right = 546.0
+offset_bottom = 60.0
+theme_override_fonts/normal_font = ExtResource("1_f7pug")
+theme_override_font_sizes/normal_font_size = 32
+text = "rad mespect bro"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Options/Option 9" unique_id=342238037]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -550.0
+offset_top = -68.0
+offset_right = 564.0
+offset_bottom = 72.0
+
+[node name="Option 10" type="Sprite2D" parent="Options" unique_id=309297578]
+visible = false
+position = Vector2(107, 298)
+rotation = -1.709607
+scale = Vector2(0.5750995, 0.503993)
+texture = ExtResource("3_iobet")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Options/Option 10" unique_id=3823020]
+offset_left = -532.0
+offset_top = -56.0
+offset_right = 546.0
+offset_bottom = 60.0
+theme_override_fonts/normal_font = ExtResource("1_f7pug")
+theme_override_font_sizes/normal_font_size = 32
+text = "rad mespect bro"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Options/Option 10" unique_id=351593090]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -550.0
+offset_top = -68.0
+offset_right = 564.0
+offset_bottom = 72.0
+
+[node name="Option 11" type="Sprite2D" parent="Options" unique_id=294353779]
+visible = false
+position = Vector2(349.00003, 163)
+rotation = -0.7879705
+scale = Vector2(0.5750995, 0.503993)
+texture = ExtResource("3_iobet")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Options/Option 11" unique_id=888888487]
+offset_left = -532.0
+offset_top = -56.0
+offset_right = 546.0
+offset_bottom = 60.0
+theme_override_fonts/normal_font = ExtResource("1_f7pug")
+theme_override_font_sizes/normal_font_size = 32
+text = "rad mespect bro"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Options/Option 11" unique_id=1887877110]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -550.0
+offset_top = -68.0
+offset_right = 564.0
+offset_bottom = 72.0
+
+[connection signal="pressed" from="Options/Option 1/Button" to="." method="response_1"]
+[connection signal="pressed" from="Options/Option 2/Button" to="." method="response_2"]
+[connection signal="pressed" from="Options/Option 3/Button" to="." method="response_3"]
+[connection signal="pressed" from="Options/Option 4/Button" to="." method="response_4"]
+[connection signal="pressed" from="Options/Option 5/Button" to="." method="response_5"]
+[connection signal="pressed" from="Options/Option 6/Button" to="." method="response_6"]
+[connection signal="pressed" from="Options/Option 7/Button" to="." method="response_7"]
+[connection signal="pressed" from="Options/Option 8/Button" to="." method="response_8"]
+[connection signal="pressed" from="Options/Option 9/Button" to="." method="response_9"]
+[connection signal="pressed" from="Options/Option 10/Button" to="." method="response_10"]
+[connection signal="pressed" from="Options/Option 11/Button" to="." method="response_11"]
